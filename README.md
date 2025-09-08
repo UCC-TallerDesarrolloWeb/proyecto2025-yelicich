@@ -32,20 +32,21 @@ Tener en cuenta:
 - [ ] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc ni .DS_Store, en todo caso emplear **.gitignore**)
 
 ### Sobre el Proyecto General
-- [ ] La página principal debe llamarse index
-- [ ] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
-- [ ] La estructura del proyecto debe ser adecuada
+- [X] La página principal debe llamarse index
+- [X] NO está permitido descargar un TEMPLATE (diseño 100% desde cero)
+- [X] La estructura del proyecto debe ser adecuada
       - Crear una carpeta para las imágenes
       - Carpeta para los sketch
       - Carpeta para los mockups/Wireframes
+- [ ] La estructura del proyecto debe ser adecuada
       En una segunda etapa, al emplear **React**:
       - Carpeta de Componentes
       - Carpeta de Pages
       - Carpeta de Styles
 - [ ] Identar correctamente el código (en Webstorm Ctrl+Alt+L)
 - [ ] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
-- [ ] Se debe emplear algún favicon
-- [ ] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa
+- [X] Se debe emplear algún favicon
+- [X] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa
 - [ ] Debe haber navegación entre todas las páginas
 - [ ] No debe haber errores de ortografía en el contenido visual
 - [ ] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
@@ -55,31 +56,31 @@ Tener en cuenta:
 - [ ] Poner comillas a todos los atributos
 - [ ] Title debe contener el título de la página
 - [ ] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripcion y palabras clave
-- [ ] Emplear al menos 3 etiquetas semánticas diferentes (header, nav, aside, main, section, article, footer)
-- [ ] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
-- [ ] Debe haber por lo menos una etiqueta ```<img>``` en la página.
-- [ ] La estructura de la página debe estar definida con ```<div></div>```
+- [X] Emplear al menos 3 etiquetas semánticas diferentes (header, nav, aside, main, section, article, footer)
+- [X] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
+- [X] Debe haber por lo menos una etiqueta ```<img>``` en la página.
+- [X] La estructura de la página debe estar definida con ```<div></div>```
 - [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
 - [ ] Emplear el atributo [**placeholder**](U2_HTML_avanzado.html#/19) (mínimamente en 1 input)
 - [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
 - [ ] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
-- [ ] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
+- [X] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [ ] La anidación de etiquetas HTML debe ser correcta.
-- [ ] No utilizar etiquetas deprecadas.
+- [X] No utilizar etiquetas deprecadas.
 - [ ] Todas las etiquetas deben estar correctamente cerradas
-- [ ] Los ids de los elementos deben ser unívocos
+- [X] Los ids de los elementos deben ser unívocos
 
 ### Sobre las imágenes
-- [ ] Debe contener por lo menos una etiqueta ```<img>``` en la página.
-- [ ] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
-- [ ] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
+- [X] Debe contener por lo menos una etiqueta ```<img>``` en la página.
+- [X] Todas las imágenes deben ser incluidas en el repositorio dentro de una carpeta llamada **imagenes** (salvo que sean demasiado pesadas. En ese caso, se puede emplear un servidor externo).
+- [X] No se deben subir videos en el repositorio (excepto que sean MUY livianos).
 - [ ] Toda imagen debe tener su atributo alt
-- [ ] Las imágenes deben poseer un nombre representativo 
+- [X] Las imágenes deben poseer un nombre representativo 
 
 ### Sobre el CSS
-- [ ] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
-- [ ] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
-- [ ] Se debe emplear pseudoclase
+- [X] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
+- [X] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
+- [X] Se debe emplear pseudoclase
 - [ ] No emplear !important
 - [ ] El diseño de la página debe ser consistente
 - [ ] En la primera etapa debe existir un único archivo CSS (se debe evitar código duplicado. Se debe aplicar re-utilización de código/estilos)
