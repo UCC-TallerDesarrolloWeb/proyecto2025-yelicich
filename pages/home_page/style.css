@@ -1,0 +1,120 @@
+:root {
+  /* Colores base */
+    --ym-primary: #2A94D5;
+    --ym-primary-light: #CDEFFC;
+    --ym-primary-dark: #2378AB;
+    --ym-accent: #F43F5E;
+
+  /* Fondo y superficies */
+    --ym-background: #F2F4F6;
+    --ym-surface: #FFFFFF;
+
+  /* Texto */
+    --ym-on-primary: #FFFFFF;
+    --ym-on-background: #212121;
+    --ym-on-bg-variant: #6B6B6B;
+
+  /* Tipografía */
+    --ym-font-main: 'Quicksand', sans-serif;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+body {
+    margin: 0;
+    font-family: Quicksand, sans-serif;
+    background-color: var(--ym-background);
+}
+
+/* ---- HEADER SECTION --- */
+
+header {
+    height: 80px;
+    width: 100%;  
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 0%, rgb(0, 0, 0, 0) 100%);
+}
+
+#header-container {
+    width: 100%;
+    max-width: 1600px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+    gap: 8px;
+    padding: 16px;
+}
+
+#logo {
+    height: 32px;
+    fill: rgb(255, 0, 0);
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: #FFF;
+}
+
+#header-buttons {
+    display: flex;
+    align-items: center;
+    
+    gap: 16px;
+    padding: 16px;
+}
+
+#header-buttons a:nth-child(-n+3) {
+    text-decoration: none;
+    color: var(--ym-on-primary);
+    letter-spacing: 2px;
+}
+
+#header-buttons a:nth-child(-n+3):hover {
+    text-decoration: underline;
+    color: var(--ym-primary-light);
+}
+
+#btn-catalogo {
+    text-decoration: none;
+    color: var(--ym-on-primary);
+    background-color: var(--ym-primary);
+    padding: 8px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+#btn-catalogo:hover {
+    background-color: var(--ym-primary-dark);
+}
+
+/* ---- HERO SECTION --- */
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../images/four_teslas.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
