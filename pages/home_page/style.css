@@ -16,10 +16,19 @@
 
   /* Tipografía */
     --ym-font-main: 'Quicksand', sans-serif;
+
+  /* estados base */
+    --arrow-off: grayscale(1) brightness(0.65);
+    --arrow-on: brightness(0) saturate(100%) invert(49%) sepia(80%) 
+        saturate(466%) hue-rotate(170deg) brightness(92%) contrast(91%); 
 }
 
-.bold {
-    font-weight: 700;
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 body {
@@ -28,11 +37,15 @@ body {
     background-color: var(--ym-background);
 }
 
+.bold {
+    font-weight: 700;
+}
+
 /* ---- HEADER SECTION --- */
 
 header {
     height: 80px;
-    width: 100%;  
+    width: 100vw;  
     position: fixed;
     top: 0;
     left: 0;
@@ -47,7 +60,7 @@ header {
 }
 
 #header-container {
-    width: 100%;
+    width: 100vw;
     max-width: 1600px;
 
     display: flex;
@@ -87,6 +100,9 @@ h1 {
     text-decoration: none;
     color: var(--ym-on-primary);
     letter-spacing: 2px;
+
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 #header-buttons a:nth-child(-n+3):hover {
@@ -101,6 +117,8 @@ h1 {
     padding: 8px 32px;
     border-radius: 50px;
     font-weight: 600;
+
+    transition: background-color 0.3s ease;
 }
 
 #btn-catalogo:hover {
@@ -112,9 +130,87 @@ h1 {
 .hero {
     width: 100vw;
     height: 100vh;
-    background-image: url(../../images/four_teslas.jpg);
+    background-image: url(../../imagenes/four_teslas.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    width: 100vw;
+    max-width: 1400px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding-left: 64px;
+    text-align: left;
+}
+
+.hero-content h2{
+    color: var(--ym-surface);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-catalogo-hero {
+    text-decoration: none;
+    color: var(--ym-on-primary);
+    background-color: var(--ym-primary);
+    padding: 16px 48px;
+    border-radius: 50px;
+    font-size: 1.5em;
+    font-weight: 600;
+    width: fit-content;
+
+    transition: background-color 0.3s ease;
+}
+
+.btn-catalogo-hero:hover {
+    background-color: var(--ym-primary-dark);
+}
+
+.hero-arrows {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-arrows img{
+    width: 64px;
+    will-change: filter;
+    opacity: 0.8;
+    user-select: none;
+}
+
+/* ARRIBA: ON de 0–16.6%, OFF de 16.6–100% */
+.hero-arrows img:nth-child(1){
+    animation: seqTop 2s infinite steps(1, end);
+}
+
+/* ABAJO: OFF 0–8.3%, ON 8.3–25%, OFF 25–100% */
+.hero-arrows img:nth-child(2){
+    animation: seqBottom 2s infinite steps(1, end);
+}
+
+@keyframes seqTop{
+    0%, 16.6%   { filter: var(--arrow-on); }   /* prende arriba */
+    16.7%, 100% { filter: var(--arrow-off); }  /* apagada resto del tiempo */
+}
+
+@keyframes seqBottom{
+    0%, 8.3%    { filter: var(--arrow-off); }  /* espera mientras prende la de arriba */
+    8.4%, 25%   { filter: var(--arrow-on); }   /* prende abajo */
+    25.1%, 100% { filter: var(--arrow-off); }  /* apagada hasta volver a empezar */
 }
