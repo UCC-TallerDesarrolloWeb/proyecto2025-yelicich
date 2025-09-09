@@ -1,23 +1,7 @@
+/* ---- GENERAL STYLES --- */
+
 :root {
-  /* Colores base */
-    --ym-primary: #2A94D5;
-    --ym-primary-light: #CDEFFC;
-    --ym-primary-dark: #2378AB;
-    --ym-accent: #F43F5E;
-
-  /* Fondo y superficies */
-    --ym-background: #F2F4F6;
-    --ym-surface: #FFFFFF;
-
-  /* Texto */
-    --ym-on-primary: #FFFFFF;
-    --ym-on-background: #212121;
-    --ym-on-bg-variant: #6B6B6B;
-
-  /* Tipografía */
-    --ym-font-main: 'Quicksand', sans-serif;
-
-  /* estados base */
+/* estados base */
     --arrow-off: grayscale(1) brightness(0.65);
     --arrow-on: brightness(0) saturate(100%) invert(49%) sepia(80%) 
         saturate(466%) hue-rotate(170deg) brightness(92%) contrast(91%); 
@@ -44,85 +28,20 @@ body {
 /* ---- HEADER SECTION --- */
 
 header {
-    height: 80px;
-    width: 100vw;  
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    z-index: 1000;
     background: linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 0%, rgb(0, 0, 0, 0) 100%);
-}
-
-#header-container {
-    width: 100vw;
-    max-width: 1600px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#header-logo a {
-    display: flex;
-    align-items: center;
-    text-decoration: none; 
-    gap: 8px;
-    padding: 16px;
-}
-
-#logo {
-    height: 32px;
-    fill: rgb(255, 0, 0);
+    border-bottom: none;
 }
 
 h1 {
-    margin: 0;
-    padding: 0;
-    font-weight: 500;
     color: #FFF;
 }
 
-#header-buttons {
-    display: flex;
-    align-items: center;
-    
-    gap: 16px;
-    padding: 16px;
-}
-
 #header-buttons a:nth-child(-n+3) {
-    text-decoration: none;
     color: var(--ym-on-primary);
-    letter-spacing: 2px;
-
-    border-bottom: 2px solid transparent;
-    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 #header-buttons a:nth-child(-n+3):hover {
-    text-decoration: underline;
     color: var(--ym-primary-light);
-}
-
-#btn-catalogo {
-    text-decoration: none;
-    color: var(--ym-on-primary);
-    background-color: var(--ym-primary);
-    padding: 8px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-
-    transition: background-color 0.3s ease;
-}
-
-#btn-catalogo:hover {
-    background-color: var(--ym-primary-dark);
 }
 
 /* ---- HERO SECTION --- */
