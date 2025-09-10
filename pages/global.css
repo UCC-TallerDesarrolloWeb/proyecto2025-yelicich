@@ -2,13 +2,13 @@
 
 :root {
 /* YM-Primary */
-    --ym-primary-950: #102a41; /* casi negro */
-    --ym-primary-900: #184262; /* textos en fondo claro */
+    --ym-primary-950: #102a41; /* textos en fondo claro */
+    --ym-primary-900: #184262; /* titulos en fondo claro */
     --ym-primary-800: #164d76; /* desc */
     --ym-primary-700: #165b8e; /* desc */
-    --ym-primary-600: #1a72af; /* desc */
+    --ym-primary-600: #1a72af; /* detalles oscuros */
     --ym-primary: #2a94d5; /* primary */
-    --ym-primary-400: #4faae1; /* desc */
+    --ym-primary-400: #4faae1; /* detalles cla */
     --ym-primary-300: #8cc7ed; /* desc */
     --ym-primary-200: #c2dff5; /* desc */
     --ym-primary-100: #e4effa; /* surface */
