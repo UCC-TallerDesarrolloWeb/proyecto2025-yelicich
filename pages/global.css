@@ -1,20 +1,26 @@
 /* ---- GENERAL STYLES --- */
 
 :root {
-/* Colores base */
-    --ym-primary: #2A94D5;
-    --ym-primary-light: #CDEFFC;
-    --ym-primary-dark: #2378AB;
+/* YM-Primary */
+    --ym-primary-950: #102a41; /* casi negro */
+    --ym-primary-900: #184262; /* textos en fondo claro */
+    --ym-primary-800: #164d76; /* desc */
+    --ym-primary-700: #165b8e; /* desc */
+    --ym-primary-600: #1a72af; /* desc */
+    --ym-primary: #2a94d5; /* primary */
+    --ym-primary-400: #4faae1; /* desc */
+    --ym-primary-300: #8cc7ed; /* desc */
+    --ym-primary-200: #c2dff5; /* desc */
+    --ym-primary-100: #e4effa; /* surface */
+    --ym-primary-50: #f2f8fd; /* textos en fondo oscuro y para fondos claros */
+
+/* YM-Gray */
+    --ym-gray-800: #435364; /* footer */
+    --ym-gray-700: #5A6B7D; /* textos secundarios e iconos */
+    --ym-gray-400: #A6B3C3;  /* bordes y divisores suaves */
+
+/* YM-Extras */
     --ym-accent: #F43F5E;
-
-/* Fondo y superficies */
-    --ym-background: #F2F4F6;
-    --ym-surface: #FFFFFF;
-
-/* Texto */
-    --ym-on-primary: #FFFFFF;
-    --ym-on-background: #212121;
-    --ym-on-bg-variant: #6B6B6B;
 
 /* Tipografía */
     --ym-font-main: 'Quicksand', sans-serif;
