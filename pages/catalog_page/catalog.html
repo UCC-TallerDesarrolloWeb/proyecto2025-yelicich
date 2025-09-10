@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    
     <title>Catalogo - YeliMotors</title>
 </head>
 <body>
@@ -38,8 +40,36 @@
         </ol>
     </nav>
     <main>
-        <div class="main-content">
-            <h2>Catálogo de vehículos</h2>
+        <div class="global-container">
+            <div class="main-header">
+                <h2>Catálogo de vehículos</h2>
+                <hr class="divider">
+
+                <div class="subtitles">
+                    <div class="subtitles__cars">168 autos</div> <!-- poner cantidad exacta -->
+                    <div class="subtitles__order">
+                        <span class="subtitles__order__text">Ordenar por: </span> <!-- modificar css -->
+                        <select class="subtitles__order__order-by" name="order-by" id="order-by">
+                            <option value="most_recent">Relevancia</option>
+                            <option value="cheaper">Menor Precio</option>
+                            <option value="expensive">Mayor precio</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-and-filters">
+                <!-- filtros -->
+                <form class="filters">
+                    <h3 class="flitros">Flitros</h3>
+                    
+                </form>
+
+                <!-- productos -->
+                <div class="list-products" id="list-products">
+                    <script src="../autos.js"></script>
+                </div>
+            </div>
         </div>
     </main>
 </body>

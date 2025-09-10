@@ -6,11 +6,11 @@
     --ym-primary-900: #184262; /* titulos en fondo claro */
     --ym-primary-800: #164d76; /* desc */
     --ym-primary-700: #165b8e; /* desc */
-    --ym-primary-600: #1a72af; /* detalles oscuros */
+    --ym-primary-600: #1a72af; /* hover oscuro */
     --ym-primary: #2a94d5; /* primary */
-    --ym-primary-400: #4faae1; /* detalles cla */
+    --ym-primary-400: #4faae1; /* detalles claros */
     --ym-primary-300: #8cc7ed; /* desc */
-    --ym-primary-200: #c2dff5; /* desc */
+    --ym-primary-200: #c2dff5; /* hover claro y divisores*/
     --ym-primary-100: #e4effa; /* surface */
     --ym-primary-50: #f2f8fd; /* textos en fondo oscuro y para fondos claros */
 
@@ -21,11 +21,18 @@
 
 /* YM-Extras */
     --ym-accent: #F43F5E;
+    --ym-background-alpha: rgba(228, 239, 250, 0.65);
 
 /* Tipografía */
     --ym-font-main: 'Quicksand', sans-serif;
 }
 
+
+html {
+    scroll-behavior: smooth;
+    color: var(--ym-primary-950);
+    font-family: Quicksand, sans-serif;
+}
 /* ---- HEADER --- */
 
 header {
@@ -42,7 +49,7 @@ header {
     z-index: 1000;
     background: var(--ym-background-alpha);
 
-    border-bottom: var(--ym-on-bg-variant) 0.1px solid;
+    border-bottom: var(--ym-gray-400) 0.1px solid;
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -74,7 +81,7 @@ h1 {
     margin: 0;
     padding: 0;
     font-weight: 500;
-    color:var(--ym-on-background);
+    color:var(--ym-primary-900);
 }
 
 #header-buttons {
@@ -87,7 +94,7 @@ h1 {
 
 #header-buttons a:nth-child(-n+3) {
     text-decoration: none;
-    color: var(--ym-on-bg-variant);
+    color: var(--ym-gray-700);
     letter-spacing: 2px;
 
     border-bottom: 2px solid transparent;
@@ -96,12 +103,12 @@ h1 {
 
 #header-buttons a:nth-child(-n+3):hover {
     text-decoration: underline;
-    color: var(--ym-primary-dark);
+    color: var(--ym-primary-600);
 }
 
 #btn-catalogo {
     text-decoration: none;
-    color: var(--ym-on-primary);
+    color: var(--ym-primary-50);
     background-color: var(--ym-primary);
     padding: 8px 32px;
     border-radius: 50px;
@@ -111,8 +118,9 @@ h1 {
 }
 
 #btn-catalogo:hover {
-    background-color: var(--ym-primary-dark);
+    background-color: var(--ym-primary-600);
 }
+
 nav[aria-label="breadcrumb"] {
     padding-top: 100px;
     width: 100%;

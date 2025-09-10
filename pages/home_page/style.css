@@ -7,18 +7,13 @@
         saturate(466%) hue-rotate(170deg) brightness(92%) contrast(91%); 
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 html, body {
     overflow-x: hidden;
 }
 
 body {
     margin: 0;
-    font-family: Quicksand, sans-serif;
-    background-color: var(--ym-background);
+    background-color: var(--ym-primary-50);
 }
 
 .bold {
@@ -36,15 +31,15 @@ header {
 }
 
 h1 {
-    color: #FFF;
+    color: var(--ym-primary-50);
 }
 
 #header-buttons a:nth-child(-n+3) {
-    color: var(--ym-on-primary);
+    color: var(--ym-primary-50);
 }
 
 #header-buttons a:nth-child(-n+3):hover {
-    color: var(--ym-primary-light);
+    color: var(--ym-primary-200);
 }
 
 /* ---- MAIN --- */
@@ -87,7 +82,7 @@ main {
 }
 
 .hero__content h2{
-    color: var(--ym-surface);
+    color: var(--ym-primary-50);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-size: 3.5em;
     margin: 0;
@@ -96,7 +91,7 @@ main {
 
 .btn-catalogo-hero {
     text-decoration: none;
-    color: var(--ym-on-primary);
+    color: var(--ym-primary-50);
     background-color: var(--ym-primary);
     padding: 16px 48px;
     border-radius: 50px;
@@ -108,7 +103,7 @@ main {
 }
 
 .btn-catalogo-hero:hover {
-    background-color: var(--ym-primary-dark);
+    background-color: var(--ym-primary-600);
 }
 
 .hero__arrows {
@@ -166,7 +161,7 @@ h3 {
     padding: 0;
     font-weight: 500;
     font-size: 28px;
-    color: var(--ym-on-background);
+    color: var(--ym-primary-900);
     justify-self: start; 
     align-self: flex-start;
 }
@@ -195,10 +190,10 @@ h3 {
     display: flex;
     gap: 12px;
     overflow-x: auto;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x proximity; /* TODO: modificar */
 }
 
-.best-seller__item {
+.best-seller__item { /* TODO */
     flex: 0 0 260px;
     background: #fff;
     border: 1px solid #d9d9d9;
