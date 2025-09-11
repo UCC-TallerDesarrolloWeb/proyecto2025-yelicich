@@ -16,10 +16,6 @@ body {
     background-color: var(--ym-primary-50);
 }
 
-.bold {
-    font-weight: 700;
-}
-
 /* ---- HEADER --- */
 
 header {

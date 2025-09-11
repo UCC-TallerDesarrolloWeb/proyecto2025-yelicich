@@ -33,8 +33,12 @@ html {
     color: var(--ym-primary-950);
     font-family: Quicksand, sans-serif;
 }
-/* ---- HEADER --- */
 
+.bold {
+    font-weight: 700;
+}
+
+/* ---- HEADER --- */
 header {
     height: 80px;
     width: 100%;  
@@ -126,4 +130,39 @@ nav[aria-label="breadcrumb"] {
     width: 100%;
     max-width: 1280px;
     letter-spacing: 2px;
+}
+
+/* ---- BREADCRUMB SECTION --- */
+nav[aria-label="breadcrumb"] {
+    width: 95%;
+    max-width: 1280px;
+}
+
+nav[aria-label="breadcrumb"] a {
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--ym-gray-700);
+}
+
+nav[aria-label="breadcrumb"] a:hover {
+    text-decoration: underline;
+    color: var(--ym-primary-600);
+}
+
+nav[aria-label="breadcrumb"] ol {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+}
+
+nav[aria-label="breadcrumb"] li::after {
+    content: "/";
+    margin-left: 4px;
+    color: var(--ym-gray-700);
+}
+
+nav[aria-label="breadcrumb"] li:last-child::after {
+    content: "";
 }

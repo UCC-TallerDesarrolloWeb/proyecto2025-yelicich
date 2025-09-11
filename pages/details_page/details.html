@@ -7,8 +7,8 @@
     <meta name="keywords" content="autos, 0km, concesionaria, argentina, yelimotors">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="autos.js"></script>
+    <link rel="stylesheet" href="details.css">
+    <script src="../autos.js"></script>
     <script src="details.js" defer></script>
     <link rel="shortcut icon" href="../../imagenes/logo_ym.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,27 +29,95 @@
                 <a href="">Importaciones</a>
                 <a href="">Servicios</a>
                 <a href="">Contacto</a>
-                <a id="btn-catalogo" href="catalog.html">Catalogo</a>
+                <a id="btn-catalogo" href="../catalog_page/catalog.html">Catalogo</a>
             </nav>
         </div>
     </header>
     <nav aria-label="breadcrumb">
         <ol>
             <li><a href="../home_page/index.html">Inicio</a></li>
-            <li><span class="bold">Catálogo</span></li>
+            <li><a href="../catalog_page/catalog.html">Catálogo</a></li>
+            <li class="bold" id="breadcrumb-current"></li>
         </ol>
     </nav>
-    <main class="detalle">
-        <h1 id="auto-nombre"></h1>
-        <div class="detalle__imagen">
-            <img id="auto-imagen" src="" alt="">
-        </div>
-        <div class="detalle__info">
-            <p><strong>Marca:</strong> <span id="auto-marca"></span></p>
-            <p><strong>Modelo:</strong> <span id="auto-modelo"></span></p>
-            <p><strong>Tipo:</strong> <span id="auto-tipo"></span></p>
-            <p><strong>Caja:</strong> <span id="auto-caja"></span></p>
-            <p><strong>Precio:</strong> <span id="auto-precio"></span></p>
+    <main class="global-container">
+        <div class="detalles">
+            <div class="detalles__imagen">
+                <img id="auto-imagen" src="" alt="">
+            </div>
+            <div class="detalles__info">
+                <div class="titles">
+                    <div class="titulo-y-detalles">
+                        <h2 id="auto-nombre"></h2>
+                        <span id="auto-type-box"></span>
+                    </div>
+                    <div class="precio">
+                        <span id="auto-precio"></span>
+                        <p>No incluye patentamiento. Precio al contado.</p>
+                        <p id="auto-precio-tax">Precio sin impuestos nacionales: $ 56.018.100</p>
+                    </div>
+                </div>
+                <div class="custom">
+                    <div class="color">
+                        <div class="color-title">
+                            <img class="ic-pallette-icon" alt="" src="ic_pallette.svg">
+                            <div class="dimensiones">Dimensiones</div>
+                        </div>
+                        <div class="numbers">
+                            <div class="alto">Alto: 1.85mts</div>
+                            <div class="ancho">Ancho: 1.95mts</div>
+                            <div class="largo">Largo: 5.35mts</div>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+                    <div class="disponibility">
+                        <div class="color-title">
+                            <img class="ic-clock-icon" alt="" src="ic_clock.svg">
+                            <div class="dimensiones">Disponibilidad</div>
+                        </div>
+                        <div class="disponibility-content">
+                            <div class="contado-financiado">Inmediata / 30 días</div>
+                        </div>
+                    </div>
+                    <hr class="divider">
+
+                    <div class="disponibility">
+                        <div class="color-title">
+                            <img class="ic-pallette-icon" alt="" src="ic_credit_card.svg">
+                            <div class="dimensiones">Forma de pago</div>
+                        </div>
+                        <div class="disponibility-content">
+                            <div class="contado-financiado">Contado / Financiado, el precio puede variar</div>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+                    <div class="disponibility">
+                        <div class="color-title">
+                            <img class="ic-pallette-icon" alt="" src="ic_location.svg">
+                            <div class="dimensiones">Concesionario oficial de Marca</div>
+                        </div>
+                        <div class="disponibility-content">
+                            <div class="contado-financiado">Ubicación Córdoba Capital</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-reservar-parent">
+                    <div class="button-reservar" id="buttonReservarContainer">
+                        <div class="reservar-ahora">Reservar ahora</div>
+                    </div>
+                    <div class="custom-divider">
+                        <hr class="divider">
+                        </div>
+                        <div class="o-tambin-podes">o también podes</div>
+                        <hr class="divider">
+                    </div>
+                    <div class="descripcion-button-reservar">
+                        <div class="reservar-ahora">Realizar consulta</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>

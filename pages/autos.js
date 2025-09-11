@@ -5,7 +5,7 @@ const autos = [
         modelo: "Model S",
         tipo: "Deportivo",
         caja: "Automático",
-        precio: 120000000,
+        precio: 110000000,
         imagen: "../../imagenes/car_image.webp",
         imagen2: "../../imagenes/car_image.webp",
         imagen3: "../../imagenes/car_image.webp",
