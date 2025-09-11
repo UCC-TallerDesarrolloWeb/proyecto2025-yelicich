@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="style.css">
+    <script src="autos.js"></script>
+    <script src="details.js" defer></script>
     <link rel="shortcut icon" href="../../imagenes/logo_ym.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,9 +39,17 @@
             <li><span class="bold">Catálogo</span></li>
         </ol>
     </nav>
-    <main>
-        <div class="main-content">
-            <h2>Catálogo de vehículos</h2>
+    <main class="detalle">
+        <h1 id="auto-nombre"></h1>
+        <div class="detalle__imagen">
+            <img id="auto-imagen" src="" alt="">
+        </div>
+        <div class="detalle__info">
+            <p><strong>Marca:</strong> <span id="auto-marca"></span></p>
+            <p><strong>Modelo:</strong> <span id="auto-modelo"></span></p>
+            <p><strong>Tipo:</strong> <span id="auto-tipo"></span></p>
+            <p><strong>Caja:</strong> <span id="auto-caja"></span></p>
+            <p><strong>Precio:</strong> <span id="auto-precio"></span></p>
         </div>
     </main>
 </body>

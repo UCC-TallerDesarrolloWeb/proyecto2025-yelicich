@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="style.css">
+    <script src="../autos.js"></script>
+    <script src="catalog.js" defer></script>
     <link rel="shortcut icon" href="../../imagenes/logo_ym.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,13 +48,13 @@
                 <hr class="divider">
 
                 <div class="subtitles">
-                    <div class="subtitles__cars">168 autos</div> <!-- poner cantidad exacta -->
+                    <div class="subtitles__cars" id="cars-count">0 autos</div>
                     <div class="subtitles__order">
-                        <span class="subtitles__order__text">Ordenar por: </span> <!-- modificar css -->
+                        <span class="subtitles__order__text" id="cars-order">Ordenar por: </span>
                         <select class="subtitles__order__order-by" name="order-by" id="order-by">
-                            <option value="most_recent">Relevancia</option>
-                            <option value="cheaper">Menor Precio</option>
+                            <option value="more_recent">Relevancia</option>
                             <option value="expensive">Mayor precio</option>
+                            <option value="cheaper">Menor Precio</option>
                         </select>
                     </div>
                 </div>
@@ -66,9 +68,7 @@
                 </form>
 
                 <!-- productos -->
-                <div class="list-products" id="list-products">
-                    <script src="../autos.js"></script>
-                </div>
+                <div class="list-products" id="list-products"></div> <!-- Se insertan desde catalog.js -->
             </div>
         </div>
     </main>
