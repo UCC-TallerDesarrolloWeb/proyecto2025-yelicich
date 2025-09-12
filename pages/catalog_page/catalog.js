@@ -13,7 +13,7 @@ function renderAutos(arr) {
         card.innerHTML = `
         <a href="../details_page/details.html?id=${auto.id}" class="link-detalle">
             <div class="car-image-container">
-            <img src="${auto.imagen}" alt="${auto.marca} ${auto.modelo}">
+            <img src="${auto.imagenes[0]}" alt="${auto.marca} ${auto.modelo}">
             </div>
             <div class="informacion">
             <div class="datos">
