@@ -19,28 +19,36 @@
     <title>Catalogo - YeliMotors</title>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div id="header-container">
+            <!-- logo -->
             <div id="header-logo">
                 <a href="../home_page/index.html">
                     <img id="logo" src="../../imagenes/logo_ym.png" alt="YeliMotors Logo" draggable="false">
                     <h1>Yeli<span class="bold">Motors</span></h1>
                 </a>
             </div>
+
+            <!-- botones -->
             <nav id="header-buttons">
                 <a href="">Importaciones</a>
                 <a href="">Servicios</a>
                 <a href="">Contacto</a>
-                <a id="btn-catalogo" href="catalog.html">Catalogo</a>
+                <a id="btn-catalogo" href="catalog.html">Catálogo</a>
             </nav>
         </div>
     </header>
+
+    <!-- NAV -->
     <nav aria-label="breadcrumb">
         <ol>
             <li><a href="../home_page/index.html">Inicio</a></li>
             <li><span class="bold">Catálogo</span></li>
         </ol>
     </nav>
+
+    <!-- MAIN -->
     <main>
         <div class="global-container">
             <div class="main-header">
@@ -52,7 +60,7 @@
                     <div class="subtitles__order">
                         <span class="subtitles__order__text" id="cars-order">Ordenar por: </span>
                         <select class="subtitles__order__order-by" name="order-by" id="order-by">
-                            <option value="more_recent">Relevancia</option>
+                            <option value="most_recent">Relevancia</option>
                             <option value="expensive">Mayor precio</option>
                             <option value="cheaper">Menor Precio</option>
                         </select>
@@ -63,8 +71,71 @@
             <div class="products-and-filters">
                 <!-- filtros -->
                 <form class="filters">
-                    <h3 class="flitros">Flitros</h3>
-                    
+                    <div class="filters__header">
+                        <h3>Filtros</h3>
+                        <button type="button" id="clear-filters" class="btn-clear hidden">Limpiar</button>
+                    </div>
+                    <div class="filter price-filter" id="price-filter" open>
+                        <h4>Precio</h4>
+                        <ul>
+                            <li>
+                                <label for="from-price">Desde:</label>
+                                <input type="text" id="from-price" placeholder="$40.000.000" class="price-filter">
+                            </li>
+                            <li>
+                                <label for="to-price">Hasta:</label>
+                                <input type="text" id="to-price" placeholder="$60.000.000" class="price-filter">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Transmisión -->
+                    <div class="filter">
+                        <h4>Transmisión</h4>
+                        <ul>
+                            <li>
+                            <input type="checkbox" id="manual" value="Manual">
+                            <label for="manual">Manual</label>
+                            </li>
+                            <li>
+                            <input type="checkbox" id="automatic" value="Automático">
+                            <label for="automatic">Automático</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Segmento -->
+                    <div class="filter">
+                        <h4>Segmento</h4>
+                        <ul>
+                            <li>
+                            <input type="checkbox" id="suv" value="SUV">
+                            <label for="suv">SUV</label>
+                            </li>
+                            <li>
+                            <input type="checkbox" id="sedan" value="Sedán">
+                            <label for="sedan">Sedán</label>
+                            </li>
+                            <li>
+                            <input type="checkbox" id="pickup" value="Pick-up">
+                            <label for="pickup">Pick-up</label>
+                            </li>
+                            <li>
+                            <input type="checkbox" id="utilitario" value="Utilitario">
+                            <label for="utilitario">Utilitario</label>
+                            </li>
+                            <li>
+                            <input type="checkbox" id="deportivo" value="Deportivo">
+                            <label for="deportivo">Deportivo</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Marca -->
+                    <div class="filter">
+                        <h4>Marca</h4>
+                        <ul id="marca-filter"><!-- Se llena desde JS --></ul>
+                    </div>
                 </form>
 
                 <!-- productos -->
@@ -72,7 +143,9 @@
             </div>
         </div>
     </main>
-        <footer class="footer">
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="footer-container">
             
             <!-- Columna izquierda -->

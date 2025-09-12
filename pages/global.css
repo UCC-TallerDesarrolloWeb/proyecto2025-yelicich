@@ -27,16 +27,15 @@
     --ym-font-main: 'Quicksand', sans-serif;
 }
 
-
 html {
     scroll-behavior: smooth;
     color: var(--ym-primary-950);
     font-family: Quicksand, sans-serif;
 }
 
-.bold {
-    font-weight: 700;
-}
+.bold { font-weight: 700; }
+
+.hidden { display: none; }
 
 /* ---- HEADER --- */
 header {

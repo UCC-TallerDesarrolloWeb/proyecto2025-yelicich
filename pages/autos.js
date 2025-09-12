@@ -2,7 +2,8 @@ const MARCAS = Object.freeze({
     TESLA: "Tesla",
     JEEP: "Jeep",
     FORD: "Ford",
-    TOYOTA: "Toyota"
+    TOYOTA: "Toyota",
+    CHEVROLET: "Chevrolet"
 });
 
 const TIPOS = Object.freeze({
@@ -29,7 +30,8 @@ const autos = [
         precio: 110000000,
         imagenes: [
             "../../imagenes/car_image.webp"
-        ]
+        ],
+        img_hover: ""
     },
     {
         id: 2,
@@ -37,7 +39,7 @@ const autos = [
         modelo: "Compass",
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
-        precio: 80000000,
+        precio: 50000000,
         imagenes: [
             "../../imagenes/cars/compass/left_compass.webp",
             "../../imagenes/cars/compass/front_compass.webp",
@@ -51,7 +53,7 @@ const autos = [
         modelo: "Ranger",
         tipo: TIPOS.PICKUP,
         caja: CAJAS.MANUAL,
-        precio: 80000000,
+        precio: 60000000,
         imagenes: [
             "../../imagenes/car_image.webp"
         ]
@@ -74,6 +76,28 @@ const autos = [
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
         precio: 80000000,
+        imagenes: [
+            "../../imagenes/car_image.webp"
+        ]
+    },
+    {
+        id: 6,
+        marca: MARCAS.TESLA,
+        modelo: "Model Y",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 90000000,
+        imagenes: [
+            "../../imagenes/car_image.webp"
+        ]
+    },
+    {
+        id: 7,
+        marca: MARCAS.TESLA,
+        modelo: "Model 3",
+        tipo: TIPOS.SEDAN,
+        caja: CAJAS.AUTOMATICO,
+        precio: 85000000,
         imagenes: [
             "../../imagenes/car_image.webp"
         ]

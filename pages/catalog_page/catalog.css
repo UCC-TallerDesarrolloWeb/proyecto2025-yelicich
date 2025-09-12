@@ -128,8 +128,108 @@ h2 {
     border: 1px solid var(--ym-gray-400);
     border-radius: 8px;
     padding: 16px;
+    padding-bottom: 0;
     position: sticky;
-    top: 16px;
+}
+
+.filters__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.filters__header h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.filters__header button {
+    background: none;
+    border: none;
+    color: var(--ym-primary);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 8px;
+    text-decoration: underline;
+}
+
+.btn-clear:hover { 
+    color: var(--ym-primary-600);
+}
+
+.filter {
+    border-top: 1px solid var(--ym-primary-200);
+    margin-bottom: 24px;
+}
+
+.filter h3 {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 0;
+}
+
+li {
+    margin: 12px 0;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--ym-primary)
+}
+
+.price-filter ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.price-filter h4 {
+    margin-bottom: 0;
+}
+
+.price-filter label {
+    font-weight: 400;
+    color: var(--ym-gray-700);
+    font-size: 14px;
+}
+
+.filters input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid var(--ym-gray-300);
+    border-radius: 6px;
+    background-color: var(--ym-primary-50);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--ym-gray-900);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filters input::placeholder {
+    color: var(--ym-gray-400);
+}
+
+.filters input:hover {
+    box-shadow: 0 0 0 3px rgba(0, 157, 255, 0.1);
+}
+
+.filters input:focus {
+    border-color: var(--ym-primary-600);
+    box-shadow: 0 0 0 3px rgba(42, 148, 213, 0.2);
 }
 
 /* lista de productos */
