@@ -4,9 +4,9 @@ Estructura de Proyecto Taller de Desarrollo Web - 2025
 ## Requisitos del Primer Parcial
 
 ### Sobre el Sketch
-- [ ] Versión Desktop y Mobile
-- [ ] Guardado en formato PNG, JPG ó PDF
-- [ ] Dentro de una carpeta llamada "Sketch"
+- [X] Versión Desktop y Mobile
+- [X] Guardado en formato PNG, JPG ó PDF
+- [X] Dentro de una carpeta llamada "Sketch"
 - [ ] En el diseño tener en cuenta los mensajes de error para el usuario
 
 Tener en cuenta:
@@ -17,11 +17,11 @@ Tener en cuenta:
 * Mensajes de Error
 
 ### Sobre el Wireframe/Mockup
-- [ ] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
+- [X] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
 - [ ] Diseño de Mensajes de error para el usuario
-- [ ] Versión Desktop y Mobile
-- [ ] Guardado en formato PNG, JPG ó PDF
-- [ ] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
+- [X] Versión Desktop y Mobile
+- [X] Guardado en formato PNG, JPG ó PDF
+- [X] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
 
 ### Sobre el Repositorio
 - [X] El proyecto debe estar subido al repositorio adecuado "Proyecto2025-ApellidoAlumno1-ApellidoAlumno2"
@@ -95,7 +95,7 @@ Tener en cuenta:
 Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 - [ ] Una función que compruebe si los valores ingresados son correctos, y si no lo son, que le indique al usuario por un alert o dialog, y que blanquee el contenido del campo.
 - [ ] Una función que calcule/muestre algo en base a los valores ingresados por el usuario en los inputs.
-- [ ] El código Js debe estar en un archivo externo
+- [X] El código Js debe estar en un archivo externo
 - [ ] Se debe emplear var, let o const según corresponda para mayor eficiencia
 - [ ] No deben existir funciones innecesarias que no se llamen en ninguna sección del código
 - [ ] Las funciones deben estar escritas cómo **función flecha**
