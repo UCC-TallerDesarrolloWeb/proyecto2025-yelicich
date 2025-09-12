@@ -15,6 +15,8 @@ if (auto) {
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
     document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * 0.9049774).toLocaleString("es-AR")}`;
+
+    renderSimilares(auto);
 } else {
     document.querySelector("main.detalle").innerHTML = "<p>Auto no encontrado</p>";
 }
@@ -54,5 +56,50 @@ if (auto) {
         });
 
         thumbnailsContainer.appendChild(thumb);
+    });
+}
+
+//Mostrar vehiculos similares
+function renderSimilares(auto) {
+    const similaresList = document.querySelector(".similares__list");
+    similaresList.innerHTML = "";
+
+    // Buscar autos del mismo segmento, excluyendo el actual
+    let similares = autos.filter(a => a.tipo === auto.tipo && a.id !== auto.id);
+
+    // Limitar a máximo 5
+    similares = similares.slice(0, 5);
+
+    // Si no hay similares, mostramos un mensaje
+    if (similares.length === 0) {
+        similaresList.innerHTML = "<p>No hay vehículos similares disponibles.</p>";
+        return;
+    }
+
+    // Renderizar las cards (reaprovechamos el estilo del catálogo)
+    similares.forEach(sim => {
+        const card = document.createElement("div");
+        card.classList.add("card-car");
+
+        card.innerHTML = `
+            <a href="../details_page/details.html?id=${sim.id}" class="link-detalle">
+                <div class="car-image-container">
+                    <img src="${sim.imagenes[0]}" alt="${sim.marca} ${sim.modelo}">
+                </div>
+                <div class="informacion">
+                    <div class="datos">
+                        <div class="car-marca">${sim.marca}</div>
+                        <div class="car-modelo">${sim.modelo}</div>
+                        <div class="car-tipo-caja">${sim.tipo} • ${sim.caja}</div>
+                    </div>
+                    <div class="car-precio">
+                        <span class="car-desde">Desde</span>
+                        <strong>$${sim.precio.toLocaleString("es-AR")}</strong>
+                    </div>
+                </div>
+            </a>
+        `;
+
+        similaresList.appendChild(card);
     });
 }
