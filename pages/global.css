@@ -21,6 +21,7 @@
 
 /* YM-Extras */
     --ym-accent: #F43F5E;
+    --ym-primary-alpha: rgba(42, 148, 213, 0.4);
     --ym-background-alpha: rgba(228, 239, 250, 0.65);
 
 /* Tipografía */
@@ -254,4 +255,82 @@ nav[aria-label="breadcrumb"] li:last-child::after {
 
 .footer-socials a:hover {
     transform: scale(1.1);
+}
+
+/* card de auto */
+.link-detalle {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-car {
+    background: #fff;
+    border: 1px solid var(--ym-gray-400);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-image-container {
+    background-color: var(--ym-primary-100);
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-car img {
+    width: 70%;
+    padding: 8px 0;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.informacion {
+    padding: 12px;
+}
+
+.marca {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.modelo {
+    color: var(--ym-primary-800);
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.tipo-caja {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--ym-gray-700);
+}
+
+.precio {
+    margin-top: 16px;
+
+    color: var(--ym-primary);
+    font-weight: 400;
+    font-size: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.desde {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--ym-gray-700);
+}
+
+.card-car {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-car:hover {
+    box-shadow: 0 0 8px 1px var(--ym-primary-alpha);
+    transform: translateY(-1px);
 }

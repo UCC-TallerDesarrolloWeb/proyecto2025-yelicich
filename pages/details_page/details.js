@@ -16,6 +16,8 @@ if (auto) {
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
     document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * 0.9049774).toLocaleString("es-AR")}`;
 
+    document.title = `${auto.marca} ${auto.modelo} - YeliMotors`;
+
     renderSimilares(auto);
 } else {
     document.querySelector("main.detalle").innerHTML = "<p>Auto no encontrado</p>";
@@ -76,7 +78,7 @@ function renderSimilares(auto) {
         return;
     }
 
-    // Renderizar las cards (reaprovechamos el estilo del catálogo)
+    // Renderizar las cards
     similares.forEach(sim => {
         const card = document.createElement("div");
         card.classList.add("card-car");
@@ -99,6 +101,16 @@ function renderSimilares(auto) {
                 </div>
             </a>
         `;
+
+        const img = card.querySelector("img");
+        if (auto.img_hover) {
+            card.addEventListener("mouseenter", () => {
+                img.src = auto.img_hover;
+            });
+            card.addEventListener("mouseleave", () => {
+                img.src = auto.imagenes[0];
+            });
+        }
 
         similaresList.appendChild(card);
     });

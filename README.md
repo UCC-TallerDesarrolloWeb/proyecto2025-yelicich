@@ -54,16 +54,16 @@ Tener en cuenta:
 ### Sobre el HTML
 - [ ] Todas las etiquetas deben estar en minúscula
 - [ ] Poner comillas a todos los atributos
-- [ ] Title debe contener el título de la página
-- [ ] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripcion y palabras clave
+- [X] Title debe contener el título de la página
+- [X] En el ```<head></head>``` incluir las etiquetas ```<meta>``` detallando: autor, descripcion y palabras clave
 - [X] Emplear al menos 3 etiquetas semánticas diferentes (header, nav, aside, main, section, article, footer)
 - [X] Emplear ```<header></header>```. En el contenido de la cabecera debe haber un título ```<h1></h1>```, puede tener color de fondo, algún logotipo, etc.
 - [X] Debe haber por lo menos una etiqueta ```<img>``` en la página.
 - [X] La estructura de la página debe estar definida con ```<div></div>```
 - [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
-- [ ] Emplear el atributo [**placeholder**](U2_HTML_avanzado.html#/19) (mínimamente en 1 input)
+- [X] Emplear el atributo [**placeholder**](U2_HTML_avanzado.html#/19) (mínimamente en 1 input)
 - [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
-- [ ] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
+- [X] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
 - [X] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [ ] La anidación de etiquetas HTML debe ser correcta.
 - [X] No utilizar etiquetas deprecadas.
@@ -82,7 +82,7 @@ Tener en cuenta:
 - [X] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
 - [X] Se debe emplear pseudoclase
 - [ ] No emplear !important
-- [ ] El diseño de la página debe ser consistente
+- [X] El diseño de la página debe ser consistente
 - [ ] En la primera etapa debe existir un único archivo CSS (se debe evitar código duplicado. Se debe aplicar re-utilización de código/estilos)
 
 ### Sobre Accesibilidad:
@@ -133,6 +133,9 @@ Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 | HTML+CSS+Js        | 85% |
 
 Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
+
+
+
 
 ## Requisitos del Segundo Parcial
 

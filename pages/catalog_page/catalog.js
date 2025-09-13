@@ -1,4 +1,3 @@
-// ---------- refs ----------
 const list = document.getElementById("list-products");
 const select = document.getElementById("order-by");
 const carsCount = document.getElementById("cars-count");
@@ -8,7 +7,7 @@ const clearBtn = document.getElementById("clear-filters");
 const fromPriceInput = document.getElementById("from-price");
 const toPriceInput   = document.getElementById("to-price");
 
-// ---------- helpers ----------
+// Numero totoal de autos
 const getCheckedValues = (selector) =>
     Array.from(document.querySelectorAll(selector))
     .filter(el => el.checked)
@@ -22,7 +21,7 @@ const getNumeric = (el) => {
 
 const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
 
-// ---------- generar marcas dinámicamente ----------
+// Marcas automáticamente
 (function buildBrandFilter() {
     const ul = document.getElementById("marca-filter");
     if (!ul || typeof MARCAS !== "object") return;
@@ -38,7 +37,7 @@ const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
     });
 })();
 
-// ---------- render ----------
+// Generar cards de los autos
 function renderAutos(arr) {
     list.innerHTML = "";
 
@@ -64,22 +63,32 @@ function renderAutos(arr) {
             </div>
         </a>
         `;
+
+        //Hover
+        const img = card.querySelector("img");
+        card.addEventListener("mouseenter", () => {
+            img.src = auto.img_hover;
+        });
+        card.addEventListener("mouseleave", () => {
+            img.src = auto.imagenes[0];
+        });
+
         list.appendChild(card);
     });
 }
 
-// ---------- sort ----------
+// Orden
 function sortAutos(arr, criterion) {
     const v = (criterion || "").toLowerCase();
     const cp = [...arr];
 
     if (v === "cheaper") cp.sort((a, b) => a.precio - b.precio);
     else if (v === "expensive") cp.sort((a, b) => b.precio - a.precio);
-    else cp.sort((a, b) => b.id - a.id);
+    else cp.sort((a, b) => a.id - b.id);
     return cp;
 }
 
-// ---------- filter + render pipeline ----------
+// Filtros
 function applyFiltersAndRender() {
     let filtered = [...autos];
 
@@ -118,7 +127,7 @@ function applyFiltersAndRender() {
     if (carsCount) carsCount.textContent = `${filtered.length} autos`;
 }
 
-// ---------- listeners (después de generar marcas) ----------
+// Listener de lso filtros
 function wireFilterEvents() {
     document.querySelectorAll(".filters input[type='checkbox']").forEach(inp => {
         inp.addEventListener("change", applyFiltersAndRender);
@@ -130,7 +139,7 @@ function wireFilterEvents() {
 }
 wireFilterEvents();
 
-// ---------- primera carga ----------
+// Primera carga
 applyFiltersAndRender();
 
 //Boton para limpiar filtros
@@ -163,10 +172,10 @@ const inputsPrecio = document.querySelectorAll(".price-filter");
 
 inputsPrecio.forEach(input => {
     input.addEventListener("input", (e) => {
-        let valor = e.target.value.replace(/\D/g, ""); // solo números
+        let valor = e.target.value.replace(/\D/g, "");
         if (valor) {
         e.target.dataset.valor = valor; // número puro
-        e.target.value = `$ ${Number(valor).toLocaleString("es-AR")}`; // texto con formato
+        e.target.value = `$ ${Number(valor).toLocaleString("es-AR")}`;
         } else {
         e.target.dataset.valor = "";
         e.target.value = "";

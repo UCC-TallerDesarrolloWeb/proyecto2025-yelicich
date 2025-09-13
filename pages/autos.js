@@ -3,7 +3,8 @@ const MARCAS = Object.freeze({
     JEEP: "Jeep",
     FORD: "Ford",
     TOYOTA: "Toyota",
-    CHEVROLET: "Chevrolet"
+    CHEVROLET: "Chevrolet",
+    VW: "Volkswagen"
 });
 
 const TIPOS = Object.freeze({
@@ -19,6 +20,32 @@ const CAJAS = Object.freeze({
     AUTOMATICO: "Automático"
 });
 
+const marcas = [
+    {
+        nombre: MARCAS.TESLA,
+        logo: "../../imagenes/logos/tesla_logo.png",
+    },
+    {
+        nombre: MARCAS.JEEP,
+        logo: "../../imagenes/logos/jeep_logo.png",
+    },
+    {
+        nombre: MARCAS.FORD,
+        logo: "../../imagenes/logos/ford_logo.png",
+    },
+    {
+        nombre: MARCAS.TOYOTA,
+        logo: "../../imagenes/logos/toyota_logo.png",
+    },
+    {
+        nombre: MARCAS.CHEVROLET,
+        logo: "../../imagenes/logos/chevrolet_logo.png",
+    },
+    {
+        nombre: MARCAS.VW,
+        logo: "../../imagenes/logos/vw_logo.png",
+    }
+];
 
 const autos = [
     {
@@ -31,7 +58,7 @@ const autos = [
         imagenes: [
             "../../imagenes/car_image.webp"
         ],
-        img_hover: ""
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
     },
     {
         id: 2,
@@ -41,11 +68,12 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 50000000,
         imagenes: [
-            "../../imagenes/cars/compass/left_compass.webp",
-            "../../imagenes/cars/compass/front_compass.webp",
+            "../../imagenes/cars/compass/main_compass.webp",
             "../../imagenes/cars/compass/right_compass.webp",
-            "../../imagenes/cars/compass/back_compass.webp"
-        ]
+            "../../imagenes/cars/compass/back_compass.webp",
+            "../../imagenes/cars/compass/front_compass.webp"
+        ],
+        img_hover: "../../imagenes/cars/compass/hover_compass.webp"
     },
     {
         id: 3,
@@ -56,7 +84,8 @@ const autos = [
         precio: 60000000,
         imagenes: [
             "../../imagenes/car_image.webp"
-        ]
+        ],
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
     },
     {
         id: 4,
@@ -67,7 +96,8 @@ const autos = [
         precio: 65000000,
         imagenes: [
             "../../imagenes/car_image.webp"
-        ]
+        ],
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
     },
     {
         id: 5,
@@ -78,7 +108,8 @@ const autos = [
         precio: 80000000,
         imagenes: [
             "../../imagenes/car_image.webp"
-        ]
+        ],
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
     },
     {
         id: 6,
@@ -89,7 +120,8 @@ const autos = [
         precio: 90000000,
         imagenes: [
             "../../imagenes/car_image.webp"
-        ]
+        ],
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
     },
     {
         id: 7,
@@ -100,6 +132,22 @@ const autos = [
         precio: 85000000,
         imagenes: [
             "../../imagenes/car_image.webp"
-        ]
+        ],
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
+    },
+    {
+        id: 8,
+        marca: MARCAS.VW,
+        modelo: "Amarok",
+        tipo: TIPOS.PICKUP,
+        caja: CAJAS.MANUAL,
+        precio: 69900000,
+        imagenes: [
+            "../../imagenes/cars/amarok/main_amarok.webp",
+            "../../imagenes/cars/amarok/right_amarok.webp",
+            "../../imagenes/cars/amarok/back_amarok.webp",
+            "../../imagenes/cars/amarok/front_amarok.webp"
+        ],
+        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
     }
 ];
