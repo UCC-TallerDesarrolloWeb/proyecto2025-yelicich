@@ -4,7 +4,16 @@ const MARCAS = Object.freeze({
     FORD: "Ford",
     TOYOTA: "Toyota",
     CHEVROLET: "Chevrolet",
-    VW: "Volkswagen"
+    VW: "Volkswagen",
+    AUDI: "Audi",
+    BMW: "BMW",
+    FIAT: "Fiat",
+    HONDA: "Honda",
+    JETOUR: "Jetour",
+    NISSAN: "Nissan",
+    PEUGEOT: "Peugeot",
+    RAM: "RAM",
+    RENAULT: "Renault",
 });
 
 const TIPOS = Object.freeze({
@@ -23,27 +32,63 @@ const CAJAS = Object.freeze({
 const marcas = [
     {
         nombre: MARCAS.TESLA,
-        logo: "../../imagenes/logos/tesla_logo.png",
+        logo: "../../imagenes/marcas/tesla.webp",
     },
     {
         nombre: MARCAS.JEEP,
-        logo: "../../imagenes/logos/jeep_logo.png",
+        logo: "../../imagenes/marcas/jeep.webp",
     },
     {
         nombre: MARCAS.FORD,
-        logo: "../../imagenes/logos/ford_logo.png",
+        logo: "../../imagenes/marcas/ford.webp",
     },
     {
         nombre: MARCAS.TOYOTA,
-        logo: "../../imagenes/logos/toyota_logo.png",
+        logo: "../../imagenes/marcas/toyota.webp",
     },
     {
         nombre: MARCAS.CHEVROLET,
-        logo: "../../imagenes/logos/chevrolet_logo.png",
+        logo: "../../imagenes/marcas/chevrolet.webp",
     },
     {
         nombre: MARCAS.VW,
-        logo: "../../imagenes/logos/vw_logo.png",
+        logo: "../../imagenes/marcas/volkswagen.webp",
+    },
+    {
+        nombre: MARCAS.AUDI,
+        logo: "../../imagenes/marcas/audi.webp",
+    },
+    {
+        nombre: MARCAS.BMW,
+        logo: "../../imagenes/marcas/bmw.webp",
+    },
+    {
+        nombre: MARCAS.FIAT,
+        logo: "../../imagenes/marcas/fiat.webp",
+    },
+    {
+        nombre: MARCAS.HONDA,
+        logo: "../../imagenes/marcas/honda.webp",
+    },
+    {
+        nombre: MARCAS.JETOUR,
+        logo: "../../imagenes/marcas/jetour.webp",
+    },
+    {
+        nombre: MARCAS.NISSAN,
+        logo: "../../imagenes/marcas/nissan.webp",
+    },
+    {
+        nombre: MARCAS.PEUGEOT,
+        logo: "../../imagenes/marcas/peugeot.webp",
+    },
+    {
+        nombre: MARCAS.RAM,
+        logo: "../../imagenes/marcas/ram.webp",
+    },
+    {
+        nombre: MARCAS.RENAULT,
+        logo: "../../imagenes/marcas/renault.webp",
     }
 ];
 

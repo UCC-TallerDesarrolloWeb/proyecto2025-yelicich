@@ -208,8 +208,43 @@ h3 {
 
 
 /* ---- BRAND SECTION --- */
+.list-brands {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 32px 64px;
+    box-sizing: border-box;
+}
 
+.car-image-container {
+    background-color: var(--ym-primary-50);
+    border-radius: 12px;
+    border: 1px solid var(--ym-primary-100);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+}
 
+.car-image-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-image-container img {
+    width: 50%;
+    border-radius: 8px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+}
+
+.brand-name {
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--ym-primary-900);
+}
 
 /* ---- SEGMENTO SECTION --- */
 
@@ -220,7 +255,7 @@ h3 {
 
 
 /* ---- TESTIMONIOS SECTION --- */
-
+/* clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 74% 85%, 75% 100%, 50% 85%, 0 85%); */
 
 
 /* ---- NEWSLETTER SECTION --- */

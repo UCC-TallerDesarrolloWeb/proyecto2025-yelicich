@@ -5,13 +5,15 @@ const clearBtn = document.getElementById("clear-filters");
 
 // Precio
 const fromPriceInput = document.getElementById("from-price");
-const toPriceInput   = document.getElementById("to-price");
+const toPriceInput = document.getElementById("to-price");
 
-// Numero totoal de autos
+// ---------- Helpers ----------
+const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
+
 const getCheckedValues = (selector) =>
     Array.from(document.querySelectorAll(selector))
-    .filter(el => el.checked)
-    .map(el => el.value);
+        .filter(el => el.checked)
+        .map(el => el.value);
 
 const getNumeric = (el) => {
     if (!el) return null;
@@ -19,12 +21,11 @@ const getNumeric = (el) => {
     return onlyDigits ? parseInt(onlyDigits, 10) : null;
 };
 
-const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
-
-// Marcas automáticamente
+// ---------- Construir filtro de marcas (UNA sola vez) ----------
 (function buildBrandFilter() {
     const ul = document.getElementById("marca-filter");
     if (!ul || typeof MARCAS !== "object") return;
+
     ul.innerHTML = "";
     Object.values(MARCAS).forEach(marca => {
         const id = `marca-${slug(marca)}`;
@@ -37,8 +38,20 @@ const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
     });
 })();
 
-// Generar cards de los autos
-function renderAutos(arr) {
+// ---------- Marcar la marca si viene desde la Home ----------
+(() => {
+    const params = new URLSearchParams(window.location.search);
+    const marcaFiltroParam = params.get("marca");
+    if (!marcaFiltroParam) return;
+
+    const marcaFiltro = decodeURIComponent(marcaFiltroParam);
+    const selectorSeguro = `#marca-filter input[value="${CSS.escape(marcaFiltro)}"]`;
+    const checkbox = document.querySelector(selectorSeguro);
+    if (checkbox) checkbox.checked = true;
+})();
+
+// ---------- Render de cards ----------
+    function renderAutos(arr) {
     list.innerHTML = "";
 
     arr.forEach(auto => {
@@ -64,31 +77,29 @@ function renderAutos(arr) {
         </a>
         `;
 
-        //Hover
+        // Hover imagen (si hay img_hover definida)
         const img = card.querySelector("img");
-        card.addEventListener("mouseenter", () => {
-            img.src = auto.img_hover;
-        });
-        card.addEventListener("mouseleave", () => {
-            img.src = auto.imagenes[0];
-        });
+        if (auto.img_hover) {
+        card.addEventListener("mouseenter", () => { img.src = auto.img_hover; });
+        card.addEventListener("mouseleave", () => { img.src = auto.imagenes[0]; });
+        }
 
         list.appendChild(card);
     });
 }
 
-// Orden
+// ---------- Orden ----------
 function sortAutos(arr, criterion) {
     const v = (criterion || "").toLowerCase();
     const cp = [...arr];
 
     if (v === "cheaper") cp.sort((a, b) => a.precio - b.precio);
     else if (v === "expensive") cp.sort((a, b) => b.precio - a.precio);
-    else cp.sort((a, b) => a.id - b.id);
+    else cp.sort((a, b) => a.id - b.id); // relevancia/recientes (ajustá si querés desc)
     return cp;
 }
 
-// Filtros
+// ---------- Filtros + Render ----------
 function applyFiltersAndRender() {
     let filtered = [...autos];
 
@@ -118,16 +129,16 @@ function applyFiltersAndRender() {
         filtered = filtered.filter(a => cajasChecked.includes(a.caja));
     }
 
-    // Ordenar sobre el resultado filtrado
+    // Orden
     const sorted = sortAutos(filtered, select ? select.value : "most_recent");
 
-    // Render + contador
+    // Render + contador + toggle limpiar
     renderAutos(sorted);
-    if (clearBtn) clearBtn.classList.toggle('hidden', !isAnyFilterActive());
+    if (clearBtn) clearBtn.classList.toggle("hidden", !isAnyFilterActive());
     if (carsCount) carsCount.textContent = `${filtered.length} autos`;
 }
 
-// Listener de lso filtros
+// ---------- Listeners ----------
 function wireFilterEvents() {
     document.querySelectorAll(".filters input[type='checkbox']").forEach(inp => {
         inp.addEventListener("change", applyFiltersAndRender);
@@ -139,42 +150,34 @@ function wireFilterEvents() {
 }
 wireFilterEvents();
 
-// Primera carga
+// ---------- Primera carga ----------
 applyFiltersAndRender();
 
-//Boton para limpiar filtros
+// ---------- Limpiar filtros ----------
 function isAnyFilterActive() {
     const minP = getNumeric(fromPriceInput);
     const maxP = getNumeric(toPriceInput);
-    const anyTipo   = document.querySelector('#suv:checked, #sedan:checked, #pickup:checked, #utilitario:checked, #deportivo:checked');
-    const anyMarca  = document.querySelector('#marca-filter input[type="checkbox"]:checked');
-    const anyCaja   = document.querySelector('#manual:checked, #automatic:checked');
+    const anyTipo  = document.querySelector('#suv:checked, #sedan:checked, #pickup:checked, #utilitario:checked, #deportivo:checked');
+    const anyMarca = document.querySelector('#marca-filter input[type="checkbox"]:checked');
+    const anyCaja  = document.querySelector('#manual:checked, #automatic:checked');
     return !!(minP || maxP || anyTipo || anyMarca || anyCaja);
 }
 
 if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-        // limpiar precio
+    clearBtn.addEventListener("click", () => {
         if (fromPriceInput) fromPriceInput.value = "";
         if (toPriceInput)   toPriceInput.value   = "";
-
-        // desmarcar todos los checkboxes
-        document.querySelectorAll('.filters input[type="checkbox"]')
-        .forEach(ch => ch.checked = false);
-
-        // re-render
+        document.querySelectorAll('.filters input[type="checkbox"]').forEach(ch => ch.checked = false);
         applyFiltersAndRender();
     });
 }
 
-//Dar formato de precio al filtro de precio
-const inputsPrecio = document.querySelectorAll(".price-filter");
-
-inputsPrecio.forEach(input => {
+// ---------- Formato de precio ----------
+document.querySelectorAll(".price-filter").forEach(input => {
     input.addEventListener("input", (e) => {
-        let valor = e.target.value.replace(/\D/g, "");
+        const valor = e.target.value.replace(/\D/g, "");
         if (valor) {
-        e.target.dataset.valor = valor; // número puro
+        e.target.dataset.valor = valor;
         e.target.value = `$ ${Number(valor).toLocaleString("es-AR")}`;
         } else {
         e.target.dataset.valor = "";
