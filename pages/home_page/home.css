@@ -141,7 +141,7 @@ main {
 /* ---- GLOBAL CONTAINER --- */
 .global-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 
     display: flex;
     flex-direction: column;
@@ -149,6 +149,17 @@ main {
     align-items: center;
     gap: 32px;
     box-sizing: border-box;
+}
+
+section {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    box-sizing: border-box;
+    padding: 0 16px;
 }
 
 h3 {
@@ -166,7 +177,6 @@ h3 {
 .best-seller__content {
     width: 100%;
     margin-inline: auto;
-    padding-inline: 16px;
     display: grid;
     row-gap: 12px;
 }
@@ -180,17 +190,16 @@ h3 {
 }
 
 .best-seller__list {
+    width: 100%;
     list-style: none;
     margin: 0;
     padding: 8px;
     display: flex;
     gap: 12px;
-    overflow-x: auto;
-    scroll-snap-type: x proximity; /* TODO: modificar */
 }
 
 .best-seller__item { /* TODO */
-    flex: 0 0 260px;
+    width: 100%;
     background: #fff;
     border: 1px solid #d9d9d9;
     border-radius: 8px;

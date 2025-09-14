@@ -292,24 +292,30 @@ nav[aria-label="breadcrumb"] li:last-child::after {
     padding: 12px;
 }
 
-.marca {
+.car-marca {
     font-weight: 300;
     font-size: 20px;
 }
 
-.modelo {
+.car-modelo {
     color: var(--ym-primary-800);
     font-weight: 600;
     font-size: 28px;
 }
 
-.tipo-caja {
+.car-tipo-caja {
     font-weight: 400;
     font-size: 16px;
     color: var(--ym-gray-700);
 }
 
-.precio {
+.car-desde {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--ym-gray-700);
+}
+
+.car-precio {
     margin-top: 16px;
 
     color: var(--ym-primary);
@@ -318,12 +324,6 @@ nav[aria-label="breadcrumb"] li:last-child::after {
 
     display: flex;
     flex-direction: column;
-}
-
-.desde {
-    font-weight: 300;
-    font-size: 16px;
-    color: var(--ym-gray-700);
 }
 
 .card-car {

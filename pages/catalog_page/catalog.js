@@ -52,12 +52,12 @@ function renderAutos(arr) {
             </div>
             <div class="informacion">
             <div class="datos">
-                <div class="marca">${auto.marca}</div>
-                <div class="modelo">${auto.modelo}</div>
-                <div class="tipo-caja">${auto.tipo} • ${auto.caja}</div>
+                <div class="car-marca">${auto.marca}</div>
+                <div class="car-modelo">${auto.modelo}</div>
+                <div class="car-tipo-caja">${auto.tipo} • ${auto.caja}</div>
             </div>
-            <div class="precio">
-                <span class="desde">Desde</span>
+            <div class="car-precio">
+                <span class="car-desde">Desde</span>
                 <strong>$${auto.precio.toLocaleString("es-AR")}</strong>
             </div>
             </div>
