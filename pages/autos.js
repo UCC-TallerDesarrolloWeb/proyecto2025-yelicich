@@ -45,7 +45,7 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 110000000,
         imagenes: [
-            ""
+            "main_models"
         ]
     },
     {
@@ -70,7 +70,7 @@ const autos = [
         caja: CAJAS.MANUAL,
         precio: 60000000,
         imagenes: [
-            ""
+            "main_ranger",
         ]
     },
     {
@@ -81,7 +81,7 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 65000000,
         imagenes: [
-            ""
+            "main_corolla"
         ]
     },
     {
@@ -103,7 +103,7 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 90000000,
         imagenes: [
-            ""
+            "main_modelx"
         ]
     },
     {
@@ -114,7 +114,7 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 80000000,
         imagenes: [
-            ""
+            "main_modely"
         ]
     },
     {

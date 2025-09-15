@@ -10,7 +10,7 @@ if (auto) {
         <span class="modelo">${auto.modelo}</span>
     `;
     document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
-    document.getElementById("auto-imagen").src = auto.imagen;
+    document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/${auto.imagenes[0]}.webp`;
     document.getElementById("auto-imagen").alt = `${auto.marca} ${auto.modelo}`;
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
@@ -30,14 +30,15 @@ if (auto) {
     const thumbnailsContainer = document.querySelector(".images-thumbnails");
 
     // mostrar la primera imagen como principal
-    mainImg.src = `../../imagenes/cars/${auto.imagenes[0]}`;
+    mainImg.src = `../../imagenes/cars/${textBase(auto.modelo)}/${auto.imagenes[0]}.webp`;
     mainImg.alt = `${auto.marca} ${auto.modelo}`;
 
     // generar miniaturas
     thumbnailsContainer.innerHTML = "";
     auto.imagenes.forEach((imgSrc, index) => {
         const thumb = document.createElement("img");
-        thumb.src = `../../imagenes/cars/${imgSrc}`;
+        let scrImage = `../../imagenes/cars/${textBase(auto.modelo)}/${imgSrc}.webp`;
+        thumb.src = scrImage;
         thumb.alt = `${auto.marca} ${auto.modelo} vista ${index + 1}`;
         thumb.classList.add("image-thumbnail");
 
@@ -48,7 +49,7 @@ if (auto) {
 
         // click → cambiar principal y borde celeste
         thumb.addEventListener("click", () => {
-        mainImg.src = `../../imagenes/cars/${imgSrc}`;
+        mainImg.src = scrImage;
 
         // limpiar active de todas
         document.querySelectorAll(".image-thumbnail")
@@ -83,11 +84,13 @@ function renderSimilares(auto) {
     similares.forEach(sim => {
         const card = document.createElement("div");
         card.classList.add("card-car");
+        let scrImage = `../../imagenes/cars/${textBase(sim.modelo)}/${sim.imagenes[0]}.webp`;
+        let scrImageHover = `../../imagenes/cars/${textBase(sim.modelo)}/hover_${textBase(sim.modelo)}.webp`;
 
         card.innerHTML = `
             <a href="../details_page/details.html?id=${sim.id}" class="link-detalle">
                 <div class="car-image-container">
-                    <img src="../../imagenes/cars/${sim.imagenes[0]}" alt="${sim.marca} ${sim.modelo}">
+                    <img src="${scrImage}" alt="${sim.marca} ${sim.modelo}">
                 </div>
                 <div class="informacion">
                     <div class="datos">
@@ -104,13 +107,9 @@ function renderSimilares(auto) {
         `;
 
         const img = card.querySelector("img");
-        if (auto.img_hover) {
-            card.addEventListener("mouseenter", () => {
-                img.src = `../../imagenes/cars/${auto.img_hover}`;
-            });
-            card.addEventListener("mouseleave", () => {
-                img.src = `../../imagenes/cars/${auto.imagenes[0]}`;
-            });
+        if (scrImageHover) {
+            card.addEventListener("mouseenter", () => { img.src = `${scrImageHover}`; });
+            card.addEventListener("mouseleave", () => { img.src = `${scrImage}`; });
         }
 
         similaresList.appendChild(card);
