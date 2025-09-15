@@ -1,3 +1,9 @@
+// Funciones generales
+function textBase(str) {
+    return str.toLowerCase().replace(/\s+/g, "");
+}
+
+//Enum marcas, tipos y cajas
 const MARCAS = Object.freeze({
     TESLA: "Tesla",
     JEEP: "Jeep",
@@ -29,69 +35,7 @@ const CAJAS = Object.freeze({
     AUTOMATICO: "Automático"
 });
 
-const marcas = [
-    {
-        nombre: MARCAS.TESLA,
-        logo: "../../imagenes/marcas/tesla.webp",
-    },
-    {
-        nombre: MARCAS.JEEP,
-        logo: "../../imagenes/marcas/jeep.webp",
-    },
-    {
-        nombre: MARCAS.FORD,
-        logo: "../../imagenes/marcas/ford.webp",
-    },
-    {
-        nombre: MARCAS.TOYOTA,
-        logo: "../../imagenes/marcas/toyota.webp",
-    },
-    {
-        nombre: MARCAS.CHEVROLET,
-        logo: "../../imagenes/marcas/chevrolet.webp",
-    },
-    {
-        nombre: MARCAS.VW,
-        logo: "../../imagenes/marcas/volkswagen.webp",
-    },
-    {
-        nombre: MARCAS.AUDI,
-        logo: "../../imagenes/marcas/audi.webp",
-    },
-    {
-        nombre: MARCAS.BMW,
-        logo: "../../imagenes/marcas/bmw.webp",
-    },
-    {
-        nombre: MARCAS.FIAT,
-        logo: "../../imagenes/marcas/fiat.webp",
-    },
-    {
-        nombre: MARCAS.HONDA,
-        logo: "../../imagenes/marcas/honda.webp",
-    },
-    {
-        nombre: MARCAS.JETOUR,
-        logo: "../../imagenes/marcas/jetour.webp",
-    },
-    {
-        nombre: MARCAS.NISSAN,
-        logo: "../../imagenes/marcas/nissan.webp",
-    },
-    {
-        nombre: MARCAS.PEUGEOT,
-        logo: "../../imagenes/marcas/peugeot.webp",
-    },
-    {
-        nombre: MARCAS.RAM,
-        logo: "../../imagenes/marcas/ram.webp",
-    },
-    {
-        nombre: MARCAS.RENAULT,
-        logo: "../../imagenes/marcas/renault.webp",
-    }
-];
-
+//Base de datos autos
 const autos = [
     {
         id: 1,
@@ -101,9 +45,8 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 110000000,
         imagenes: [
-            "../../imagenes/car_image.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
+            ""
+        ]
     },
     {
         id: 2,
@@ -113,12 +56,11 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 50000000,
         imagenes: [
-            "../../imagenes/cars/compass/main_compass.webp",
-            "../../imagenes/cars/compass/right_compass.webp",
-            "../../imagenes/cars/compass/back_compass.webp",
-            "../../imagenes/cars/compass/front_compass.webp"
-        ],
-        img_hover: "../../imagenes/cars/compass/hover_compass.webp"
+            "main_compass",
+            "right_compass",
+            "back_compass",
+            "front_compass"
+        ]
     },
     {
         id: 3,
@@ -128,9 +70,8 @@ const autos = [
         caja: CAJAS.MANUAL,
         precio: 60000000,
         imagenes: [
-            "../../imagenes/car_image.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
+            ""
+        ]
     },
     {
         id: 4,
@@ -140,45 +81,41 @@ const autos = [
         caja: CAJAS.AUTOMATICO,
         precio: 65000000,
         imagenes: [
-            "../../imagenes/car_image.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
+            ""
+        ]
     },
     {
         id: 5,
-        marca: MARCAS.TESLA,
-        modelo: "Model X",
-        tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
-        precio: 80000000,
-        imagenes: [
-            "../../imagenes/car_image.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
-    },
-    {
-        id: 6,
-        marca: MARCAS.TESLA,
-        modelo: "Model Y",
-        tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
-        precio: 90000000,
-        imagenes: [
-            "../../imagenes/car_image.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
-    },
-    {
-        id: 7,
         marca: MARCAS.TESLA,
         modelo: "Model 3",
         tipo: TIPOS.SEDAN,
         caja: CAJAS.AUTOMATICO,
         precio: 85000000,
         imagenes: [
-            "../../imagenes/car_image.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
+            "main_model3"
+        ]
+    },
+    {
+        id: 6,
+        marca: MARCAS.TESLA,
+        modelo: "Model X",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 90000000,
+        imagenes: [
+            ""
+        ]
+    },
+    {
+        id: 7,
+        marca: MARCAS.TESLA,
+        modelo: "Model Y",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 80000000,
+        imagenes: [
+            ""
+        ]
     },
     {
         id: 8,
@@ -188,11 +125,10 @@ const autos = [
         caja: CAJAS.MANUAL,
         precio: 69900000,
         imagenes: [
-            "../../imagenes/cars/amarok/main_amarok.webp",
-            "../../imagenes/cars/amarok/right_amarok.webp",
-            "../../imagenes/cars/amarok/back_amarok.webp",
-            "../../imagenes/cars/amarok/front_amarok.webp"
-        ],
-        img_hover: "../../imagenes/cars/amarok/hover_amarok.webp"
+            "main_amarok",
+            "right_amarok",
+            "back_amarok",
+            "front_amarok"
+        ]
     }
 ];

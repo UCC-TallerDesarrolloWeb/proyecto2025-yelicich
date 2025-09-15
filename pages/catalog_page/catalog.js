@@ -57,11 +57,14 @@ const getNumeric = (el) => {
     arr.forEach(auto => {
         const card = document.createElement("div");
         card.classList.add("card-car");
+        let modeloDir = auto.modelo.toLowerCase().replace(/\s+/g, "");
+        let scrImage = `../../imagenes/cars/${modeloDir}/${auto.imagenes[0]}.webp`;
+        let scrImageHover = `../../imagenes/cars/${modeloDir}/hover_${modeloDir}.webp`;
 
         card.innerHTML = `
         <a href="../details_page/details.html?id=${auto.id}" class="link-detalle">
             <div class="car-image-container">
-            <img src="${auto.imagenes[0]}" alt="${auto.marca} ${auto.modelo}">
+            <img src="${scrImage}" alt="${auto.marca} ${auto.modelo}">
             </div>
             <div class="informacion">
             <div class="datos">
@@ -79,9 +82,9 @@ const getNumeric = (el) => {
 
         // Hover imagen (si hay img_hover definida)
         const img = card.querySelector("img");
-        if (auto.img_hover) {
-        card.addEventListener("mouseenter", () => { img.src = auto.img_hover; });
-        card.addEventListener("mouseleave", () => { img.src = auto.imagenes[0]; });
+        if (scrImageHover) {
+        card.addEventListener("mouseenter", () => { img.src = `${scrImageHover}`; });
+        card.addEventListener("mouseleave", () => { img.src = `${scrImage}`; });
         }
 
         list.appendChild(card);

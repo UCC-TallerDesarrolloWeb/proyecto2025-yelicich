@@ -46,7 +46,7 @@ main {
 .detalles {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 0.4fr;
+    grid-template-columns: 1fr 0.42fr;
     gap: 48px;
     align-items: start;
 }

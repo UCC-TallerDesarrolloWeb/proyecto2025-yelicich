@@ -1,19 +1,20 @@
 const brandsList = document.getElementById("list-brands");
 
 // Generar cards de las marcas
-function renderMarcas(arr) {
+function renderMarcas(marcasObj) {
     brandsList.innerHTML = "";
 
-    arr.forEach(marca => {
+    Object.values(marcasObj).forEach(nombre => {
+        const logo = textBase(nombre);
         const card = document.createElement("div");
         card.classList.add("card-brand");
 
         card.innerHTML = `
-            <a href="../catalog_page/catalog.html?marca=${encodeURIComponent(marca.nombre)}" class="link-detalle">
+            <a href="../catalog_page/catalog.html?marca=${encodeURIComponent(nombre)}" class="link-detalle">
                 <div class="car-image-container">
-                    <img src="${marca.logo}" alt="${marca.nombre}">
+                    <img src="../../imagenes/marcas/${logo}.webp" alt="${nombre}">
                 </div>
-                <div class="brand-name">${marca.nombre}</div>
+                <div class="brand-name">${nombre}</div>
             </a>
         `;
 
@@ -21,4 +22,4 @@ function renderMarcas(arr) {
     });
 }
 
-renderMarcas(marcas);
+renderMarcas(MARCAS);

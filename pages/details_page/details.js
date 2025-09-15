@@ -15,6 +15,7 @@ if (auto) {
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
     document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * 0.9049774).toLocaleString("es-AR")}`;
+    document.getElementById("location-brand").textContent = `Concesionario oficial de ${auto.marca}`;
 
     document.title = `${auto.marca} ${auto.modelo} - YeliMotors`;
 
@@ -29,14 +30,14 @@ if (auto) {
     const thumbnailsContainer = document.querySelector(".images-thumbnails");
 
     // mostrar la primera imagen como principal
-    mainImg.src = auto.imagenes[0];
+    mainImg.src = `../../imagenes/cars/${auto.imagenes[0]}`;
     mainImg.alt = `${auto.marca} ${auto.modelo}`;
 
     // generar miniaturas
     thumbnailsContainer.innerHTML = "";
     auto.imagenes.forEach((imgSrc, index) => {
         const thumb = document.createElement("img");
-        thumb.src = imgSrc;
+        thumb.src = `../../imagenes/cars/${imgSrc}`;
         thumb.alt = `${auto.marca} ${auto.modelo} vista ${index + 1}`;
         thumb.classList.add("image-thumbnail");
 
@@ -47,7 +48,7 @@ if (auto) {
 
         // click → cambiar principal y borde celeste
         thumb.addEventListener("click", () => {
-        mainImg.src = imgSrc;
+        mainImg.src = `../../imagenes/cars/${imgSrc}`;
 
         // limpiar active de todas
         document.querySelectorAll(".image-thumbnail")
@@ -86,7 +87,7 @@ function renderSimilares(auto) {
         card.innerHTML = `
             <a href="../details_page/details.html?id=${sim.id}" class="link-detalle">
                 <div class="car-image-container">
-                    <img src="${sim.imagenes[0]}" alt="${sim.marca} ${sim.modelo}">
+                    <img src="../../imagenes/cars/${sim.imagenes[0]}" alt="${sim.marca} ${sim.modelo}">
                 </div>
                 <div class="informacion">
                     <div class="datos">
@@ -105,10 +106,10 @@ function renderSimilares(auto) {
         const img = card.querySelector("img");
         if (auto.img_hover) {
             card.addEventListener("mouseenter", () => {
-                img.src = auto.img_hover;
+                img.src = `../../imagenes/cars/${auto.img_hover}`;
             });
             card.addEventListener("mouseleave", () => {
-                img.src = auto.imagenes[0];
+                img.src = `../../imagenes/cars/${auto.imagenes[0]}`;
             });
         }
 
