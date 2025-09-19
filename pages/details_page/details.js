@@ -10,7 +10,7 @@ if (auto) {
         <span class="modelo">${auto.modelo}</span>
     `;
     document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
-    document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/${auto.imagenes[0]}.webp`;
+    document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
     document.getElementById("auto-imagen").alt = `${auto.marca} ${auto.modelo}`;
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
@@ -28,16 +28,20 @@ if (auto) {
 if (auto) {
     const mainImg = document.getElementById("auto-imagen");
     const thumbnailsContainer = document.querySelector(".images-thumbnails");
+    const modeloCar = textBase(auto.modelo);
 
     // mostrar la primera imagen como principal
-    mainImg.src = `../../imagenes/cars/${textBase(auto.modelo)}/${auto.imagenes[0]}.webp`;
+    mainImg.src = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
     mainImg.alt = `${auto.marca} ${auto.modelo}`;
 
     // generar miniaturas
     thumbnailsContainer.innerHTML = "";
-    auto.imagenes.forEach((imgSrc, index) => {
+
+    const img_names = ["main", "right", "back", "front", "inside"];
+
+    img_names.forEach((imgSrc, index) => {
         const thumb = document.createElement("img");
-        let scrImage = `../../imagenes/cars/${textBase(auto.modelo)}/${imgSrc}.webp`;
+        let scrImage = `../../imagenes/cars/${modeloCar}/${imgSrc}_${modeloCar}.webp`;
         thumb.src = scrImage;
         thumb.alt = `${auto.marca} ${auto.modelo} vista ${index + 1}`;
         thumb.classList.add("image-thumbnail");
@@ -58,6 +62,8 @@ if (auto) {
         // marcar la actual
         thumb.classList.add("active");
         });
+
+        thumb.onerror = () => { thumb.remove(); }; // Eliminar si no está
 
         thumbnailsContainer.appendChild(thumb);
     });
@@ -84,8 +90,9 @@ function renderSimilares(auto) {
     similares.forEach(sim => {
         const card = document.createElement("div");
         card.classList.add("card-car");
-        let scrImage = `../../imagenes/cars/${textBase(sim.modelo)}/${sim.imagenes[0]}.webp`;
-        let scrImageHover = `../../imagenes/cars/${textBase(sim.modelo)}/hover_${textBase(sim.modelo)}.webp`;
+        let modeloCar = textBase(sim.modelo);
+        let scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
+        let scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
 
         card.innerHTML = `
             <a href="../details_page/details.html?id=${sim.id}" class="link-detalle">

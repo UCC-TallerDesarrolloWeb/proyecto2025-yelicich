@@ -43,10 +43,7 @@ const autos = [
         modelo: "Model S",
         tipo: TIPOS.DEPORTIVO,
         caja: CAJAS.AUTOMATICO,
-        precio: 110000000,
-        imagenes: [
-            "main_models"
-        ]
+        precio: 110000000
     },
     {
         id: 2,
@@ -54,13 +51,7 @@ const autos = [
         modelo: "Compass",
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
-        precio: 50000000,
-        imagenes: [
-            "main_compass",
-            "right_compass",
-            "back_compass",
-            "front_compass"
-        ]
+        precio: 50000000
     },
     {
         id: 3,
@@ -68,10 +59,7 @@ const autos = [
         modelo: "Ranger",
         tipo: TIPOS.PICKUP,
         caja: CAJAS.MANUAL,
-        precio: 60000000,
-        imagenes: [
-            "main_ranger",
-        ]
+        precio: 60000000
     },
     {
         id: 4,
@@ -79,10 +67,7 @@ const autos = [
         modelo: "Corolla",
         tipo: TIPOS.SEDAN,
         caja: CAJAS.AUTOMATICO,
-        precio: 65000000,
-        imagenes: [
-            "main_corolla"
-        ]
+        precio: 65000000
     },
     {
         id: 5,
@@ -90,10 +75,7 @@ const autos = [
         modelo: "Model 3",
         tipo: TIPOS.SEDAN,
         caja: CAJAS.AUTOMATICO,
-        precio: 85000000,
-        imagenes: [
-            "main_model3"
-        ]
+        precio: 85000000
     },
     {
         id: 6,
@@ -101,10 +83,7 @@ const autos = [
         modelo: "Model X",
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
-        precio: 90000000,
-        imagenes: [
-            "main_modelx"
-        ]
+        precio: 90000000
     },
     {
         id: 7,
@@ -112,10 +91,7 @@ const autos = [
         modelo: "Model Y",
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
-        precio: 80000000,
-        imagenes: [
-            "main_modely"
-        ]
+        precio: 80000000
     },
     {
         id: 8,
@@ -123,12 +99,6 @@ const autos = [
         modelo: "Amarok",
         tipo: TIPOS.PICKUP,
         caja: CAJAS.MANUAL,
-        precio: 69900000,
-        imagenes: [
-            "main_amarok",
-            "right_amarok",
-            "back_amarok",
-            "front_amarok"
-        ]
+        precio: 69900000
     }
 ];

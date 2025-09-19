@@ -57,8 +57,9 @@ const getNumeric = (el) => {
     arr.forEach(auto => {
         const card = document.createElement("div");
         card.classList.add("card-car");
-        let scrImage = `../../imagenes/cars/${textBase(auto.modelo)}/${auto.imagenes[0]}.webp`;
-        let scrImageHover = `../../imagenes/cars/${textBase(auto.modelo)}/hover_${textBase(auto.modelo)}.webp`;
+        let modeloCar = textBase(auto.modelo);
+        let scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
+        let scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
 
         card.innerHTML = `
         <a href="../details_page/details.html?id=${auto.id}" class="link-detalle">

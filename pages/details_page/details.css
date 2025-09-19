@@ -87,8 +87,9 @@ main {
 #auto-imagen {
     flex: 1;
     border-radius: 16px;
-    object-fit: contain;
+    object-fit: cover;
     max-height: 400px;
+    aspect-ratio: 3/4;
 }
 
 .detalles-auto h3 {
