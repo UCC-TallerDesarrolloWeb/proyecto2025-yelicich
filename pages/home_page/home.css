@@ -55,7 +55,7 @@ main {
 .hero {
     width: 100vw;
     height: 100vh;
-    background-image: url(../../imagenes/four_teslas.jpg);
+    background-image: url(../../imagenes/backgrounds/four_teslas.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
