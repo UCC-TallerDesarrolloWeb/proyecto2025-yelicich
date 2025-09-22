@@ -1,6 +1,29 @@
 # proyecto2025
 Estructura de Proyecto Taller de Desarrollo Web - 2025
 
+-[Titulo del proyecto](#titulo-del-proyecto)
+-[Autor](#autor)
+-[Link gh-pages](#link-de-gh-pages)
+-[Contenido de la pagina](#contenido-de-la-pagina)
+-[Listado de tecnologias](#listado-de-tecnologias-usadas)
+
+## Titulo del proyecto
+Pagina de un Consesionario de autos
+
+### Autor
+**Yelicich** Matias Adrian
+
+## link de gh-pages
+[link YeliMotors](https://...)
+
+## Contenido de la pagina
+|t
+
+## Listado de tecnologias usadas
+- HTML
+- CSS
+- JavaScript
+
 ## Requisitos del Primer Parcial
 
 ### Sobre el Sketch
