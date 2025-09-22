@@ -174,36 +174,99 @@ h3 {
 }
 
 /* ---- BEST SELLER SECTION --- */
-.best-seller__content {
+.best-seller {
     width: 100%;
-    margin-inline: auto;
-    display: grid;
-    row-gap: 12px;
-}
-
-.best-seller__viewport {
-    width: 100%;
-    margin-inline: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 1200px;
+    align-items: start;
 }
 
 .best-seller__list {
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 8px;
     display: flex;
-    gap: 12px;
+    transition: transform 0.4s ease;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.best-seller__item { /* TODO */
-    width: 100%;
+.card-best-seller {
     background: #fff;
-    border: 1px solid #d9d9d9;
-    border-radius: 8px;
-    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-best-seller img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    aspect-ratio: 2.35/1;
+}
+
+.card-best-seller__body {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+}
+
+.card-best-seller__body h4 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.card-best-seller__body p {
+    margin: 0;
+    color: var(--ym--gray-700);
+}
+
+.card-best-seller__body a {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--ym-primary);
+    text-decoration: none;
+}
+
+.card-best-seller__body a:hover {
+    color: var(--ym-primary-600);
+    text-decoration: underline;
+}
+
+.best-seller__prev,
+.best-seller__next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.best-seller__prev { left: 0.5rem; }
+.best-seller__next { right: 0.5rem; }
+
+.best-seller__dots {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.best-seller__dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    background: var(--ym-primary-100);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.best-seller__dot.active {
+    background: var(--ym-primary);
 }
 
 

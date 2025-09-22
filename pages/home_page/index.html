@@ -48,24 +48,54 @@
 
         <div class="global-container">
             <!-- Best seller section -->
-            <section class="best-seller" aria-label="vehículos más vendidos">
+            <section class="best-seller" aria-label="vehículos destacados">
                 <div class="best-seller__content">
                     <h3>Vehículos <span class="bold">destacados</span></h3>
+
                     <div class="best-seller__viewport">
-                        <button class="best-seller__prev" type="button" aria-label="Anterior">‹</button>
+                    <button class="best-seller__prev" type="button" aria-label="Anterior">‹</button>
 
-                        <ul class="best-seller__list" role="list">
-                        <!-- Cards will be dynamically inserted here -->
-                            <li class="best-seller__item">Vehículo 1</li>
-                            <li class="best-seller__item">Vehículo 2</li>
-                            <li class="best-seller__item">Vehículo 3</li>
-                            <li class="best-seller__item">Vehículo 4</li>
-                            <li class="best-seller__item">Vehículo 5</li>
-                            <li class="best-seller__item">Vehículo 6</li>
-                        </ul>
+                    <ul class="best-seller__list" id="best-seller-list" role="list">
+                        <div class="card-best-seller">
+                            <img src="/featured_${auto.modelo}.webp" alt="${auto.marca} ${auto.modelo}">
+                            <div class="card-best-seller__body">
+                                <div class="card-best-seller__body-top">
+                                    <h4>${auto.marca} <strong>${auto.modelo}</strong></h4>
+                                    <p>${auto.tipo} • ${auto.caja}</p>
+                                </div>
+                                <a href="../details_page/details.html?id=${auto.id}">Ir a la página &gt;</a>
+                            </div>
+                        </div>
 
-                        <button class="best-seller__next" type="button" aria-label="Siguiente">›</button>
+
+                        <div class="card-best-seller">
+                            <img src="../../imagenes/cars/modelx/featured_modelx.webp" alt="featured_modelx">
+                            <div class="card-best-seller__body">
+                                <div class="card-best-seller__body-top">
+                                    <h4>Tesla <strong>Model X</strong></h4>
+                                    <p>SUV • Électrico</p>
+                                </div>
+                                <a href="../details_page/details.html?id=2">Ir a la página &gt;</a>
+                            </div>
+                        </div>
+                        <div class="card-best-seller">
+                            <img src="../../imagenes/test.png" alt="featured_modelx">
+                            <div class="card-best-seller__body">
+                                <div class="card-best-seller__body-top">
+                                    <h4>Tesla <strong>Model X</strong></h4>
+                                    <p>SUV • Électrico</p>
+                                </div>
+                                <a href="../details_page/details.html?id=2">Ir a la página &gt;</a>
+                            </div>
+                        </div>
+                    </ul>
+                    
+                    
+
+                    <button class="best-seller__next" type="button" aria-label="Siguiente">›</button>
                     </div>
+
+                    <div class="best-seller__dots" id="best-seller-dots" role="tablist" aria-label="Indicadores"></div>
                 </div>
             </section>
 

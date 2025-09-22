@@ -32,7 +32,8 @@ const TIPOS = Object.freeze({
 
 const CAJAS = Object.freeze({
     MANUAL: "Manual",
-    AUTOMATICO: "Automático"
+    AUTOMATICO: "Automático",
+    ELECTRICO: "Eléctrico"
 });
 
 //Base de datos autos
@@ -42,7 +43,7 @@ const autos = [
         marca: MARCAS.TESLA,
         modelo: "Model S",
         tipo: TIPOS.DEPORTIVO,
-        caja: CAJAS.AUTOMATICO,
+        caja: CAJAS.ELECTRICO,
         precio: 110000000
     },
     {
@@ -74,7 +75,7 @@ const autos = [
         marca: MARCAS.TESLA,
         modelo: "Model 3",
         tipo: TIPOS.SEDAN,
-        caja: CAJAS.AUTOMATICO,
+        caja: CAJAS.ELECTRICO,
         precio: 85000000
     },
     {
@@ -82,7 +83,7 @@ const autos = [
         marca: MARCAS.TESLA,
         modelo: "Model X",
         tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
+        caja: CAJAS.ELECTRICO,
         precio: 90000000
     },
     {
@@ -90,7 +91,7 @@ const autos = [
         marca: MARCAS.TESLA,
         modelo: "Model Y",
         tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
+        caja: CAJAS.ELECTRICO,
         precio: 80000000
     },
     {

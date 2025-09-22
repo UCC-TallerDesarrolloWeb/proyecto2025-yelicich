@@ -23,3 +23,5 @@ function renderMarcas(marcasObj) {
 }
 
 renderMarcas(MARCAS);
+
+// Carrusel de destacados
