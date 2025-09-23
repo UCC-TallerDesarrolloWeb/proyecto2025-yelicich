@@ -250,7 +250,7 @@ h3 {
     box-sizing: border-box;
 }
 
-.car-image-container {
+.brand-image-container {
     background-color: var(--ym-primary-50);
     border-radius: 12px;
     border: 1px solid var(--ym-primary-100);
@@ -261,11 +261,11 @@ h3 {
     padding: 16px 0;
 }
 
-.car-image-container:hover {
+.brand-image-container:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.car-image-container img {
+.brand-image-container img {
     width: 50%;
     border-radius: 8px;
     object-fit: contain;
@@ -281,7 +281,43 @@ h3 {
 }
 
 /* ---- SEGMENTO SECTION --- */
+.list-types {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 32px 64px;
+    box-sizing: border-box;
+}
 
+.type-image-container {
+    background-color: var(--ym-primary-50);
+    border-radius: 12px;
+    border: 1px solid var(--ym-primary-100);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.type-image-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.type-image-container img {
+    width: 50%;
+    border-radius: 8px;
+    object-fit: contain;
+    aspect-ratio: 4/3;
+}
+
+.type-name {
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--ym-primary-900);
+}
 
 
 /* ---- ABOUT US SECTION --- */
