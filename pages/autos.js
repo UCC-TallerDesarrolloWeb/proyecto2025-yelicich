@@ -101,5 +101,13 @@ const autos = [
         tipo: TIPOS.PICKUP,
         caja: CAJAS.MANUAL,
         precio: 69900000
+    },
+    {
+        id: 9,
+        marca: MARCAS.TOYOTA,
+        modelo: "SW4",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 77500000
     }
 ];

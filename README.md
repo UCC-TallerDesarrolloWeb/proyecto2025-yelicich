@@ -186,6 +186,7 @@ const activities = [
   },
   {
     nombre: "zumba",
+    
     descripcion: "ritmos latinos",
     horarios: [
       { dia: 1, "hora-inicio": "19:30", "hora-fin": "20:30" },

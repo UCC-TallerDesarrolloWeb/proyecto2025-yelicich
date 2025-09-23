@@ -180,6 +180,12 @@ h3 {
     align-items: start;
 }
 
+.best-seller__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .best-seller__list {
     display: flex;
     transition: transform 0.4s ease;
@@ -234,41 +240,6 @@ h3 {
     color: var(--ym-primary-600);
     text-decoration: underline;
 }
-
-.best-seller__prev,
-.best-seller__next {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.best-seller__prev { left: 0.5rem; }
-.best-seller__next { right: 0.5rem; }
-
-.best-seller__dots {
-    margin-top: 0.5rem;
-    text-align: center;
-}
-
-.best-seller__dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 4px;
-    background: var(--ym-primary-100);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.best-seller__dot.active {
-    background: var(--ym-primary);
-}
-
 
 /* ---- BRAND SECTION --- */
 .list-brands {
