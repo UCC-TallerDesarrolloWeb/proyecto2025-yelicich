@@ -45,6 +45,8 @@ function renderSegmentos(segmentosObj) {
 
         segmentosList.appendChild(card);
     });
+
+    //TODO: conectar con catalogo.html?segmento=nombre
 }
 
 renderSegmentos(TIPOS);
