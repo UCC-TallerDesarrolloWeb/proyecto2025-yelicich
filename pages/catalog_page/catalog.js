@@ -7,7 +7,7 @@ const clearBtn = document.getElementById("clear-filters");
 const fromPriceInput = document.getElementById("from-price");
 const toPriceInput = document.getElementById("to-price");
 
-// ---------- Helpers ----------
+// Helpers
 const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
 
 const getCheckedValues = (selector) =>
@@ -21,7 +21,7 @@ const getNumeric = (el) => {
     return onlyDigits ? parseInt(onlyDigits, 10) : null;
 };
 
-// ---------- Construir filtro de marcas (UNA sola vez) ----------
+// Render filtro de marcas
 (function buildBrandFilter() {
     const ul = document.getElementById("marca-filter");
     if (!ul || typeof MARCAS !== "object") return;
@@ -38,7 +38,24 @@ const getNumeric = (el) => {
     });
 })();
 
-// ---------- Marcar la marca si viene desde la Home ----------
+// Render filtro segmentos
+(function buildSegmentFilter() {
+    const ul = document.getElementById("tipo-filter");
+    if (!ul || typeof TIPOS !== "object") return;
+
+    ul.innerHTML = "";
+    Object.values(TIPOS).forEach(tipo => {
+        const id = `tipo-${slug(tipo)}`;
+        const li = document.createElement("li");
+        li.innerHTML = `
+        <input type="checkbox" id="${id}" value="${tipo}">
+        <label for="${id}">${tipo}</label>
+        `;
+        ul.appendChild(li);
+    });
+})();
+
+// Marcar la marca si viene desde la Home
 (() => {
     const params = new URLSearchParams(window.location.search);
     const marcaFiltroParam = params.get("marca");
@@ -50,7 +67,20 @@ const getNumeric = (el) => {
     if (checkbox) checkbox.checked = true;
 })();
 
-// ---------- Render de cards ----------
+// Marcar el segmento si viene desde la Home
+(() => {
+    const params = new URLSearchParams(window.location.search);
+    const segmentoFiltroParam = params.get("segmento");
+    if (!segmentoFiltroParam) return;
+
+    const segmentoFiltro = decodeURIComponent(segmentoFiltroParam);
+    const selectorSeguro = `#tipo-filter input[value="${CSS.escape(segmentoFiltro)}"]`;
+    const checkbox = document.querySelector(selectorSeguro);
+    if (checkbox) checkbox.checked = true;
+
+})();
+
+// Render de cards
     function renderAutos(arr) {
     list.innerHTML = "";
 
@@ -91,18 +121,18 @@ const getNumeric = (el) => {
     });
 }
 
-// ---------- Orden ----------
+// Orden
 function sortAutos(arr, criterion) {
     const v = (criterion || "").toLowerCase();
     const cp = [...arr];
 
     if (v === "cheaper") cp.sort((a, b) => a.precio - b.precio);
     else if (v === "expensive") cp.sort((a, b) => b.precio - a.precio);
-    else cp.sort((a, b) => a.id - b.id); // relevancia/recientes (ajustá si querés desc)
+    else cp.sort((a, b) => a.id - b.id);
     return cp;
 }
 
-// ---------- Filtros + Render ----------
+// Filtros + Render
 function applyFiltersAndRender() {
     let filtered = [...autos];
 
@@ -113,9 +143,7 @@ function applyFiltersAndRender() {
     if (maxP !== null) filtered = filtered.filter(a => a.precio <= maxP);
 
     // Segmento / Tipo
-    const tiposChecked = getCheckedValues(
-        "#suv:checked, #sedan:checked, #pickup:checked, #utilitario:checked, #deportivo:checked"
-    );
+    const tiposChecked = getCheckedValues("#tipo-filter input[type='checkbox']:checked");
     if (tiposChecked.length) {
         filtered = filtered.filter(a => tiposChecked.includes(a.tipo));
     }
@@ -141,7 +169,7 @@ function applyFiltersAndRender() {
     if (carsCount) carsCount.textContent = `${filtered.length} autos`;
 }
 
-// ---------- Listeners ----------
+// Listeners
 function wireFilterEvents() {
     document.querySelectorAll(".filters input[type='checkbox']").forEach(inp => {
         inp.addEventListener("change", applyFiltersAndRender);
@@ -153,10 +181,10 @@ function wireFilterEvents() {
 }
 wireFilterEvents();
 
-// ---------- Primera carga ----------
+// Primera carga
 applyFiltersAndRender();
 
-// ---------- Limpiar filtros ----------
+// Limpiar filtros
 function isAnyFilterActive() {
     const minP = getNumeric(fromPriceInput);
     const maxP = getNumeric(toPriceInput);
@@ -175,7 +203,7 @@ if (clearBtn) {
     });
 }
 
-// ---------- Formato de precio ----------
+// Formato de precio
 document.querySelectorAll(".price-filter").forEach(input => {
     input.addEventListener("input", (e) => {
         const valor = e.target.value.replace(/\D/g, "");
