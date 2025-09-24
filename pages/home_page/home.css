@@ -141,13 +141,12 @@ main {
 /* ---- GLOBAL CONTAINER --- */
 .global-container {
     width: 100%;
-    max-width: 1400px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 64px;
     box-sizing: border-box;
 }
 
@@ -242,6 +241,10 @@ h3 {
 }
 
 /* ---- BRAND SECTION --- */
+.brands {
+    max-width: 1200px;
+}
+
 .list-brands {
     width: 100%;
     display: grid;
@@ -281,6 +284,10 @@ h3 {
 }
 
 /* ---- SEGMENTO SECTION --- */
+.types {
+    max-width: 1200px;
+}
+
 .list-types {
     width: 100%;
     display: grid;
@@ -321,16 +328,34 @@ h3 {
 
 
 /* ---- TESTIMONIOS SECTION --- */
+.testimonios {
+    max-width: 1200px;
+}
+
 .testimonios__content {
-    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonio {
+    display: none;
     gap: 24px;
     align-items: center;
+    animation: fade 0.5s ease-in-out;
+}
+
+.testimonio.active {
+    display: flex;
 }
 
 .testimonios__content img {
     width: 256px;
     object-fit: cover;
     aspect-ratio: 1/1;
+    border-radius: 8px;
 }
 
 .testimonio__text {
@@ -341,6 +366,7 @@ h3 {
     font-style: italic;
     color: var(--ym-gray-800);
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    flex: 1;
 }
 
 .testimonio__about {
@@ -364,15 +390,105 @@ h3 {
 
 .testimonio__about p {
     margin: 0;
-    color: var(--ym--gray-400);
+    color: var(--ym-gray-400);
     font-size: 14px;
 }
 
-/* clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 74% 85%, 75% 100%, 50% 85%, 0 85%); */
+.testimonios__controls {
+    text-align: center;
+    margin-top: 12px;
+}
 
+.testimonios__controls button {
+    border: none;
+    background: var(--ym-primary-400);
+    color: white;
+    font-size: 18px;
+    padding: 6px 10px;
+    margin: 0 6px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.testimonios__controls button:hover {
+    background: var(--ym-primary-600);
+}
+
+/* animación */
+@keyframes fade {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
 
 /* ---- NEWSLETTER SECTION --- */
+.newsletter {
+    margin: 0;
+    width: 100%;
+    position: relative;
+    background: url("../../imagenes/backgrounds/tesla_roadster_front.jpg") center/cover no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    color: white;
+}
 
+.newsletter__overlay {
+    background-color: rgba(0,0,0,0.75);
+    width: 100%;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.newsletter__content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
 
-/* ---- FOOTER --- */
+.newsletter__text h4 {
+    margin: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--ym-primary-400);
+}
+
+.newsletter__text p {
+    margin: 8px 0 0;
+    font-size: 16px;
+    color: var(--ym-primary-100);
+}
+
+.newsletter__form {
+    display: flex;
+    gap: 0;
+}
+
+.newsletter__form input {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    width: 250px;
+    outline: none;
+}
+
+.newsletter__form button {
+    background: var(--ym-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter__form button:hover {
+    background: var(--ym-primary-600);
+}

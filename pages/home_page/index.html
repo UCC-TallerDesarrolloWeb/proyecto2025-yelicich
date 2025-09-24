@@ -107,25 +107,76 @@
             <!-- Testimonios section -->
             <section class="testimonios" aria-label="Testimonios">
                 <h3>Nuestros <span class="bold">testimonios</span></h3>
+
                 <div class="testimonios__content">
+
+                    <!-- Slides -->
+                    <div class="testimonio active">
                     <img src="../../imagenes/persons/fake_person_1.jpg" alt="">
                     <div class="testimonio__text">
                         <div class="testimonio__comment">
-                            <p>"La atención fue excelente desde el primer momento. Me asesoraron en cada detalle, resolvieron todas mis dudas y me ofrecieron distintas alternativas hasta encontrar el auto ideal para mí. La entrega fue rápida y todo el proceso muy claro, sin costos ocultos ni sorpresas. Se nota que valoran al cliente y priorizan la confianza. ¡Definitivamente volvería a elegirlos!"</p>
+                        <p>"La atención fue excelente desde el primer momento. Me asesoraron en cada detalle, resolvieron todas mis dudas y me ofrecieron distintas alternativas hasta encontrar el auto ideal para mí."</p>
                         </div>
                         <div class="testimonio__about">
-                            <h4>- Juan Cruz Novell</h4>
-                            <p>Cliente satisfecho</p>
+                        <h4>- Juan Cruz Novell</h4>
+                        <p>Cliente satisfecho</p>
                         </div>
                     </div>
+                    </div>
+
+                    <div class="testimonio">
+                    <img src="../../imagenes/persons/fake_person_2.jpg" alt="">
+                    <div class="testimonio__text">
+                        <div class="testimonio__comment">
+                        <p>"Me sorprendió la variedad de modelos y la transparencia en toda la operación. Comparé precios con otras concesionarias y acá conseguí la mejor oferta, con facilidades de financiación adaptadas a mis necesidades."</p>
+                        </div>
+                        <div class="testimonio__about">
+                        <h4>- Laura Fernández</h4>
+                        <p>Compradora</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="testimonio">
+                    <img src="../../imagenes/persons/fake_person_3.jpg" alt="">
+                    <div class="testimonio__text">
+                        <div class="testimonio__comment">
+                        <p>"Recomiendo totalmente este lugar. No solo encontré el vehículo que buscaba a un precio competitivo, sino que también recibí un trato cordial y profesional. Todo muy claro y rápido."</p>
+                        </div>
+                        <div class="testimonio__about">
+                        <h4>- Martín López</h4>
+                        <p>Cliente frecuente</p>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+                <!-- Controles -->
+                <div class="testimonios__controls">
+                    <button onclick="prevTestimonio()">&#10094;</button>
+                    <button onclick="nextTestimonio()">&#10095;</button>
                 </div>
             </section>
 
+
             <!-- Newsletter section -->
             <section class="newsletter" aria-label="Suscripción a boletín de noticias">
-                <h4>Suscribite a nuetros <span class="bold">boletin de noticias</span></h4>
-
+                <div class="newsletter__overlay">
+                    <div class="newsletter__content">
+                        <div class="newsletter__text">
+                            <h4>Suscribite a nuestro <span class="bold">boletín de noticias</span></h4>
+                            <p>Enterate de novedades, promociones y lanzamientos exclusivos.</p>
+                        </div>
+                        <form class="newsletter__form">
+                            <input type="email" placeholder="Ingresa tu email" required size="50">
+                            <button type="submit">Suscribite</button>
+                        </form>
+                    </div>
+                    
+                </div>
             </section>
+
         </div>
     </main>
     <footer class="footer">

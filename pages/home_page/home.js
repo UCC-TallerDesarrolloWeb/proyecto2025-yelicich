@@ -50,3 +50,26 @@ function renderSegmentos(segmentosObj) {
 }
 
 renderSegmentos(TIPOS);
+
+// Carrusel cometario
+let currentTestimonio = 0;
+const testimonios = document.querySelectorAll(".testimonio");
+
+function showTestimonio(index) {
+    testimonios.forEach((t, i) => {
+        t.classList.toggle("active", i === index);
+    });
+}
+
+function nextTestimonio() {
+    currentTestimonio = (currentTestimonio + 1) % testimonios.length;
+    showTestimonio(currentTestimonio);
+}
+
+function prevTestimonio() {
+    currentTestimonio = (currentTestimonio - 1 + testimonios.length) % testimonios.length;
+    showTestimonio(currentTestimonio);
+}
+
+// Inicializa
+showTestimonio(currentTestimonio);
