@@ -320,11 +320,54 @@ h3 {
 }
 
 
-/* ---- ABOUT US SECTION --- */
-
-
-
 /* ---- TESTIMONIOS SECTION --- */
+.testimonios__content {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.testimonios__content img {
+    width: 256px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.testimonio__text {
+    height: 100%;
+    background-color: var(--ym-primary-50);
+    border-left: 4px solid var(--ym-primary-400);
+    padding: 16px 24px;
+    font-style: italic;
+    color: var(--ym-gray-800);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.testimonio__about {
+    width: 100%;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 16px;
+    font-style: normal;
+}
+
+.testimonio__comment p {
+    text-align: justify;
+}
+
+.testimonio__about h4 {
+    margin: 0;
+    color: var(--ym-primary);
+}
+
+.testimonio__about p {
+    margin: 0;
+    color: var(--ym--gray-400);
+    font-size: 14px;
+}
+
 /* clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 74% 85%, 75% 100%, 50% 85%, 0 85%); */
 
 
