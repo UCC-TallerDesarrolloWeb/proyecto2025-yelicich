@@ -17,8 +17,6 @@ Pagina de un Consesionario de autos
 [link YeliMotors](https://...) //TODO
 
 ## Contenido de la pagina
-## Contenido de la página
-
 | Página | Secciones | Descripción |
 |--------|-----------|-------------|
 | **Inicio** (`index.html`) | Header | Logo y navegación principal con links a Importaciones, Servicios, Contacto y Catálogo. |
