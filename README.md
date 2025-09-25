@@ -14,10 +14,34 @@ Pagina de un Consesionario de autos
 **Yelicich** Matias Adrian
 
 ## link de gh-pages
-[link YeliMotors](https://...)
+[link YeliMotors](https://...) //TODO
 
 ## Contenido de la pagina
-|t
+## Contenido de la página
+
+| Página | Secciones | Descripción |
+|--------|-----------|-------------|
+| **Inicio** (`index.html`) | Header | Logo y navegación principal con links a Importaciones, Servicios, Contacto y Catálogo. |
+| | Hero | Mensaje principal con botón al catálogo. |
+| | Vehículos destacados | Carrusel de autos destacados con links a detalles. |
+| | Marcas | Listado dinámico para explorar autos por marca. |
+| | Segmentos | Listado dinámico por tipo de vehículo. |
+| | Testimonios | Opiniones de clientes en carrusel. |
+| | Newsletter | Formulario de suscripción con email. |
+| | Footer | Links legales, enlaces adicionales y redes sociales. |
+| **Catálogo** (`catalog.html`) | Header | Igual al de inicio. |
+| | Breadcrumb | Ruta de navegación Inicio > Catálogo. |
+| | Catálogo de vehículos | Listado dinámico de autos con tarjetas. |
+| | Filtros | Por precio, transmisión, segmento y marca. |
+| | Footer | Igual al de inicio. |
+| **Detalles** (`details.html`) | Header | Igual al de inicio. |
+| | Breadcrumb | Ruta de navegación Inicio > Catálogo > Detalles. |
+| | Imágenes del auto | Imagen principal y miniaturas dinámicas. |
+| | Descripción | Características, motor y seguridad. |
+| | Info del auto | Nombre, tipo, precio, impuestos, concesionario y botones de acción. |
+| | Vehículos similares | Cards con autos relacionados. |
+| | Modal de compra | Configurador con color, rines, método de pago, cuotas y resumen dinámico. |
+| | Footer | Igual al de inicio. |
 
 ## Listado de tecnologias usadas
 - HTML
