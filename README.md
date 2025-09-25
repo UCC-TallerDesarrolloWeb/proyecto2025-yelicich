@@ -1,20 +1,28 @@
-# proyecto2025
-Estructura de Proyecto Taller de Desarrollo Web - 2025
+# Proyecto 2025 – Taller de Desarrollo Web
 
+Estructura de Proyecto Taller de Desarrollo Web - 2025  
+
+---
+
+## Índice
 - [Titulo del proyecto](#titulo-del-proyecto)
 - [Autor](#autor)
 - [Link gh-pages](#link-de-gh-pages)
 - [Contenido de la pagina](#contenido-de-la-pagina)
 - [Listado de tecnologias](#listado-de-tecnologias-usadas)
 
-## Titulo del proyecto
-Pagina de un Consesionario de autos
+---
 
-### Autor
-**Yelicich** Matias Adrian
+## Título del proyecto
+**YeliMotors** – Página web de un concesionario de autos 0km en Argentina.  
+El sitio incluye catálogo dinámico, página de detalles con configurador de compra y un carrusel de vehículos destacados.
 
-## link de gh-pages
-[link YeliMotors](https://...) //TODO
+---
+
+## Link de gh-pages
+🔗 [YeliMotors en GitHub Pages](https://...) <!-- TODO -->
+
+---
 
 ## Contenido de la pagina
 | Página | Secciones | Descripción |
@@ -41,6 +49,9 @@ Pagina de un Consesionario de autos
 | | Modal de compra | Configurador con color, rines, método de pago, cuotas y resumen dinámico. |
 | | Footer | Igual al de inicio. |
 
+
+---
+
 ## Tecnologias usadas
 - **HTML5** → estructura semántica de las páginas (header, nav, main, section, footer, etc.).  
 - **CSS3** → estilos, diseño responsive, carruseles, modal de compra, layout con flexbox y grid.  
@@ -48,7 +59,9 @@ Pagina de un Consesionario de autos
 - **Figma** → prototipado de interfaces: sketch y wireframe en desktop y mobile.  
 - **Git & GitHub** → control de versiones, repositorio del proyecto y despliegue con GitHub Pages.  
 - **Google Fonts** → tipografía personalizada (Quicksand).  
-- **Material Icons** → iconografía para mejorar la interfaz.  
+- **Material Icons** → iconos para mejorar la interfaz.  
+
+---
 
 ## Requisitos del Primer Parcial
 
