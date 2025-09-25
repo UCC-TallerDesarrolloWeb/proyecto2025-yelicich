@@ -1,3 +1,6 @@
-.idea
-.vsc
+# Configuración de IDEs
+.idea/
+.vscode/
+
+# Archivos de sistema
 .DS_Store
