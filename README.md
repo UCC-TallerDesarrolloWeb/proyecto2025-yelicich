@@ -70,9 +70,9 @@ Tener en cuenta:
 - [ ] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [X] Se debe emplear algún favicon
 - [X] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa
-- [ ] Debe haber navegación entre todas las páginas
+- [X] Debe haber navegación entre todas las páginas
 - [ ] No debe haber errores de ortografía en el contenido visual
-- [ ] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
+- [X] "Lorem ipsum" es sólo válido para los prototipos, NO para la página
 
 ### Sobre el HTML
 - [ ] Todas las etiquetas deben estar en minúscula
@@ -85,7 +85,7 @@ Tener en cuenta:
 - [X] La estructura de la página debe estar definida con ```<div></div>```
 - [ ] Debe contener al menos 3 elementos de tipo ```<input>``` o ```<select>``` ó ```<button>``` que le permitan al usuario ingresar valores para poder realizar un cálculo de un ejercicio.
 - [X] Emplear el atributo [**placeholder**](U2_HTML_avanzado.html#/19) (mínimamente en 1 input)
-- [ ] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
+- [X] Emplear el atributo **size** para que el tamaño de los inputs sea prolijo
 - [X] Emplear el atributo **maxlength** para que el usurario no pueda ingresar valores "muy grandes"
 - [X] No espaciar con excesivos ```<br>```. Utilizar márgenes, paddings, etc.
 - [ ] La anidación de etiquetas HTML debe ser correcta.
@@ -117,13 +117,13 @@ Tener en cuenta:
 ### Sobre la funcionalidad JavaScript
 Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 - [ ] Una función que compruebe si los valores ingresados son correctos, y si no lo son, que le indique al usuario por un alert o dialog, y que blanquee el contenido del campo.
-- [ ] Una función que calcule/muestre algo en base a los valores ingresados por el usuario en los inputs.
+- [X] Una función que calcule/muestre algo en base a los valores ingresados por el usuario en los inputs.
 - [X] El código Js debe estar en un archivo externo
 - [ ] Se debe emplear var, let o const según corresponda para mayor eficiencia
 - [ ] No deben existir funciones innecesarias que no se llamen en ninguna sección del código
 - [ ] Las funciones deben estar escritas cómo **función flecha**
 - [ ] No debe haber errores JavaScript presentes (F12 > Consola)
-- [ ] El funcionamiento de la página debe ser consistente.
+- [X] El funcionamiento de la página debe ser consistente.
 
 ### Sobre la documentación
 - [ ] TODAS las funciones javaScript deben estar comentadas adecuadamente. [JsDoc](https://jsdoc.app/about-getting-started.html)
@@ -156,6 +156,7 @@ Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 | HTML+CSS+Js        | 85% |
 
 Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
+
 
 
 
