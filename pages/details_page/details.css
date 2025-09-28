@@ -134,9 +134,10 @@ main {
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        align-items: stretch
+        align-items: stretch;
+        gap: 16px;
     }
-    
+
     .detalles__left {
         width: 100%;
         box-sizing: border-box;
@@ -146,6 +147,7 @@ main {
         width: 100%;
         order: 1;
         flex-direction: column;
+        gap: 4px;
     }
 
     .images-thumbnails {
@@ -156,7 +158,8 @@ main {
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 8px;
+        padding: 8px 4px;
+        gap: 16px;
     }
 
     .images-thumbnails img {
@@ -194,12 +197,16 @@ main {
 }
 
 #titles-mobile {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
+}
+
+#auto-type-box-mobile {
+    color: var(--ym-gray-700);
 }
 
 h2 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .marca {
@@ -212,19 +219,20 @@ h2 {
 
 #auto-type-box {
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--ym-gray-700);
 }
 
 #auto-precio {
-    font-size: 1.75em;
+    font-size: 1.75rem;
     font-weight: 600;
 }
 
 .precio p {
     margin: 0;
-    font-size: 0.6875em;
+    font-size: 0.785rem;
     color: var(--ym-gray-700);
+    text-align: justify;
 }
 
 /* ---- custom --- */
