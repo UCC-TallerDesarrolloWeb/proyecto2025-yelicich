@@ -96,13 +96,13 @@ main {
     margin: 0;
     margin-top: 16px;
 
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 600;
 }
 
 .detalles-auto p {
     margin: 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--ym-gray-700);
     text-align: justify;
 }
@@ -129,7 +129,7 @@ main {
 
 h2 {
     margin: 0;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .marca {
@@ -142,18 +142,18 @@ h2 {
 
 #auto-type-box {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--ym-gray-700);
 }
 
 #auto-precio {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
 }
 
 .precio p {
     margin: 0;
-    font-size: 11px;
+    font-size: 0.6875rem;
     color: var(--ym-gray-700);
 }
 
@@ -173,13 +173,13 @@ h2 {
 
 .dato-section__subtitle h4 {
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
 }
 
 .dato-section__subtitle .icon {
     width: 32px;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1;
     color: var(--ym-primary);
 }
@@ -189,7 +189,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-size: 13px;
+    font-size: 0.75rem;
     color: var(--ym-gray-700);
 }
 
@@ -201,7 +201,7 @@ h2 {
 
     background-color: var(--ym-primary);
     color: var(--ym-primary-50);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 600;
     border: none;
     border-radius: 8px;
@@ -222,7 +222,7 @@ h2 {
 
     background-color: var(--ym-primary-50);
     color: var(--ym-primary);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     border: 1px solid var(--ym-primary);
     border-radius: 8px;
@@ -261,7 +261,7 @@ h2 {
 .or-text {
     margin: 0;
 
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--ym-primary-300);
     white-space: nowrap;
 }
@@ -283,7 +283,7 @@ h2 {
     width: 100%;
     margin: 0;
     margin-bottom: 16px;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 600;
 }
 
@@ -295,15 +295,15 @@ h2 {
 
 /* card de auto */
 .car-modelo {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .car-tipo-caja {
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 .car-desde {
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* ---- MODAL --- */
@@ -357,12 +357,12 @@ h2 {
 
 .modal__body h3 {
     margin: 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
 .modal__body h4 {
-    font-size: 16px;
+    font-size: 1rem;
     margin: .6rem 0 .4rem;
     font-weight: 600;
 }
@@ -377,14 +377,14 @@ h2 {
 
 #modal-title {
     margin: 0;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .modal__close {
     width: 36px;
     height: 36px;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 #close-modal:hover {
@@ -397,7 +397,6 @@ h2 {
 .options {
     display: flex;
     flex-wrap: wrap;
-    gap: .6rem;
     margin-bottom: 1rem;
     gap: 16px;
 }
@@ -408,7 +407,7 @@ h2 {
     cursor: pointer;
     background: var(--ym-primary-50);
     transition: all .2s ease;
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 .option:hover { 
     border-color: var(--ym-primary-400); 
@@ -460,7 +459,7 @@ h2 {
     background: var(--ym-primary-100);
     border-radius: 12px;
     padding: 1rem;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-top: 8px;
 }
 .resumen p {
@@ -471,7 +470,7 @@ h2 {
 }
 .resumen .total {
     margin-top: .8rem;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--ym-primary-900);
 }

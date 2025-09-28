@@ -166,7 +166,7 @@ h3 {
     margin: 0;
     padding: 0;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 1.75rem;
     color: var(--ym-primary-900);
     justify-self: start; 
     align-self: flex-start;
@@ -279,7 +279,7 @@ h3 {
     margin-top: 8px;
     text-align: center;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--ym-primary-900);
 }
 
@@ -322,7 +322,7 @@ h3 {
     margin-top: 8px;
     text-align: center;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--ym-primary-900);
 }
 
@@ -391,7 +391,7 @@ h3 {
 .testimonio__about p {
     margin: 0;
     color: var(--ym-gray-400);
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .testimonios__controls {
@@ -403,7 +403,7 @@ h3 {
     border: none;
     background: var(--ym-primary-400);
     color: white;
-    font-size: 18px;
+    font-size: 1.125rem;
     padding: 6px 10px;
     margin: 0 6px;
     cursor: pointer;
@@ -454,7 +454,7 @@ h3 {
 
 .newsletter__text h4 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: 900;
     color: var(--ym-primary-400);
@@ -462,7 +462,7 @@ h3 {
 
 .newsletter__text p {
     margin: 8px 0 0;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--ym-primary-100);
 }
 

@@ -20,7 +20,7 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 ---
 
 ## Link de gh-pages
-🔗 [YeliMotors en GitHub Pages](https://...) <!-- TODO -->
+🔗 [YeliMotors en GitHub Pages](https://ucc-tallerdesarrolloweb.github.io/proyecto2025-yelicich/pages/home_page/index.html)
 
 ---
 

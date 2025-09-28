@@ -58,7 +58,7 @@ h2 {
     width: 100%;
     margin: 0;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .divider {
@@ -74,7 +74,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
 
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .subtitles__order {
@@ -90,7 +90,7 @@ h2 {
     font-family: Quicksand, sans-serif;
     color: var(--ym-primary-700);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.875rem;
     
     padding: 4px 8px;
     border-radius: 6px;
@@ -142,14 +142,14 @@ h2 {
 .filters__header h3 {
     margin: 0;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .filters__header button {
     background: none;
     border: none;
     color: var(--ym-primary);
-    font-size: 13px;
+    font-size: 0.875rem;
     cursor: pointer;
     padding: 4px 8px;
     text-decoration: underline;
@@ -201,7 +201,7 @@ input[type="checkbox"] {
 .price-filter label {
     font-weight: 400;
     color: var(--ym-gray-700);
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 .filters input[type="text"] {
@@ -211,7 +211,7 @@ input[type="checkbox"] {
     border: 1px solid var(--ym-gray-300);
     border-radius: 6px;
     background-color: var(--ym-primary-50);
-    font-size: 14px;
+    font-size: 0.875rem;
     font-family: inherit;
     color: var(--ym-gray-900);
     outline: none;
