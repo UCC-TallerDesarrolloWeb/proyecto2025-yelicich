@@ -110,8 +110,12 @@ const getNumeric = (el) => {
         </a>
         `;
 
-        // Hover imagen (si hay img_hover definida)
+        // Hover
         const img = card.querySelector("img");
+
+        img.onerror = () => {
+            img.src = "/imagenes/cars/without_image.webp";
+        };
         if (scrImageHover) {
             card.addEventListener("mouseenter", () => { img.src = `${scrImageHover}`; });
             card.addEventListener("mouseleave", () => { img.src = `${scrImage}`; });

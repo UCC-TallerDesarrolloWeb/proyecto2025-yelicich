@@ -20,6 +20,7 @@ const MARCAS = Object.freeze({
     PEUGEOT: "Peugeot",
     RAM: "RAM",
     RENAULT: "Renault",
+    FERRARI: "Ferrari",
 });
 
 const TIPOS = Object.freeze({
@@ -109,5 +110,13 @@ const autos = [
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
         precio: 77500000
+    },
+    {
+        id: 10,
+        marca: MARCAS.FERRARI,
+        modelo: "488",
+        tipo: TIPOS.DEPORTIVO,
+        caja: CAJAS.MANUAL,
+        precio: 988079487
     }
 ];

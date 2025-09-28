@@ -138,6 +138,16 @@ main {
     25.1%, 100% { filter: var(--arrow-off); }  /* apagada hasta volver a empezar */
 }
 
+@media (max-width: 768px) {
+    .hero__content h2{
+        font-size: 3em;
+    }
+
+    .hero__arrows img{
+        width: 48px;
+    }
+}
+
 /* ---- GLOBAL CONTAINER --- */
 .global-container {
     width: 100%;
@@ -240,6 +250,10 @@ h3 {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    /* TODO */
+}
+
 /* ---- BRAND SECTION --- */
 .brands {
     max-width: 1200px;
@@ -281,6 +295,13 @@ h3 {
     font-weight: 400;
     font-size: 1rem;
     color: var(--ym-primary-900);
+}
+
+@media (max-width: 768px) {
+    .list-brands {
+        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+        gap: 16px 32px;
+    }
 }
 
 /* ---- SEGMENTO SECTION --- */
@@ -328,19 +349,8 @@ h3 {
 
 
 /* ---- TESTIMONIOS SECTION --- */
-.testimonios {
-    max-width: 1200px;
-}
-
-.testimonios__content {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-}
-
 .testimonio {
+    max-width: 1200px;
     display: none;
     gap: 24px;
     align-items: center;
@@ -349,6 +359,14 @@ h3 {
 
 .testimonio.active {
     display: flex;
+}
+
+.testimonios__content {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
 }
 
 .testimonios__content img {
@@ -415,10 +433,19 @@ h3 {
     background: var(--ym-primary-600);
 }
 
-/* animación */
 @keyframes fade {
     from { opacity: 0; transform: translateX(20px); }
     to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+    .testimonio.active {
+        flex-direction: column;
+    }
+    .testimonios__content img {
+        width: 200px;
+        border-radius: 16px;
+    }
 }
 
 /* ---- NEWSLETTER SECTION --- */

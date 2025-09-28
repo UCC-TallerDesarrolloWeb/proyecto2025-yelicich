@@ -40,6 +40,24 @@ main {
     justify-content: center;
 }
 
+@media (max-width: 768px) {
+    body {
+        background-color: var(--ym-primary-50);
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+        padding: 16px;
+        border-radius: 0;
+    }
+
+    .global-container {
+        width: 100%;
+        padding: 0 8px;
+    }
+}
+
 /* ---- MAIN-HEADER SECTION --- */
 
 .main-header {

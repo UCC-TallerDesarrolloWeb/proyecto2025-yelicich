@@ -9,10 +9,15 @@ if (auto) {
         <span class="marca">${auto.marca}</span> 
         <span class="modelo">${auto.modelo}</span>
     `;
+    document.getElementById("auto-nombre-mobile").innerHTML = `
+        <span class="marca">${auto.marca}</span> 
+        <span class="modelo">${auto.modelo}</span>
+    `;
     document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
     document.getElementById("auto-imagen").src = `/imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
     document.getElementById("auto-imagen").alt = `${auto.marca} ${auto.modelo}`;
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
+    document.getElementById("auto-type-box-mobile").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
     document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * 0.9049774).toLocaleString("es-AR")}`;
     document.getElementById("location-brand").textContent = `Concesionario oficial de ${auto.marca}`;
@@ -34,6 +39,10 @@ if (auto) {
     mainImg.src = `/imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
     mainImg.alt = `${auto.marca} ${auto.modelo}`;
 
+    mainImg.onerror = () => {
+        mainImg.src = "/imagenes/cars/without_image.webp";
+    };
+
     // generar miniaturas
     thumbnailsContainer.innerHTML = "";
 
@@ -53,14 +62,14 @@ if (auto) {
 
         // click → cambiar principal y borde celeste
         thumb.addEventListener("click", () => {
-        mainImg.src = scrImage;
+            mainImg.src = scrImage;
 
-        // limpiar active de todas
-        document.querySelectorAll(".image-thumbnail")
-            .forEach(t => t.classList.remove("active"));
+            // limpiar active de todas
+            document.querySelectorAll(".image-thumbnail")
+                .forEach(t => t.classList.remove("active"));
 
-        // marcar la actual
-        thumb.classList.add("active");
+            // marcar la actual
+            thumb.classList.add("active");
         });
 
         thumb.onerror = () => { thumb.remove(); }; // Eliminar si no está

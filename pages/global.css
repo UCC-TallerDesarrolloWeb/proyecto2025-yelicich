@@ -32,7 +32,13 @@ html {
     scroll-behavior: smooth;
     color: var(--ym-primary-950);
     font-family: Quicksand, sans-serif;
-    font-size: 1rem;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
 }
 
 .bold { font-weight: 700; }
@@ -142,6 +148,16 @@ nav[aria-label="breadcrumb"] {
     width: 100%;
     max-width: 1280px;
     letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    #logo {
+        height: 28px;
+    }
+
+    #header-buttons a:nth-child(-n+3) {
+        display: none;
+    }
 }
 
 /* ---- BREADCRUMB SECTION --- */
@@ -293,10 +309,27 @@ nav[aria-label="breadcrumb"] li:last-child::after {
     color: var(--ym-gray-400);
 }
 
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center; /* centra todo */
+        text-align: center;
+    }
+
+    .footer-center {
+        order: 1;
+    }
+
+    .footer-links {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 /* AUTO CARD */
 .link-detalle {
     text-decoration: none;
-    color: inherit;
 }
 
 .card-car {
@@ -331,6 +364,7 @@ nav[aria-label="breadcrumb"] li:last-child::after {
 .car-marca {
     font-weight: 300;
     font-size: 1.25rem;
+    color: var(--ym-primary-900);
 }
 
 .car-modelo {
