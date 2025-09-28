@@ -82,7 +82,7 @@ function renderSimilares(auto) {
 
     // Si no hay similares, mostramos un mensaje
     if (similares.length === 0) {
-        similaresList.innerHTML = "<p>No hay vehículos similares disponibles.</p>";
+        similaresList.innerHTML = "<p>No encontramos vehículos similares en este segmento.</p>";
         return;
     }
 
