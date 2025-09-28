@@ -45,8 +45,6 @@ function renderSegmentos(segmentosObj) {
 
         segmentosList.appendChild(card);
     });
-
-    //TODO: conectar con catalogo.html?segmento=nombre
 }
 
 renderSegmentos(TIPOS);
@@ -71,7 +69,27 @@ function prevTestimonio() {
     showTestimonio(currentTestimonio);
 }
 
-// Inicializa
 showTestimonio(currentTestimonio);
 document.getElementById("prev-testimonio").addEventListener("click", prevTestimonio);
 document.getElementById("next-testimonio").addEventListener("click", nextTestimonio);
+
+// Newsletter: validar email
+const newsletterForm = document.querySelector(".newsletter__form");
+const newsletterInput = document.getElementById("newsletter-email");
+
+newsletterForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = newsletterInput.value.trim();
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regex.test(email)) {
+        alert("Por favor ingresá un correo válido.");
+        newsletterInput.value = "";
+        newsletterInput.focus();
+        return;
+    }
+
+    alert("¡Gracias por suscribirte!");
+    newsletterInput.value = "";
+});
