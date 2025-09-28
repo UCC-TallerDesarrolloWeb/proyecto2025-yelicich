@@ -199,10 +199,16 @@ nav[aria-label="breadcrumb"] li:last-child::after {
 
 .footer-links {
     min-width: 200px;
+}
+
+.footer-links ul {
+    list-style: none;   
+    margin: 0;
+    padding: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 12px;
 }
 
@@ -241,9 +247,17 @@ nav[aria-label="breadcrumb"] li:last-child::after {
     font-weight: 500;
 }
 
-.footer-socials {
+.footer-socials ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
     display: flex;
     gap: 16px;
+}
+
+.footer-socials li {
+    display: flex;
 }
 
 .footer-socials img {
