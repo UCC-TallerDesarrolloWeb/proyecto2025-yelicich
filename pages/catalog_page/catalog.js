@@ -143,6 +143,17 @@ function applyFiltersAndRender() {
     // Precio
     const minP = getNumeric(fromPriceInput);
     const maxP = getNumeric(toPriceInput);
+
+    if (minP !== null && maxP !== null && minP > maxP) {
+        document.getElementById("from-price").classList.add("input-error");
+        document.getElementById("to-price").classList.add("input-error");
+        alert("El precio mínimo no puede ser mayor al máximo.");
+        return;
+    } else {
+        document.getElementById("from-price").classList.remove("input-error");
+        document.getElementById("to-price").classList.remove("input-error");
+    }
+
     if (minP !== null) filtered = filtered.filter(a => a.precio >= minP);
     if (maxP !== null) filtered = filtered.filter(a => a.precio <= maxP);
 

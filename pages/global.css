@@ -21,6 +21,7 @@
 
 /* YM-Extras */
     --ym-accent: #F43F5E;
+    --ym-accent-alpha: rgba(244, 63, 94, 0.4);
     --ym-primary-alpha: rgba(42, 148, 213, 0.4);
     --ym-background-alpha: rgba(228, 239, 250, 0.65);
 
