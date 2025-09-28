@@ -38,6 +38,10 @@ html {
 
 .hidden { display: none; }
 
+.sr-only {
+    display: none;
+}
+
 /* ---- HEADER --- */
 header {
     height: 80px;

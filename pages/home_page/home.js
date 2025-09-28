@@ -51,7 +51,7 @@ function renderSegmentos(segmentosObj) {
 
 renderSegmentos(TIPOS);
 
-// Carrusel cometario
+// Carrusel testimonios
 let currentTestimonio = 0;
 const testimonios = document.querySelectorAll(".testimonio");
 
@@ -73,3 +73,5 @@ function prevTestimonio() {
 
 // Inicializa
 showTestimonio(currentTestimonio);
+document.getElementById("prev-testimonio").addEventListener("click", prevTestimonio);
+document.getElementById("next-testimonio").addEventListener("click", nextTestimonio);
