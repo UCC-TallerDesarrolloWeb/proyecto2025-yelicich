@@ -14,7 +14,7 @@ if (auto) {
         <span class="modelo">${auto.modelo}</span>
     `;
     document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
-    document.getElementById("auto-imagen").src = `/imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
+    document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
     document.getElementById("auto-imagen").alt = `${auto.marca} ${auto.modelo}`;
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-type-box-mobile").textContent = `${auto.tipo} • ${auto.caja}`;
@@ -36,11 +36,11 @@ if (auto) {
     const modeloCar = textBase(auto.modelo);
 
     // mostrar la primera imagen como principal
-    mainImg.src = `/imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
+    mainImg.src = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
     mainImg.alt = `${auto.marca} ${auto.modelo}`;
 
     mainImg.onerror = () => {
-        mainImg.src = "/imagenes/cars/without_image.webp";
+        mainImg.src = "../../imagenes/cars/without_image.webp";
     };
 
     // generar miniaturas
@@ -50,7 +50,7 @@ if (auto) {
 
     img_names.forEach((imgSrc, index) => {
         const thumb = document.createElement("img");
-        let scrImage = `/imagenes/cars/${modeloCar}/${imgSrc}_${modeloCar}.webp`;
+        let scrImage = `../../imagenes/cars/${modeloCar}/${imgSrc}_${modeloCar}.webp`;
         thumb.src = scrImage;
         thumb.alt = `${auto.marca} ${auto.modelo} vista ${index + 1}`;
         thumb.classList.add("image-thumbnail");
@@ -100,8 +100,8 @@ function renderSimilares(auto) {
         const card = document.createElement("div");
         card.classList.add("card-car");
         let modeloCar = textBase(sim.modelo);
-        let scrImage = `/imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
-        let scrImageHover = `/imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
+        let scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
+        let scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
 
         card.innerHTML = `
             <a href="../details_page/details.html?id=${sim.id}" class="link-detalle">

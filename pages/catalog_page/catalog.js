@@ -88,8 +88,8 @@ const getNumeric = (el) => {
         const card = document.createElement("div");
         card.classList.add("card-car");
         let modeloCar = textBase(auto.modelo);
-        let scrImage = `/imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
-        let scrImageHover = `/imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
+        let scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
+        let scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
 
         card.innerHTML = `
         <a href="../details_page/details.html?id=${auto.id}" class="link-detalle">
@@ -114,7 +114,7 @@ const getNumeric = (el) => {
         const img = card.querySelector("img");
 
         img.onerror = () => {
-            img.src = "/imagenes/cars/without_image.webp";
+            img.src = "../../imagenes/cars/without_image.webp";
         };
         if (scrImageHover) {
             card.addEventListener("mouseenter", () => { img.src = `${scrImageHover}`; });

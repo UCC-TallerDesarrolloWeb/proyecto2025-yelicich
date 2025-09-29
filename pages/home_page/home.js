@@ -13,7 +13,7 @@ function renderMarcas(marcasObj) {
         card.innerHTML = `
             <a href="../catalog_page/catalog.html?marca=${encodeURIComponent(nombre)}" class="link-detalle">
                 <div class="brand-image-container">
-                    <img src="/imagenes/marcas/${logo}.webp" alt="${nombre}">
+                    <img src="../../imagenes/marcas/${logo}.webp" alt="${nombre}">
                 </div>
                 <div class="brand-name">${nombre}</div>
             </a>
@@ -37,7 +37,7 @@ function renderSegmentos(segmentosObj) {
         card.innerHTML = `
             <a href="../catalog_page/catalog.html?segmento=${encodeURIComponent(nombre)}" class="link-detalle">
                 <div class="type-image-container">
-                    <img src="/imagenes/segmentos/${imagen}.webp" alt="${nombre}">
+                    <img src="../../imagenes/segmentos/${imagen}.webp" alt="${nombre}">
                 </div>
                 <div class="type-name">${nombre}</div>
             </a>
