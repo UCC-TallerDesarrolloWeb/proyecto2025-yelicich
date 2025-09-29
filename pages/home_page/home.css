@@ -87,7 +87,7 @@ main {
 
 .btn-catalogo-hero {
     text-decoration: none;
-    color: var(--ym-primary-50);
+    color: #FFF;
     background-color: var(--ym-primary);
     padding: 16px 48px;
     border-radius: 50px;
