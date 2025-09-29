@@ -152,8 +152,12 @@ nav[aria-label="breadcrumb"] {
 }
 
 @media (max-width: 700px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
     #logo {
-        height: 28px;
+        height: 24px;
     }
 
     #header-buttons a:nth-child(-n+3) {
