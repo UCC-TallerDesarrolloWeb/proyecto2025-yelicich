@@ -94,7 +94,7 @@ const getNumeric = (el) => {
         card.innerHTML = `
         <a href="../details_page/details.html?id=${auto.id}" class="link-detalle">
             <div class="car-image-container">
-            <img src="${scrImage}" alt="${auto.marca} ${auto.modelo}">
+            <img src="${scrImage}" alt="${auto.marca} ${auto.modelo}" loading="lazy">
             </div>
             <div class="informacion">
             <div class="datos">
