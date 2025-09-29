@@ -51,6 +51,7 @@
     <!-- MAIN -->
     <main>
         <div class="global-container">
+            <div class="filters-overlay"></div>
             <div class="main-header">
                 <h2>Catálogo de vehículos</h2>
                 <hr class="divider">
@@ -64,6 +65,10 @@
                             <option value="expensive">Mayor precio</option>
                             <option value="cheaper">Menor precio</option>
                         </select>
+                        <button class="btn-filtros">
+                            <span class="material-icons-round">filter_alt</span>
+                            Filtros
+                        </button>
                     </div>
                 </div>
             </div>
@@ -129,6 +134,10 @@
                         <h4>Marca</h4>
                         <ul id="marca-filter"></ul> <!-- Se llena desde JS -->
                     </div>
+
+                    <button class="btn-apply-filters" type="button">
+                        Aplicar filtros
+                    </button>
                 </form>
 
                 <!-- productos -->

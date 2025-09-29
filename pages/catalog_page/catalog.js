@@ -231,3 +231,24 @@ document.querySelectorAll(".price-filter").forEach(input => {
         }
     });
 });
+
+// Filtros mobile
+const btnFiltros = document.querySelector(".btn-filtros");
+const filtros = document.querySelector(".filters");
+const overlay = document.querySelector(".filters-overlay");
+const btnApply = document.querySelector(".btn-apply-filters");
+
+btnFiltros.addEventListener("click", () => {
+    filtros.classList.add("mobile-active");
+    overlay.style.display = "block";
+});
+
+overlay.addEventListener("click", () => {
+    filtros.classList.remove("mobile-active");
+    overlay.style.display = "none";
+});
+
+btnApply.addEventListener("click", () => {
+    filtros.classList.remove("mobile-active");
+    overlay.style.display = "none";
+});

@@ -36,7 +36,7 @@ html {
     font-size: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     html {
         font-size: 14px;
     }
@@ -151,7 +151,7 @@ nav[aria-label="breadcrumb"] {
     letter-spacing: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     #logo {
         height: 28px;
     }
@@ -310,7 +310,7 @@ nav[aria-label="breadcrumb"] li:last-child::after {
     color: var(--ym-gray-400);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .footer-container {
         flex-direction: column;
         align-items: center; /* centra todo */
@@ -404,4 +404,10 @@ nav[aria-label="breadcrumb"] li:last-child::after {
 .card-car:hover {
     box-shadow: 0 0 8px 1px var(--ym-primary-alpha);
     transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+    .card-car {
+        width: 100%;
+    }
 }
