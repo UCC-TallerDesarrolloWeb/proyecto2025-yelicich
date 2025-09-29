@@ -353,6 +353,12 @@ h3 {
     color: var(--ym-primary-900);
 }
 
+@media (max-width: 700px) {
+    .list-types {
+        grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+        gap: 16px 32px;
+    }
+}
 
 /* ---- TESTIMONIOS SECTION --- */
 .testimonio {
