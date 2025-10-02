@@ -22,7 +22,7 @@ const getNumeric = (el) => {
 };
 
 // Render filtro de marcas
-(function buildBrandFilter() {
+(() => {
     const ul = document.getElementById("marca-filter");
     if (!ul || typeof MARCAS !== "object") return;
 
@@ -39,7 +39,7 @@ const getNumeric = (el) => {
 })();
 
 // Render filtro segmentos
-(function buildSegmentFilter() {
+(() => {
     const ul = document.getElementById("tipo-filter");
     if (!ul || typeof TIPOS !== "object") return;
 
@@ -81,7 +81,7 @@ const getNumeric = (el) => {
 })();
 
 // Render de cards
-    function renderAutos(arr) {
+const renderAutos = (arr) => {
     list.innerHTML = "";
 
     arr.forEach(auto => {
@@ -126,7 +126,7 @@ const getNumeric = (el) => {
 }
 
 // Orden
-function sortAutos(arr, criterion) {
+const sortAutos = (arr, criterion) => {
     const v = (criterion || "").toLowerCase();
     const cp = [...arr];
 
@@ -137,7 +137,7 @@ function sortAutos(arr, criterion) {
 }
 
 // Filtros + Render
-function applyFiltersAndRender() {
+const applyFiltersAndRender = () => {
     let filtered = [...autos];
 
     // Precio
@@ -185,7 +185,7 @@ function applyFiltersAndRender() {
 }
 
 // Listeners
-function wireFilterEvents() {
+const wireFilterEvents = () => {
     document.querySelectorAll(".filters input[type='checkbox']").forEach(inp => {
         inp.addEventListener("change", applyFiltersAndRender);
     });
@@ -200,7 +200,7 @@ wireFilterEvents();
 applyFiltersAndRender();
 
 // Limpiar filtros
-function isAnyFilterActive() {
+const isAnyFilterActive = () => {
     const minP = getNumeric(fromPriceInput);
     const maxP = getNumeric(toPriceInput);
     const anyTipo  = document.querySelector('#suv:checked, #sedan:checked, #pickup:checked, #utilitario:checked, #deportivo:checked');

@@ -2,7 +2,7 @@ const brandsList = document.getElementById("list-brands");
 const segmentosList = document.getElementById("list-types");
 
 // Generar cards de las marcas
-function renderMarcas(marcasObj) {
+const renderMarcas = (marcasObj) => {
     brandsList.innerHTML = "";
 
     Object.values(marcasObj).forEach(nombre => {
@@ -26,7 +26,7 @@ function renderMarcas(marcasObj) {
 renderMarcas(MARCAS);
 
 // Generar cards de los segmentos
-function renderSegmentos(segmentosObj) {
+const renderSegmentos = (segmentosObj) => {
     segmentosList.innerHTML = "";
 
     Object.values(segmentosObj).forEach(nombre => {
@@ -53,18 +53,18 @@ renderSegmentos(TIPOS);
 let currentTestimonio = 0;
 const testimonios = document.querySelectorAll(".testimonio");
 
-function showTestimonio(index) {
+const showTestimonio = (index) => {
     testimonios.forEach((t, i) => {
         t.classList.toggle("active", i === index);
     });
 }
 
-function nextTestimonio() {
+const nextTestimonio = () => {
     currentTestimonio = (currentTestimonio + 1) % testimonios.length;
     showTestimonio(currentTestimonio);
 }
 
-function prevTestimonio() {
+const prevTestimonio = () => {
     currentTestimonio = (currentTestimonio - 1 + testimonios.length) % testimonios.length;
     showTestimonio(currentTestimonio);
 }

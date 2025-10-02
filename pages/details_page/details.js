@@ -26,7 +26,7 @@ if (auto) {
 
     renderSimilares(auto);
 } else {
-    document.querySelector("main.detalle").innerHTML = "<p>Auto no encontrado</p>";
+    document.querySelector("main.detalles").innerHTML = "<p>Auto no encontrado</p>";
 }
 
 // Hacer dinámico la lista de imágenes
@@ -79,7 +79,7 @@ if (auto) {
 }
 
 //Mostrar vehiculos similares
-function renderSimilares(auto) {
+const renderSimilares = (auto) => {
     const similaresList = document.querySelector(".similares__list");
     similaresList.innerHTML = "";
 
@@ -240,7 +240,6 @@ document.querySelectorAll("#metodo-pago .option").forEach(btn => {
         btn.classList.add("active");
 
         const metodo = btn.getAttribute("value");
-        console.log(metodo);
 
         switch (metodo) {
             case "contado": 
