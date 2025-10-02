@@ -69,7 +69,7 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 - [X] Versión Desktop y Mobile
 - [X] Guardado en formato PNG, JPG ó PDF
 - [X] Dentro de una carpeta llamada "Sketch"
-- [ ] En el diseño tener en cuenta los mensajes de error para el usuario
+- [X] En el diseño tener en cuenta los mensajes de error para el usuario
 
 Tener en cuenta:
 * ¿Qué opciones debe ofrecer al usuario?
