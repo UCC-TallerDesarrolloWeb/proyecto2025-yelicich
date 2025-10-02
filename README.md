@@ -106,7 +106,7 @@ Tener en cuenta:
       - Carpeta de Pages
       - Carpeta de Styles
 - [X] Identar correctamente el código (en Webstorm Ctrl+Alt+L)
-- [ ] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
+- [X] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [X] Se debe emplear algún favicon
 - [X] Emplear alguna fuente de google fonts o subir al proyecto alguna fuente externa
 - [X] Debe haber navegación entre todas las páginas
@@ -161,7 +161,7 @@ Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 - [X] Se debe emplear var, let o const según corresponda para mayor eficiencia
 - [X] No deben existir funciones innecesarias que no se llamen en ninguna sección del código
 - [X] Las funciones deben estar escritas cómo **función flecha**
-- [ ] No debe haber errores JavaScript presentes (F12 > Consola)
+- [X] No debe haber errores JavaScript presentes (F12 > Consola)
 - [X] El funcionamiento de la página debe ser consistente.
 
 ### Sobre la documentación

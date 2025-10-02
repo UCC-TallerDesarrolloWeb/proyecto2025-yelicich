@@ -1,7 +1,12 @@
 const brandsList = document.getElementById("list-brands");
 const segmentosList = document.getElementById("list-types");
 
-// Generar cards de las marcas
+/**
+ * Renderiza las tarjetas de marcas en la sección "Buscar por marca".
+ * @method renderMarcas
+ * @param {Object} marcasObj - Lista con todas las marcas disponibles.
+ * @return {void}
+ */
 const renderMarcas = (marcasObj) => {
     brandsList.innerHTML = "";
 
@@ -25,7 +30,12 @@ const renderMarcas = (marcasObj) => {
 
 renderMarcas(MARCAS);
 
-// Generar cards de los segmentos
+/**
+ * Renderiza las tarjetas de segmentos en la sección "Buscar por segmento".
+ * @method renderSegmentos
+ * @param {Object} segmentosObj - Lista con todos los segmentos disponibles.
+ * @return {void}
+ */
 const renderSegmentos = (segmentosObj) => {
     segmentosList.innerHTML = "";
 
@@ -53,17 +63,33 @@ renderSegmentos(TIPOS);
 let currentTestimonio = 0;
 const testimonios = document.querySelectorAll(".testimonio");
 
+/**
+ * Muestra el testimonio activo en el carrusel y oculta los demás.
+ * @method showTestimonio
+ * @param {number} index - Índice del testimonio que se debe mostrar.
+ * @return {void}
+ */
 const showTestimonio = (index) => {
     testimonios.forEach((t, i) => {
         t.classList.toggle("active", i === index);
     });
 }
 
+/**
+ * Avanza al siguiente testimonio en el carrusel.
+ * @method nextTestimonio
+ * @return {void}
+ */
 const nextTestimonio = () => {
     currentTestimonio = (currentTestimonio + 1) % testimonios.length;
     showTestimonio(currentTestimonio);
 }
 
+/**
+ * Retrocede al testimonio anterior en el carrusel.
+ * @method prevTestimonio
+ * @return {void}
+ */
 const prevTestimonio = () => {
     currentTestimonio = (currentTestimonio - 1 + testimonios.length) % testimonios.length;
     showTestimonio(currentTestimonio);
@@ -77,6 +103,12 @@ document.getElementById("next-testimonio").addEventListener("click", nextTestimo
 const newsletterForm = document.querySelector(".newsletter__form");
 const newsletterInput = document.getElementById("newsletter-email");
 
+/**
+ * Valida el email ingresado.
+ * @method submitNewsletter
+ * @param {Event} e - Evento de submit del formulario.
+ * @return {void}
+ */
 newsletterForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
