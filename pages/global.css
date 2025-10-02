@@ -117,7 +117,7 @@ h1 {
 
 #header-buttons a:nth-child(-n+3) {
     text-decoration: none;
-    color: var(--ym-gray-700);
+    color: #FFF;
     letter-spacing: 2px;
 
     border-bottom: 2px solid transparent;
@@ -131,7 +131,7 @@ h1 {
 
 #btn-catalogo {
     text-decoration: none;
-    color: var(--ym-primary-50);
+    color: #FFF;
     background-color: var(--ym-primary);
     padding: 8px 32px;
     border-radius: 50px;
