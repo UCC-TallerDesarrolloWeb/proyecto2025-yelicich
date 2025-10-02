@@ -340,7 +340,7 @@ h2 {
     margin: 0;
 
     font-size: 0.875rem;
-    color: var(--ym-primary-300);
+    color: var(--ym-gray-700);
     white-space: nowrap;
 }
 

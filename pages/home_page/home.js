@@ -37,7 +37,7 @@ function renderSegmentos(segmentosObj) {
         card.innerHTML = `
             <a href="../catalog_page/catalog.html?segmento=${encodeURIComponent(nombre)}" class="link-detalle">
                 <div class="type-image-container">
-                    <img src="../../imagenes/segmentos/${imagen}.webp" alt="icon del segmento ${nombre}" loading="lazy">
+                    <img src="../../imagenes/segmentos/${imagen}.webp" alt="Ícono del segmento ${nombre}" loading="lazy">
                 </div>
                 <div class="type-name">${nombre}</div>
             </a>

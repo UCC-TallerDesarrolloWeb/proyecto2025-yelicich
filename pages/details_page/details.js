@@ -50,7 +50,7 @@ if (auto) {
 
     img_names.forEach((imgSrc, index) => {
         const thumb = document.createElement("img");
-        let scrImage = `../../imagenes/cars/${modeloCar}/${imgSrc}_${modeloCar}.webp`;
+        const scrImage = `../../imagenes/cars/${modeloCar}/${imgSrc}_${modeloCar}.webp`;
         thumb.src = scrImage;
         thumb.alt = `${auto.marca} ${auto.modelo} vista ${index + 1}`;
         thumb.classList.add("image-thumbnail");
@@ -99,9 +99,9 @@ function renderSimilares(auto) {
     similares.forEach(sim => {
         const card = document.createElement("div");
         card.classList.add("card-car");
-        let modeloCar = textBase(sim.modelo);
-        let scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
-        let scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
+        const modeloCar = textBase(sim.modelo);
+        const scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
+        const scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
 
         card.innerHTML = `
             <a href="../details_page/details.html?id=${sim.id}" class="link-detalle">

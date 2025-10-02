@@ -31,7 +31,7 @@ h1 {
 }
 
 #header-buttons a:nth-child(-n+3) {
-    color: var(--ym-primary-50);
+    color: #FFF;
 }
 
 #header-buttons a:nth-child(-n+3):hover {
@@ -420,7 +420,7 @@ h3 {
 
 .testimonio__about p {
     margin: 0;
-    color: var(--ym-gray-400);
+    color: var(--ym-gray-700);
     font-size: 0.875rem;
 }
 

@@ -17,7 +17,8 @@
 /* YM-Gray */
     --ym-gray-800: #435364; /* footer */
     --ym-gray-700: #5A6B7D; /* textos secundarios e iconos */
-    --ym-gray-400: #A6B3C3;  /* bordes y divisores suaves */
+    --ym-gray-400: #A6B3C3; /* bordes y divisores suaves */
+    --ym-gray-200: #d9e1e8; /* textos sobre fondos oscuros */
 
 /* YM-Extras */
     --ym-accent: #F43F5E;
@@ -117,7 +118,7 @@ h1 {
 
 #header-buttons a:nth-child(-n+3) {
     text-decoration: none;
-    color: #FFF;
+    color: var(--ym-gray-700);
     letter-spacing: 2px;
 
     border-bottom: 2px solid transparent;
@@ -311,7 +312,7 @@ nav[aria-label="breadcrumb"] li:last-child::after {
     text-align: center;
     margin-top: 64px;
     font-size: 0.75rem;
-    color: var(--ym-gray-400);
+    color: var(--ym-gray-200);
 }
 
 @media (max-width: 700px) {

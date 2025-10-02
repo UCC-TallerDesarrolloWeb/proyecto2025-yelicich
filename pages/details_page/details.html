@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="details.css">
-    <script src="../autos.js"></script>
-    <script src="details.js" defer></script>
+    <script src="../autos.js" type="text/javascript" defer></script>
+    <script src="details.js" type="text/javascript" defer></script>
     <link rel="shortcut icon" href="../../imagenes/logo_ym.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +27,9 @@
                 </a>
             </div>
             <nav id="header-buttons">
-                <a href="">Importaciones</a>
-                <a href="">Servicios</a>
-                <a href="">Contacto</a>
+                <a href="#" aria-disabled="true">Importaciones</a>
+                <a href="#" aria-disabled="true">Servicios</a>
+                <a href="#" aria-disabled="true">Contacto</a>
                 <a id="btn-catalogo" href="../catalog_page/catalog.html">Catálogo</a>
             </nav>
         </div>
@@ -166,27 +166,27 @@
                 <nav class="footer-socials" aria-label="Redes sociales">
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook YeliMotors">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook YeliMotors">
                                 <img src="../../imagenes/social/ic_facebook.png" alt="Facebook YeliMotors">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram YeliMotors">
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram YeliMotors">
                                 <img src="../../imagenes/social/ic_instagram.png" alt="Instagram YeliMotors">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube YeliMotors">
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube YeliMotors">
                                 <img src="../../imagenes/social/ic_youtube.png" alt="YouTube YeliMotors">
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok YeliMotors">
+                            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok YeliMotors">
                                 <img src="../../imagenes/social/ic_tiktok.png" alt="TikTok YeliMotors">
                             </a>
                         </li>
                         <li>
-                            <a href="https://x.com/" target="_blank" aria-label="Twitter/X YeliMotors">
+                            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X YeliMotors">
                                 <img src="../../imagenes/social/ic_x.png" alt="Twitter/X YeliMotors">
                             </a>
                         </li>
@@ -206,7 +206,7 @@
         </div>
 
         <div class="footer__bottom">
-            <p>&copy; 2025 Yeli Motors</p>
+            <p>&copy; 2025 YeliMotors</p>
             <p>Desarrollado por Matías Adrián Yelicich - 2025</p>
         </div>
     </footer>
@@ -219,7 +219,7 @@
             <div class="modal__header">
                 <div class="modal__close"></div>
                 <h2 id="modal-title"></h2>
-                <button class="modal__close" id="close-modal" aria-label="Cerrar">×</button>
+                <button class="modal__close" id="close-modal" aria-label="Cerrar" type="button">×</button>
             </div>
 
             <section class="modal__body">
@@ -229,38 +229,38 @@
                 </div>
                 <h4 id="colors-subtitle">Color exterior</h4>
                 <div class="options" id="color-options">
-                    <button class="option color" aria-label="Blanco" value="blanco">
+                    <button class="option color" aria-label="Blanco" value="blanco" type="button">
                         <img src="../../imagenes/paints/paint_white.png" alt="Blanco">
                     </button>
-                    <button class="option color" aria-label="Negro" value="negro">
+                    <button class="option color" aria-label="Negro" value="negro" type="button">
                         <img src="../../imagenes/paints/paint_black.png" alt="Negro">
                     </button>
-                    <button class="option color" aria-label="Gris oscuro" value="gris_oscuro">
+                    <button class="option color" aria-label="Gris oscuro" value="gris_oscuro" type="button">
                         <img src="../../imagenes/paints/paint_stealth_grey.png" alt="Gris oscuro">
                     </button>
-                    <button class="option color" aria-label="Plata" value="plata">
+                    <button class="option color" aria-label="Plata" value="plata" type="button">
                         <img src="../../imagenes/paints/paint_silver.png" alt="Plata">
                     </button>
-                    <button class="option color" aria-label="Azul" value="azul">
+                    <button class="option color" aria-label="Azul" value="azul" type="button">
                         <img src="../../imagenes/paints/paint_blue.png" alt="Azul">
                     </button>
-                    <button class="option color" aria-label="Rojo" value="rojo">
+                    <button class="option color" aria-label="Rojo" value="rojo" type="button">
                         <img src="../../imagenes/paints/paint_red.png" alt="Rojo">
                     </button>
                 </div>
 
                 <h4 id="wheels-subtitle">Rines</h4>
                 <div class="options" id="rines-options">
-                    <button class="option wheels" aria-label="Rines Magnetita 19'" value="magnetite_19">
+                    <button class="option wheels" aria-label="Rines Magnetita 19'" value="magnetite_19" type="button">
                         <img src="../../imagenes/wheels/wheel_magnetite_19.webp" alt="Rines Magnetita 19'">
                     </button>
-                    <button class="option wheels" aria-label="Rines Perihelix 20'" value="perihelix_20">
+                    <button class="option wheels" aria-label="Rines Perihelix 20'" value="perihelix_20" type="button">
                         <img src="../../imagenes/wheels/wheel_perihelix_20.webp" alt="Rines Perihelix 20'">
                     </button>
-                    <button class="option wheels" aria-label="Rines Velarium 21'" value="velarium_21">
+                    <button class="option wheels" aria-label="Rines Velarium 21'" value="velarium_21" type="button">
                         <img src="../../imagenes/wheels/wheel_velarium_21.webp" alt="Rines Velarium 21'">
                     </button>
-                    <button class="option wheels" aria-label="Rines Machina 22'" value="machina_22">
+                    <button class="option wheels" aria-label="Rines Machina 22'" value="machina_22" type="button">
                         <img src="../../imagenes/wheels/wheel__machina_22.webp" alt="Rines Machina 22'">
                     </button>
                 </div>
@@ -271,17 +271,17 @@
                 </div>
                 <h4 id="metod-subtitle">Método</h4>
                 <div class="options" id="metodo-pago">
-                    <button class="option" value="contado">Contado</button>
-                    <button class="option" value="tarjeta">Tarjeta de crédito</button>
+                    <button class="option" value="contado" type="button">Contado</button>
+                    <button class="option" value="tarjeta" type="button">Tarjeta de crédito</button>
                 </div>
 
                 <div id="financiacion-show">
                     <h4 id="financiation-subtitle">Financiación</h4>
                     <div class="options" id="financiacion" hidden>
-                        <button class="option" value="12cuotas">12 cuotas</button>
-                        <button class="option" value="24cuotas">24 cuotas</button>
-                        <button class="option" value="36cuotas">36 cuotas</button>
-                        <button class="option" value="48cuotas">48 cuotas</button>
+                        <button class="option" value="12cuotas" type="button">12 cuotas</button>
+                        <button class="option" value="24cuotas" type="button">24 cuotas</button>
+                        <button class="option" value="36cuotas" type="button">36 cuotas</button>
+                        <button class="option" value="48cuotas" type="button">48 cuotas</button>
                     </div>
                 </div>
 
@@ -299,7 +299,7 @@
             </section>
 
             <footer class="modal__footer">
-            <button id="btn-confirm" class="btn-confirm">Realizar pago</button>
+            <button id="btn-confirm" class="btn-confirm" type="button">Realizar pago</button>
             </footer>
         </div>
     </div>
