@@ -7,21 +7,44 @@ const clearBtn = document.getElementById("clear-filters");
 const fromPriceInput = document.getElementById("from-price");
 const toPriceInput = document.getElementById("to-price");
 
-// Helpers
+/**
+ * Genera un string en minúsculas separado por guiones a partir de un texto.
+ * @method slug
+ * @param {string} s - Texto de entrada.
+ * @return {string} Slug generado.
+ */
 const slug = (s) => s.toLowerCase().replace(/\s+/g, "-");
 
+/**
+ * Devuelve un array con los valores de todos los checkboxes seleccionados según un selector.
+ * @method getCheckedValues
+ * @param {string} selector - Selector CSS para buscar checkboxes.
+ * @return {Array<string>} Lista de valores seleccionados.
+ */
 const getCheckedValues = (selector) =>
     Array.from(document.querySelectorAll(selector))
         .filter(el => el.checked)
         .map(el => el.value);
 
+/**
+ * Convierte el valor de un input en número, eliminando caracteres no numéricos.
+ * @method getNumeric
+ * @param {HTMLInputElement} el - Input del que se obtiene el valor.
+ * @return {number|null} Número parseado o null si está vacío.
+ */
 const getNumeric = (el) => {
     if (!el) return null;
     const onlyDigits = (el.value || "").replace(/\D/g, "");
     return onlyDigits ? parseInt(onlyDigits, 10) : null;
 };
 
-// Render filtro de marcas
+// -------------------- FILTROS AUTOMÁTICOS --------------------
+
+/**
+ * Renderiza dinámicamente el filtro de marcas al cargar la página.
+ * @method (IIFE) //Función autoejecutable inmediatamente
+ * @return {void}
+ */
 (() => {
     const ul = document.getElementById("marca-filter");
     if (!ul || typeof MARCAS !== "object") return;
@@ -38,7 +61,11 @@ const getNumeric = (el) => {
     });
 })();
 
-// Render filtro segmentos
+/**
+ * Renderiza dinámicamente el filtro de segmentos al cargar la página.
+ * @method (IIFE) //Función autoejecutable inmediatamente
+ * @return {void}
+ */
 (() => {
     const ul = document.getElementById("tipo-filter");
     if (!ul || typeof TIPOS !== "object") return;
@@ -55,7 +82,11 @@ const getNumeric = (el) => {
     });
 })();
 
-// Marcar la marca si viene desde la Home
+/**
+ * Marca automáticamente la marca seleccionada si se pasa por la url.
+ * @method (IIFE) //Función autoejecutable inmediatamente
+ * @return {void}
+ */
 (() => {
     const params = new URLSearchParams(window.location.search);
     const marcaFiltroParam = params.get("marca");
@@ -67,7 +98,11 @@ const getNumeric = (el) => {
     if (checkbox) checkbox.checked = true;
 })();
 
-// Marcar el segmento si viene desde la Home
+/**
+ * Marca automáticamente el segmento seleccionado si se pasa por la url.
+ * @method (IIFE) //Función autoejecutable inmediatamente
+ * @return {void}
+ */
 (() => {
     const params = new URLSearchParams(window.location.search);
     const segmentoFiltroParam = params.get("segmento");
@@ -80,7 +115,14 @@ const getNumeric = (el) => {
 
 })();
 
-// Render de cards
+// -------------------- RENDER --------------------
+
+/**
+ * Renderiza las tarjetas de autos en la lista principal.
+ * @method renderAutos
+ * @param {Array<Object>} arr - Array de los autos con {id, marca, modelo, tipo, caja, precio}.
+ * @return {void}
+ */
 const renderAutos = (arr) => {
     list.innerHTML = "";
 
@@ -125,7 +167,13 @@ const renderAutos = (arr) => {
     });
 }
 
-// Orden
+/**
+ * Ordena los autos según el criterio elegido.
+ * @method sortAutos
+ * @param {Array<Object>} arr - Lista de autos a ordenar.
+ * @param {string} criterion - Criterio de orden ("cheaper", "expensive", "most_recent").
+ * @return {Array<Object>} Lista de autos ordenada.
+ */
 const sortAutos = (arr, criterion) => {
     const v = (criterion || "").toLowerCase();
     const cp = [...arr];
@@ -136,7 +184,11 @@ const sortAutos = (arr, criterion) => {
     return cp;
 }
 
-// Filtros + Render
+/**
+ * Aplica todos los filtros activos y renderiza la lista de autos resultante.
+ * @method applyFiltersAndRender
+ * @return {void}
+ */
 const applyFiltersAndRender = () => {
     let filtered = [...autos];
 
@@ -184,7 +236,11 @@ const applyFiltersAndRender = () => {
     if (carsCount) carsCount.textContent = `${filtered.length} autos`;
 }
 
-// Listeners
+/**
+ * Conecta los filtros (checkboxes, inputs y select) con la función que actualiza y muestra los autos filtrados.
+ * @method wireFilterEvents
+ * @return {void}
+ */
 const wireFilterEvents = () => {
     document.querySelectorAll(".filters input[type='checkbox']").forEach(inp => {
         inp.addEventListener("change", applyFiltersAndRender);
@@ -199,7 +255,11 @@ wireFilterEvents();
 // Primera carga
 applyFiltersAndRender();
 
-// Limpiar filtros
+/**
+ * Determina si hay filtros activos.
+ * @method isAnyFilterActive
+ * @return {boolean} True si hay al menos un filtro aplicado.
+ */
 const isAnyFilterActive = () => {
     const minP = getNumeric(fromPriceInput);
     const maxP = getNumeric(toPriceInput);
@@ -218,6 +278,8 @@ if (clearBtn) {
     });
 }
 
+// -------------------- FORMATOS Y MOBILE --------------------
+
 // Formato de precio
 document.querySelectorAll(".price-filter").forEach(input => {
     input.addEventListener("input", (e) => {
@@ -232,22 +294,25 @@ document.querySelectorAll(".price-filter").forEach(input => {
     });
 });
 
-// Filtros mobile
+// Aplica formato monetario a los inputs de precio mientras el usuario escribe.
 const btnFiltros = document.querySelector(".btn-filtros");
 const filtros = document.querySelector(".filters");
 const overlay = document.querySelector(".filters-overlay");
 const btnApply = document.querySelector(".btn-apply-filters");
 
+//Maneja la apertura de filtros en versión mobile.
 btnFiltros.addEventListener("click", () => {
     filtros.classList.add("mobile-active");
     overlay.style.display = "block";
 });
 
+// Cierra los filtros al hacer click en el overlay.
 overlay.addEventListener("click", () => {
     filtros.classList.remove("mobile-active");
     overlay.style.display = "none";
 });
 
+// Aplica los filtros y cierra el modal en mobile.
 btnApply.addEventListener("click", () => {
     filtros.classList.remove("mobile-active");
     overlay.style.display = "none";
