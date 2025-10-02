@@ -3,7 +3,12 @@ const id = parseInt(params.get("id"));
 
 const auto = autos.find(a => a.id === id);
 
-//Remplazar textos e imagenes segun auto
+/**
+ * Inserta la información del auto seleccionado en la página de detalles.
+ * Modifica título, imagen, precio, tipo de caja, breadcrumb y ubicación.
+ * @param {Object} auto - Objeto con los datos del auto seleccionado.
+ * @return {void}
+ */
 if (auto) {
     document.getElementById("auto-nombre").innerHTML = `
         <span class="marca">${auto.marca}</span> 
@@ -29,7 +34,11 @@ if (auto) {
     document.querySelector("main.detalles").innerHTML = "<p>Auto no encontrado</p>";
 }
 
-// Hacer dinámico la lista de imágenes
+/**
+ * Genera dinámicamente las miniaturas del auto y permite cambiarlas en el visor principal.
+ * @param {Object} auto - Objeto con datos del auto seleccionado.
+ * @return {void}
+ */
 if (auto) {
     const mainImg = document.getElementById("auto-imagen");
     const thumbnailsContainer = document.querySelector(".images-thumbnails");
@@ -78,7 +87,12 @@ if (auto) {
     });
 }
 
-//Mostrar vehiculos similares
+/**
+ * Renderiza hasta 5 autos similares al actual según el mismo segmento.
+ * @method renderSimilares
+ * @param {Object} auto - Auto actual como referencia para buscar similares.
+ * @return {void}
+ */
 const renderSimilares = (auto) => {
     const similaresList = document.querySelector(".similares__list");
     similaresList.innerHTML = "";
@@ -137,13 +151,17 @@ const renderSimilares = (auto) => {
 }
 
 // ------ MODAL -------
-// Variables
+
 const precioBase = auto.precio;
 let priceColor = 0
 let priceWheel = 0
 let interes = 0;
 
-// Acciones modal
+/**
+ * Reinicia el modal a su estado inicial quitando selecciones y reseteando precios.
+ * @method resetModal
+ * @return {void}
+ */
 const resetModal = () => {
     priceColor = 0;
     priceWheel = 0;
@@ -160,6 +178,11 @@ const resetModal = () => {
     updateResumen();
 };
 
+/**
+ * Cierra el modal y lo resetea.
+ * @method closeModal
+ * @return {void}
+ */
 const closeModal = () => {
     document.getElementById("modal-pago").setAttribute("aria-hidden", "true");
     resetModal();
@@ -176,7 +199,11 @@ document.getElementById("modal-overlay").addEventListener("click", () => {
     closeModal();
 });
 
-// Render inicial
+/**
+ * Actualiza el resumen del modal con los precios calculados.
+ * @method updateResumen
+ * @return {void}
+ */
 const updateResumen = () => {
     document.getElementById("modal-title").textContent = `${auto.marca} ${auto.modelo}`;
     document.getElementById("precio-base").textContent = `$${precioBase.toLocaleString("es-AR")}`;
