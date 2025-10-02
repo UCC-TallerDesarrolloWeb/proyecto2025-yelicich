@@ -80,7 +80,7 @@ Tener en cuenta:
 
 ### Sobre el Wireframe/Mockup
 - [X] Dibujado con algún programa como: Figma, AdobeXD, Canvas, Draw.io en Drive, Pencil Project, Mockups, NinjaMock, o similares.
-- [ ] Diseño de Mensajes de error para el usuario
+- [X] Diseño de Mensajes de error para el usuario
 - [X] Versión Desktop y Mobile
 - [X] Guardado en formato PNG, JPG ó PDF
 - [X] Dentro de una carpeta llamada "Wireframe" ó "Mockup"
