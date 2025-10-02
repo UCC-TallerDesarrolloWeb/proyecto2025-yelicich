@@ -263,7 +263,7 @@ applyFiltersAndRender();
 const isAnyFilterActive = () => {
     const minP = getNumeric(fromPriceInput);
     const maxP = getNumeric(toPriceInput);
-    const anyTipo  = document.querySelector('#suv:checked, #sedan:checked, #pickup:checked, #utilitario:checked, #deportivo:checked');
+    const anyTipo  = document.querySelector('#tipo-filter input[type="checkbox"]:checked');
     const anyMarca = document.querySelector('#marca-filter input[type="checkbox"]:checked');
     const anyCaja  = document.querySelector('#manual:checked, #automatic:checked');
     return !!(minP || maxP || anyTipo || anyMarca || anyCaja);
