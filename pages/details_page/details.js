@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const id = parseInt(params.get("id"));
+const factor_sin_imp = 0.9049774;
 
 const auto = autos.find(a => a.id === id);
 
@@ -87,7 +88,7 @@ if (auto) {
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-type-box-mobile").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
-    document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * 0.9049774).toLocaleString("es-AR")}`;
+    document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * factor_sin_imp).toLocaleString("es-AR")}`;
     document.getElementById("location-brand").textContent = `Concesionario oficial de ${auto.marca}`;
 
     document.title = `${auto.marca} ${auto.modelo} - YeliMotors`;
