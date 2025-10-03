@@ -369,6 +369,12 @@ h3 {
     animation: fade 0.5s ease-in-out;
 }
 
+.testimonios h3 {
+    max-width: 1200px;
+    margin: 0 auto;   /* centra el bloque */
+    padding: 8px 0;
+}
+
 .testimonio.active {
     display: flex;
 }

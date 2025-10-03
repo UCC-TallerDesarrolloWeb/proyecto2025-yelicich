@@ -281,6 +281,8 @@ h2 {
     color: var(--ym-primary-50);
     font-size: 1em;
     font-weight: 600;
+    font-family: Quicksand;
+    letter-spacing: 1.3px;
     border: none;
     border-radius: 8px;
     text-decoration: none;
@@ -302,6 +304,8 @@ h2 {
     color: var(--ym-primary);
     font-size: 1em;
     font-weight: 500;
+    font-family: Quicksand;
+    letter-spacing: 1.3px;
     border: 1px solid var(--ym-primary);
     border-radius: 8px;
     text-decoration: none;
@@ -599,11 +603,13 @@ h2 {
     width: 100%;
     background: var(--ym-primary);
     color: var(--ym-primary-50);
+    font-weight: 600;
+    font-family: Quicksand;
+    letter-spacing: 1.3px;
     border: none;
     padding: .9rem;
     border-radius: 8px;
     font-size: 1rem;
-    font-weight: 500;
     cursor: pointer;
     transition: background .2s ease;
 }

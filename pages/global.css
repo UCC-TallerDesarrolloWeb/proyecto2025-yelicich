@@ -150,6 +150,7 @@ h1 {
     padding: 8px 32px;
     border-radius: 50px;
     font-weight: 600;
+    letter-spacing: 1.3px;
     
     transition: background-color 0.3s ease;
 }

@@ -20,7 +20,7 @@ const MARCAS = Object.freeze({
     PEUGEOT: "Peugeot",
     RAM: "RAM",
     RENAULT: "Renault",
-    FERRARI: "Ferrari",
+    FERRARI: "Ferrari"
 });
 
 const TIPOS = Object.freeze({
@@ -28,7 +28,8 @@ const TIPOS = Object.freeze({
     SEDAN: "Sedán",
     PICKUP: "Pick-up",
     UTILITARIO: "Utilitario",
-    DEPORTIVO: "Deportivo"
+    DEPORTIVO: "Deportivo",
+    HATCHBACK: "Hatchback"
 });
 
 const CAJAS = Object.freeze({
@@ -53,7 +54,7 @@ const autos = [
         modelo: "Compass",
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
-        precio: 50000000
+        precio: 60500000
     },
     {
         id: 3,
@@ -61,7 +62,7 @@ const autos = [
         modelo: "Ranger",
         tipo: TIPOS.PICKUP,
         caja: CAJAS.MANUAL,
-        precio: 60000000
+        precio: 64000000
     },
     {
         id: 4,
@@ -69,7 +70,7 @@ const autos = [
         modelo: "Corolla",
         tipo: TIPOS.SEDAN,
         caja: CAJAS.AUTOMATICO,
-        precio: 65000000
+        precio: 44645000
     },
     {
         id: 5,
@@ -109,7 +110,7 @@ const autos = [
         modelo: "SW4",
         tipo: TIPOS.SUV,
         caja: CAJAS.AUTOMATICO,
-        precio: 77500000
+        precio: 85674000
     },
     {
         id: 10,
@@ -118,5 +119,117 @@ const autos = [
         tipo: TIPOS.DEPORTIVO,
         caja: CAJAS.MANUAL,
         precio: 988079487
+    },
+    {
+        id: 11,
+        marca: MARCAS.RAM,
+        modelo: "RAMPAGE",
+        tipo: TIPOS.PICKUP,
+        caja: CAJAS.MANUAL,
+        precio: 61500000
+    },
+    {
+        id: 12,
+        marca: MARCAS.CHEVROLET,
+        modelo: "Montana",
+        tipo: TIPOS.PICKUP,
+        caja: CAJAS.AUTOMATICO,
+        precio: 36800000
+    },
+    {
+        id: 13,
+        marca: MARCAS.RENAULT,
+        modelo: "Alaskan",
+        tipo: TIPOS.PICKUP,
+        caja: CAJAS.AUTOMATICO,
+        precio: 54840000
+    },
+    {
+        id: 14,
+        marca: MARCAS.FIAT,
+        modelo: "Titano",
+        tipo: TIPOS.PICKUP,
+        caja: CAJAS.AUTOMATICO,
+        precio: 50900000
+    },
+    {
+        id: 15,
+        marca: MARCAS.TOYOTA,
+        modelo: "Hilux",
+        tipo: TIPOS.PICKUP,
+        caja: CAJAS.AUTOMATICO,
+        precio: 63350000
+    },
+    {
+        id: 16,
+        marca: MARCAS.TOYOTA,
+        modelo: "Corolla Cross",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 57754000
+    },
+    {
+        id: 17,
+        marca: MARCAS.VW,
+        modelo: "T-Cross",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 31500000
+    },
+    {
+        id: 18,
+        marca: MARCAS.VW,
+        modelo: "Nivus",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.MANUAL,
+        precio: 34700000
+    },
+    {
+        id: 19,
+        marca: MARCAS.VW,
+        modelo: "Taos",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 47900000
+    },
+    {
+        id: 20,
+        marca: MARCAS.VW,
+        modelo: "Tera",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.MANUAL,
+        precio: 29000000
+    },
+    {
+        id: 21,
+        marca: MARCAS.VW,
+        modelo: "Tiguan",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 72300000
+    },
+    {
+        id: 22,
+        marca: MARCAS.VW,
+        modelo: "Virtus",
+        tipo: TIPOS.SEDAN,
+        caja: CAJAS.MANUAL,
+        precio: 28900000
+    },
+    {
+        id: 23,
+        marca: MARCAS.VW,
+        modelo: "Vento",
+        tipo: TIPOS.SEDAN,
+        caja: CAJAS.MANUAL,
+        precio: 64700000
+    },
+    {
+        id: 24,
+        marca: MARCAS.VW,
+        modelo: "Polo",
+        tipo: TIPOS.HATCHBACK,
+        caja: CAJAS.MANUAL,
+        precio: 24200000
     }
 ];
