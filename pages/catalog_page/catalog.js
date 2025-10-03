@@ -115,6 +115,20 @@ const getNumeric = (el) => {
 
 })();
 
+/**
+ * Determina si hay filtros activos.
+ * @method isAnyFilterActive
+ * @return {boolean} True si hay al menos un filtro aplicado.
+ */
+const isAnyFilterActive = () => {
+    const minP = getNumeric(fromPriceInput);
+    const maxP = getNumeric(toPriceInput);
+    const anyTipo  = document.querySelector('#tipo-filter input[type="checkbox"]:checked');
+    const anyMarca = document.querySelector('#marca-filter input[type="checkbox"]:checked');
+    const anyCaja  = document.querySelector('#manual:checked, #automatic:checked');
+    return !!(minP || maxP || anyTipo || anyMarca || anyCaja);
+}
+
 // -------------------- RENDER --------------------
 
 /**
@@ -233,7 +247,7 @@ const applyFiltersAndRender = () => {
     // Render + contador + toggle limpiar
     renderAutos(sorted);
     if (clearBtn) clearBtn.classList.toggle("hidden", !isAnyFilterActive());
-    if (carsCount) carsCount.textContent = `${filtered.length} autos`;
+    if (carsCount) carsCount.textContent = `${sorted.length} autos`;
 }
 
 /**
@@ -254,20 +268,6 @@ wireFilterEvents();
 
 // Primera carga
 applyFiltersAndRender();
-
-/**
- * Determina si hay filtros activos.
- * @method isAnyFilterActive
- * @return {boolean} True si hay al menos un filtro aplicado.
- */
-const isAnyFilterActive = () => {
-    const minP = getNumeric(fromPriceInput);
-    const maxP = getNumeric(toPriceInput);
-    const anyTipo  = document.querySelector('#tipo-filter input[type="checkbox"]:checked');
-    const anyMarca = document.querySelector('#marca-filter input[type="checkbox"]:checked');
-    const anyCaja  = document.querySelector('#manual:checked, #automatic:checked');
-    return !!(minP || maxP || anyTipo || anyMarca || anyCaja);
-}
 
 if (clearBtn) {
     clearBtn.addEventListener("click", () => {
