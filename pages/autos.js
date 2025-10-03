@@ -20,7 +20,9 @@ const MARCAS = Object.freeze({
     PEUGEOT: "Peugeot",
     RAM: "RAM",
     RENAULT: "Renault",
-    FERRARI: "Ferrari"
+    FERRARI: "Ferrari",
+    CITROEN: "Citroën",
+    LOTUS: "Lotus"
 });
 
 const TIPOS = Object.freeze({
@@ -46,7 +48,7 @@ const autos = [
         modelo: "Model S",
         tipo: TIPOS.DEPORTIVO,
         caja: CAJAS.ELECTRICO,
-        precio: 110000000
+        precio: 202047000
     },
     {
         id: 2,
@@ -78,7 +80,7 @@ const autos = [
         modelo: "Model 3",
         tipo: TIPOS.SEDAN,
         caja: CAJAS.ELECTRICO,
-        precio: 85000000
+        precio: 58455000
     },
     {
         id: 6,
@@ -86,7 +88,7 @@ const autos = [
         modelo: "Model X",
         tipo: TIPOS.SUV,
         caja: CAJAS.ELECTRICO,
-        precio: 90000000
+        precio: 192026000
     },
     {
         id: 7,
@@ -94,7 +96,7 @@ const autos = [
         modelo: "Model Y",
         tipo: TIPOS.SUV,
         caja: CAJAS.ELECTRICO,
-        precio: 80000000
+        precio: 75467000
     },
     {
         id: 8,
@@ -231,5 +233,109 @@ const autos = [
         tipo: TIPOS.HATCHBACK,
         caja: CAJAS.MANUAL,
         precio: 24200000
+    },
+    {
+        id: 25,
+        marca: MARCAS.AUDI,
+        modelo: "A3",
+        tipo: TIPOS.SEDAN,
+        caja: CAJAS.MANUAL,
+        precio: 83250000
+    },
+    {
+        id: 26,
+        marca: MARCAS.FORD,
+        modelo: "Territory",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 43990000
+    },
+    {
+        id: 27,
+        marca: MARCAS.RENAULT,
+        modelo: "Kangoo",
+        tipo: TIPOS.UTILITARIO,
+        caja: CAJAS.MANUAL,
+        precio: 30190000
+    },
+    {
+        id: 28,
+        marca: MARCAS.CITROEN,
+        modelo: "Berlingo",
+        tipo: TIPOS.UTILITARIO,
+        caja: CAJAS.MANUAL,
+        precio: 26203000
+    },
+    {
+        id: 29,
+        marca: MARCAS.FIAT,
+        modelo: "Fiorino",
+        tipo: TIPOS.UTILITARIO,
+        caja: CAJAS.MANUAL,
+        precio: 23600000
+    },
+    {
+        id: 30,
+        marca: MARCAS.BMW,
+        modelo: "220i",
+        tipo: TIPOS.DEPORTIVO,
+        caja: CAJAS.AUTOMATICO,
+        precio: 86855000
+    },
+    {
+        id: 31,
+        marca: MARCAS.LOTUS,
+        modelo: "Emira",
+        tipo: TIPOS.DEPORTIVO,
+        caja: CAJAS.AUTOMATICO,
+        precio: 215597000
+    },
+    {
+        id: 32,
+        marca: MARCAS.BMW,
+        modelo: "430i",
+        tipo: TIPOS.DEPORTIVO,
+        caja: CAJAS.AUTOMATICO,
+        precio: 128205000
+    },
+    {
+        id: 33,
+        marca: MARCAS.FORD,
+        modelo: "Mustang",
+        tipo: TIPOS.DEPORTIVO,
+        caja: CAJAS.AUTOMATICO,
+        precio: 137500000
+    },
+    {
+        id: 34,
+        marca: MARCAS.BMW,
+        modelo: "X2",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 121083000
+    },
+    {
+        id: 35,
+        marca: MARCAS.JETOUR,
+        modelo: "Dashing",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 58261000
+    },
+    {
+        id: 36,
+        marca: MARCAS.PEUGEOT,
+        modelo: "208",
+        tipo: TIPOS.HATCHBACK,
+        caja: CAJAS.MANUAL,
+        precio: 25600000
+    },
+    {
+        id: 37,
+        marca: MARCAS.NISSAN,
+        modelo: "Kicks",
+        tipo: TIPOS.SUV,
+        caja: CAJAS.AUTOMATICO,
+        precio: 34000000
     }
 ];
