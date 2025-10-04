@@ -129,7 +129,7 @@ h1 {
     padding: 16px;
 }
 
-#header-buttons a:nth-child(-n+3) {
+.header-buttons__small {
     text-decoration: none;
     color: var(--ym-gray-700);
     letter-spacing: 2px;
@@ -138,7 +138,7 @@ h1 {
     transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-#header-buttons a:nth-child(-n+3):hover {
+.header-buttons__small:hover {
     text-decoration: underline;
     color: var(--ym-primary-600);
 }
