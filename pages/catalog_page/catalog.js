@@ -218,11 +218,12 @@ const applyFiltersAndRender = () => {
     if (minP !== null && maxP !== null && minP > maxP) {
         document.getElementById("from-price").classList.add("input-error");
         document.getElementById("to-price").classList.add("input-error");
-        alert("El precio mínimo no puede ser mayor al máximo.");
+        document.getElementById("input-error-text").style.display = "block";
         return;
     } else {
         document.getElementById("from-price").classList.remove("input-error");
         document.getElementById("to-price").classList.remove("input-error");
+        document.getElementById("input-error-text").style.display = "none";
     }
 
     if (minP !== null) filtered = filtered.filter(a => a.precio >= minP);
