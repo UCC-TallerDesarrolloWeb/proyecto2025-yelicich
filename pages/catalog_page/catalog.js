@@ -146,6 +146,7 @@ const renderAutos = (arr) => {
         const modeloCar = textBase(auto.modelo);
         const scrImage = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
         const scrImageHover = `../../imagenes/cars/${modeloCar}/hover_${modeloCar}.webp`;
+        let noHover = false;
 
         card.innerHTML = `
         <a href="../details_page/details.html?id=${auto.id}" class="link-detalle">
@@ -171,11 +172,15 @@ const renderAutos = (arr) => {
 
         img.onerror = () => {
             img.src = "../../imagenes/cars/without_image.webp";
+            noHover = true;
         };
-        if (scrImageHover) {
-            card.addEventListener("mouseenter", () => { img.src = `${scrImageHover}`; });
-            card.addEventListener("mouseleave", () => { img.src = `${scrImage}`; });
-        }
+
+        img.onload = () => {
+            if (!noHover) {
+                card.addEventListener("mouseenter", () => { img.src = scrImageHover; });
+                card.addEventListener("mouseleave", () => { img.src = scrImage; });
+            }
+        };
 
         list.appendChild(card);
     });

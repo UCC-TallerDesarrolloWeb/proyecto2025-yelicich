@@ -112,14 +112,6 @@ const autos = [
         precio: 85674000
     },
     {
-        id: 10,
-        marca: MARCAS.FERRARI,
-        modelo: "488",
-        tipo: TIPOS.DEPORTIVO,
-        caja: CAJAS.MANUAL,
-        precio: 988079487
-    },
-    {
         id: 11,
         marca: MARCAS.RAM,
         modelo: "RAMPAGE",
@@ -158,14 +150,6 @@ const autos = [
         tipo: TIPOS.PICKUP,
         caja: CAJAS.AUTOMATICO,
         precio: 63350000
-    },
-    {
-        id: 16,
-        marca: MARCAS.TOYOTA,
-        modelo: "Corolla Cross",
-        tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
-        precio: 57754000
     },
     {
         id: 17,
@@ -257,82 +241,10 @@ const autos = [
     },
     {
         id: 28,
-        marca: MARCAS.CITROEN,
-        modelo: "Berlingo",
-        tipo: TIPOS.UTILITARIO,
-        caja: CAJAS.MANUAL,
-        precio: 26203000
-    },
-    {
-        id: 29,
-        marca: MARCAS.FIAT,
-        modelo: "Fiorino",
-        tipo: TIPOS.UTILITARIO,
-        caja: CAJAS.MANUAL,
-        precio: 23600000
-    },
-    {
-        id: 30,
-        marca: MARCAS.BMW,
-        modelo: "220i",
-        tipo: TIPOS.DEPORTIVO,
-        caja: CAJAS.AUTOMATICO,
-        precio: 86855000
-    },
-    {
-        id: 31,
-        marca: MARCAS.LOTUS,
-        modelo: "Emira",
-        tipo: TIPOS.DEPORTIVO,
-        caja: CAJAS.AUTOMATICO,
-        precio: 215597000
-    },
-    {
-        id: 32,
-        marca: MARCAS.BMW,
-        modelo: "430i",
-        tipo: TIPOS.DEPORTIVO,
-        caja: CAJAS.AUTOMATICO,
-        precio: 128205000
-    },
-    {
-        id: 33,
-        marca: MARCAS.FORD,
-        modelo: "Mustang",
-        tipo: TIPOS.DEPORTIVO,
-        caja: CAJAS.AUTOMATICO,
-        precio: 137500000
-    },
-    {
-        id: 34,
-        marca: MARCAS.BMW,
-        modelo: "X2",
-        tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
-        precio: 121083000
-    },
-    {
-        id: 35,
-        marca: MARCAS.JETOUR,
-        modelo: "Dashing",
-        tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
-        precio: 58261000
-    },
-    {
-        id: 36,
         marca: MARCAS.PEUGEOT,
         modelo: "208",
         tipo: TIPOS.HATCHBACK,
         caja: CAJAS.MANUAL,
         precio: 25600000
-    },
-    {
-        id: 37,
-        marca: MARCAS.NISSAN,
-        modelo: "Kicks",
-        tipo: TIPOS.SUV,
-        caja: CAJAS.AUTOMATICO,
-        precio: 34000000
     }
 ];
