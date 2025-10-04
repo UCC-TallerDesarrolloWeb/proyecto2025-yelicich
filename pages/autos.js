@@ -1,9 +1,7 @@
-// Funciones generales
 function textBase(str) {
     return str.toLowerCase().replace(/\s+/g, "");
 }
 
-//Enum marcas, tipos y cajas
 const MARCAS = Object.freeze({
     TESLA: "Tesla",
     JEEP: "Jeep",
@@ -40,7 +38,6 @@ const CAJAS = Object.freeze({
     ELECTRICO: "Eléctrico"
 });
 
-//Base de datos autos
 const autos = [
     {
         id: 1,

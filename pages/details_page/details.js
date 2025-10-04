@@ -14,13 +14,10 @@ const renderSimilares = (auto) => {
     const similaresList = document.querySelector(".similares__list");
     similaresList.innerHTML = "";
 
-    // Buscar autos del mismo segmento, excluyendo el actual
     let similares = autos.filter(a => a.tipo === auto.tipo && a.id !== auto.id);
 
-    // Limitar a máximo 5
     similares = similares.slice(0, 5);
 
-    // Si no hay similares, mostramos un mensaje
     if (similares.length === 0) {
         similaresList.innerHTML = "<p>No encontramos vehículos similares en este segmento.</p>";
         return;
@@ -116,7 +113,6 @@ if (auto) {
         mainImg.src = "../../imagenes/cars/without_image.webp";
     };
 
-    // generar miniaturas
     thumbnailsContainer.innerHTML = "";
 
     const img_names = ["main", "right", "back", "front", "inside"];
@@ -128,24 +124,20 @@ if (auto) {
         thumb.alt = `${auto.marca} ${auto.modelo} vista ${index + 1}`;
         thumb.classList.add("image-thumbnail");
 
-        // primera activa por defecto
         if (index === 0) {
         thumb.classList.add("active");
         }
 
-        // clic → cambiar principal y borde celeste
         thumb.addEventListener("click", () => {
             mainImg.src = scrImage;
 
-            // limpiar activé de todas
             document.querySelectorAll(".image-thumbnail")
                 .forEach(t => t.classList.remove("active"));
 
-            // marcar la actual
             thumb.classList.add("active");
         });
 
-        thumb.onerror = () => { thumb.remove(); }; // Eliminar si no está
+        thumb.onerror = () => { thumb.remove(); };
 
         thumbnailsContainer.appendChild(thumb);
     });

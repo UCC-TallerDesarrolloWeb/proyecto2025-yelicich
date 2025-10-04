@@ -223,28 +223,23 @@ const applyFiltersAndRender = () => {
     if (minP !== null) filtered = filtered.filter(a => a.precio >= minP);
     if (maxP !== null) filtered = filtered.filter(a => a.precio <= maxP);
 
-    // Segmento / Tipo
     const tiposChecked = getCheckedValues("#tipo-filter input[type='checkbox']:checked");
     if (tiposChecked.length) {
         filtered = filtered.filter(a => tiposChecked.includes(a.tipo));
     }
 
-    // Marca
     const marcasChecked = getCheckedValues("#marca-filter input[type='checkbox']:checked");
     if (marcasChecked.length) {
         filtered = filtered.filter(a => marcasChecked.includes(a.marca));
     }
 
-    // Transmisión
     const cajasChecked = getCheckedValues("#manual:checked, #automatic:checked");
     if (cajasChecked.length) {
         filtered = filtered.filter(a => cajasChecked.includes(a.caja));
     }
 
-    // Orden
     const sorted = sortAutos(filtered, select ? select.value : "most_recent");
 
-    // Render + contador + toggle limpiar
     renderAutos(sorted);
     if (clearBtn) clearBtn.classList.toggle("hidden", !isAnyFilterActive());
     if (carsCount) carsCount.textContent = `${sorted.length} autos`;
@@ -266,7 +261,6 @@ const wireFilterEvents = () => {
 }
 wireFilterEvents();
 
-// Primera carga
 applyFiltersAndRender();
 
 if (clearBtn) {
