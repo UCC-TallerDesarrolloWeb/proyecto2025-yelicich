@@ -110,7 +110,7 @@ if (auto) {
 
     // mostrar la primera imagen como principal
     mainImg.src = `../../imagenes/cars/${modeloCar}/main_${modeloCar}.webp`;
-    mainImg.alt = `${auto.marca} ${auto.modelo}`;
+    mainImg.alt = `Imagen del auto ${auto.marca} ${auto.modelo}`;
 
     mainImg.onerror = () => {
         mainImg.src = "../../imagenes/cars/without_image.webp";
