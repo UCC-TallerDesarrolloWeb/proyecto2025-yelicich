@@ -241,7 +241,7 @@ h3 {
 
 .card-best-seller__body p {
     margin: 0;
-    color: var(--ym--gray-700);
+    color: var(--ym-gray-700);
 }
 
 .card-best-seller__body a {
@@ -471,8 +471,7 @@ h3 {
     margin: 0;
     width: 100%;
     position: relative;
-    background: url("../../imagenes/backgrounds/tesla_roadster_front.jpg") center/cover no-repeat;
-    background-attachment: fixed;
+    background: url("../../imagenes/backgrounds/tesla_roadster_front.jpg") no-repeat fixed center;
     padding: 0;
     color: white;
 }

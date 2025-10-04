@@ -19,8 +19,7 @@ main {
     max-width: 1280px;
     min-height: calc(100vh - 120px);
     padding: 32px;
-    margin: 0 128px;
-    margin-bottom: 32px;
+    margin: 0 128px 32px;
     box-sizing: border-box;
 
     display: flex;
@@ -73,7 +72,7 @@ main {
     align-items: start;
 }
 
-/* ---- imagenes --- */
+/* ---- imágenes --- */
 .imagenes-container {
     display: flex;
     align-items: flex-start;
@@ -115,8 +114,7 @@ main {
 }
 
 .detalles-auto h3 {
-    margin: 0;
-    margin-top: 16px;
+    margin: 16px 0 0;
 
     font-size: 1.25rem;
     font-weight: 600;
@@ -177,7 +175,7 @@ main {
     }
 }
 
-/* ---- INFORMACION --- */
+/* ---- INFORMACIÓN --- */
 .detalles__info {
     flex: 2;
     display: flex;
@@ -281,7 +279,7 @@ h2 {
     color: var(--ym-primary-50);
     font-size: 1em;
     font-weight: 600;
-    font-family: Quicksand;
+    font-family: Quicksand, sans-serif;
     letter-spacing: 1.3px;
     border: none;
     border-radius: 8px;
@@ -304,7 +302,7 @@ h2 {
     color: var(--ym-primary);
     font-size: 1em;
     font-weight: 500;
-    font-family: Quicksand;
+    font-family: Quicksand, sans-serif;
     letter-spacing: 1.3px;
     border: 1px solid var(--ym-primary);
     border-radius: 8px;
@@ -383,8 +381,7 @@ h2 {
 
 .similares h3 {
     width: 100%;
-    margin: 0;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
     font-size: 1.75rem;
     font-weight: 600;
 }
@@ -604,7 +601,7 @@ h2 {
     background: var(--ym-primary);
     color: var(--ym-primary-50);
     font-weight: 600;
-    font-family: Quicksand;
+    font-family: Quicksand, sans-serif;
     letter-spacing: 1.3px;
     border: none;
     padding: .9rem;

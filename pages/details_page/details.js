@@ -133,11 +133,11 @@ if (auto) {
         thumb.classList.add("active");
         }
 
-        // click → cambiar principal y borde celeste
+        // clic → cambiar principal y borde celeste
         thumb.addEventListener("click", () => {
             mainImg.src = scrImage;
 
-            // limpiar active de todas
+            // limpiar activé de todas
             document.querySelectorAll(".image-thumbnail")
                 .forEach(t => t.classList.remove("active"));
 
