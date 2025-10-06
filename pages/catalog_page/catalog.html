@@ -18,7 +18,7 @@
     
     <title>Catálogo - YeliMotors</title>
 </head>
-<body>
+<body onload="initCatalogPage(); initExtras();">
     <!-- HEADER -->
     <header>
         <div id="header-container">
@@ -51,7 +51,7 @@
     <!-- MAIN -->
     <main>
         <div class="global-container">
-            <div class="filters-overlay"></div>
+            <div class="filters-overlay" onclick="closeFilters()"></div>
             <div class="main-header">
                 <h2>Catálogo de vehículos</h2>
                 <hr class="divider">
@@ -65,7 +65,7 @@
                             <option value="expensive">Mayor precio</option>
                             <option value="cheaper">Menor precio</option>
                         </select>
-                        <button class="btn-filtros" type="button">
+                        <button class="btn-filtros" type="button" onclick="openFilters()">
                             <span class="material-icons-round">filter_alt</span>
                             Filtros
                         </button>
@@ -78,7 +78,7 @@
                 <form class="filters">
                     <div class="filters__header">
                         <h3>Filtros</h3>
-                        <button id="clear-filters" class="btn-clear hidden" type="button">Limpiar filtros</button>
+                        <button id="clear-filters" class="btn-clear hidden" type="button" onclick="clearAllFilters()">Limpiar filtros</button>
                     </div>
                     <!-- precio -->
                     <div class="filter price-filter" id="price-filter">
@@ -137,7 +137,7 @@
                         <ul id="marca-filter"></ul>
                     </div>
 
-                    <button class="btn-apply-filters" type="button">
+                    <button class="btn-apply-filters" type="button" onclick="closeFilters()">
                         Aplicar filtros
                     </button>
                 </form>

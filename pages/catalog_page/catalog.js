@@ -41,11 +41,11 @@ const getNumeric = (el) => {
 // -------------------- FILTROS AUTOMÁTICOS --------------------
 
 /**
- * Renderiza dinámicamente el filtro de marcas al cargar la página.
- * @method (IIFE) //Función autoejecutable inmediatamente
+ * Renderiza dinámicamente el filtro de marcas.
+ * @method renderBrandFilter
  * @return {void}
  */
-(() => {
+const renderBrandFilter = () => {
     const ul = document.getElementById("marca-filter");
     if (!ul || typeof MARCAS !== "object") return;
 
@@ -59,14 +59,14 @@ const getNumeric = (el) => {
         `;
         ul.appendChild(li);
     });
-})();
+};
 
 /**
  * Renderiza dinámicamente el filtro de segmentos al cargar la página.
- * @method (IIFE) //Función autoejecutable inmediatamente
+ * @method renderSegmentFilter
  * @return {void}
  */
-(() => {
+const renderSegmentFilter = () => {
     const ul = document.getElementById("tipo-filter");
     if (!ul || typeof TIPOS !== "object") return;
 
@@ -80,40 +80,33 @@ const getNumeric = (el) => {
         `;
         ul.appendChild(li);
     });
-})();
+};
 
 /**
- * Marca automáticamente la marca seleccionada si se pasa por la url.
- * @method (IIFE) //Función autoejecutable inmediatamente
+ * Marca automáticamente los filtros según los parámetros pasados por la URL.
+ * @method applyURLFilters
  * @return {void}
  */
-(() => {
+const applyURLFilters = () => {
     const params = new URLSearchParams(window.location.search);
-    const marcaFiltroParam = params.get("marca");
-    if (!marcaFiltroParam) return;
 
-    const marcaFiltro = decodeURIComponent(marcaFiltroParam);
-    const selectorSeguro = `#marca-filter input[value="${CSS.escape(marcaFiltro)}"]`;
-    const checkbox = document.querySelector(selectorSeguro);
-    if (checkbox) checkbox.checked = true;
-})();
+    const marcaParam = params.get("marca");
+    if (marcaParam) {
+        const marca = decodeURIComponent(marcaParam);
+        const selector = `#marca-filter input[value="${CSS.escape(marca)}"]`;
+        const checkbox = document.querySelector(selector);
+        if (checkbox) checkbox.checked = true;
+    }
 
-/**
- * Marca automáticamente el segmento seleccionado si se pasa por la url.
- * @method (IIFE) //Función autoejecutable inmediatamente
- * @return {void}
- */
-(() => {
-    const params = new URLSearchParams(window.location.search);
-    const segmentoFiltroParam = params.get("segmento");
-    if (!segmentoFiltroParam) return;
+    const segmentoParam = params.get("segmento");
+    if (segmentoParam) {
+        const segmento = decodeURIComponent(segmentoParam);
+        const selector = `#tipo-filter input[value="${CSS.escape(segmento)}"]`;
+        const checkbox = document.querySelector(selector);
+        if (checkbox) checkbox.checked = true;
+    }
+};
 
-    const segmentoFiltro = decodeURIComponent(segmentoFiltroParam);
-    const selectorSeguro = `#tipo-filter input[value="${CSS.escape(segmentoFiltro)}"]`;
-    const checkbox = document.querySelector(selectorSeguro);
-    if (checkbox) checkbox.checked = true;
-
-})();
 
 /**
  * Determina si hay filtros activos.
@@ -130,7 +123,6 @@ const isAnyFilterActive = () => {
 }
 
 // -------------------- RENDER --------------------
-
 /**
  * Renderiza las tarjetas de autos en la lista principal.
  * @method renderAutos
@@ -138,7 +130,7 @@ const isAnyFilterActive = () => {
  * @return {void}
  */
 const renderAutos = (arr) => {
-    list.innerHTML = "";
+    list.textContent = "";
 
     arr.forEach(auto => {
         const card = document.createElement("div");
@@ -252,11 +244,23 @@ const applyFiltersAndRender = () => {
 }
 
 /**
- * Conecta los filtros (checkboxes, inputs y select) con la función que actualiza y muestra los autos filtrados.
- * @method wireFilterEvents
+ * Limpia todos los filtros activos.
+ * @method clearAllFilters
  * @return {void}
  */
-const wireFilterEvents = () => {
+const clearAllFilters = () => {
+    if (fromPriceInput) fromPriceInput.value = "";
+    if (toPriceInput)   toPriceInput.value   = "";
+    document.querySelectorAll('.filters input[type="checkbox"]').forEach(ch => ch.checked = false);
+    applyFiltersAndRender();
+};
+
+/**
+ * Asocia los eventos de los filtros a sus funciones correspondientes.
+ * @method initFilterEvents
+ * @return {void}
+ */
+const initFilterEvents = () => {
     document.querySelectorAll(".filters input[type='checkbox']").forEach(inp => {
         inp.addEventListener("change", applyFiltersAndRender);
     });
@@ -264,56 +268,73 @@ const wireFilterEvents = () => {
         if (inp) inp.addEventListener("input", applyFiltersAndRender);
     });
     if (select) select.addEventListener("change", applyFiltersAndRender);
-}
-wireFilterEvents();
+    if (clearBtn) clearBtn.addEventListener("click", clearAllFilters);
+};
 
-applyFiltersAndRender();
-
-if (clearBtn) {
-    clearBtn.addEventListener("click", () => {
-        if (fromPriceInput) fromPriceInput.value = "";
-        if (toPriceInput)   toPriceInput.value   = "";
-        document.querySelectorAll('.filters input[type="checkbox"]').forEach(ch => ch.checked = false);
-        applyFiltersAndRender();
-    });
-}
+/**
+ * Inicializa los filtros de la página de catálogo.
+ * Llama a todas las funciones necesarias al cargar la página.
+ * @method initCatalogPage
+ * @return {void}
+ */
+const initCatalogPage = () => {
+    renderBrandFilter();
+    renderSegmentFilter();
+    applyURLFilters();
+    initFilterEvents();
+    applyFiltersAndRender();
+};
 
 // -------------------- FORMATOS Y MOBILE --------------------
-
-// Formato de precio
-document.querySelectorAll(".price-filter").forEach(input => {
-    input.addEventListener("input", (e) => {
-        const valor = e.target.value.replace(/\D/g, "");
-        if (valor) {
-        e.target.dataset.valor = valor;
-        e.target.value = `$ ${Number(valor).toLocaleString("es-AR")}`;
-        } else {
-        e.target.dataset.valor = "";
-        e.target.value = "";
-        }
+/**
+ * Aplica formato monetario a los inputs de precio mientras el usuario escribe.
+ * @method initPriceFormatting
+ * @return {void}
+ */
+const initPriceFormatting = () => {
+    document.querySelectorAll(".price-filter").forEach(input => {
+        input.addEventListener("input", (e) => {
+            const valor = e.target.value.replace(/\D/g, "");
+            if (valor) {
+                e.target.dataset.valor = valor;
+                e.target.value = `$ ${Number(valor).toLocaleString("es-AR")}`;
+            } else {
+                e.target.dataset.valor = "";
+                e.target.value = "";
+            }
+        });
     });
-});
+};
 
-// Aplica formato monetario a los inputs de precio mientras el usuario escribe.
-const btnFiltros = document.querySelector(".btn-filtros");
-const filtros = document.querySelector(".filters");
-const overlay = document.querySelector(".filters-overlay");
-const btnApply = document.querySelector(".btn-apply-filters");
-
-//Maneja la apertura de filtros en versión mobile.
-btnFiltros.addEventListener("click", () => {
+/**
+ * Abre el panel de filtros en versión mobile.
+ * @method openFilters
+ * @return {void}
+ */
+const openFilters = () => {
+    const filtros = document.querySelector(".filters");
+    const overlay = document.querySelector(".filters-overlay");
     filtros.classList.add("mobile-active");
     overlay.style.display = "block";
-});
+};
 
-// Cierra los filtros al hacer click en el overlay.
-overlay.addEventListener("click", () => {
+/**
+ * Cierra el panel de filtros (mobile).
+ * @method closeFilters
+ * @return {void}
+ */
+const closeFilters = () => {
+    const filtros = document.querySelector(".filters");
+    const overlay = document.querySelector(".filters-overlay");
     filtros.classList.remove("mobile-active");
     overlay.style.display = "none";
-});
+};
 
-// Aplica los filtros y cierra el modal en mobile.
-btnApply.addEventListener("click", () => {
-    filtros.classList.remove("mobile-active");
-    overlay.style.display = "none";
-});
+/**
+ * Inicializa funciones adicionales (formato de precio).
+ * @method initExtras
+ * @return {void}
+ */
+const initExtras = () => {
+    initPriceFormatting();
+};
