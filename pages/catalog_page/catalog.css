@@ -364,12 +364,12 @@ input[type="checkbox"] {
 
 @media (max-width: 700px) {
     .products-and-filters {
-        display: block;   /* en mobile que sea 1 sola columna */
+        display: block;
         width: 100%;
     }
 
     .list-products {
-        grid-template-columns: 1fr; /* cards full-width */
+        grid-template-columns: 1fr;
         width: 100%;
     }
 }

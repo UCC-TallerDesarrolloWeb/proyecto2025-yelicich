@@ -126,14 +126,14 @@ main {
 }
 
 @keyframes seqTop{
-    0%, 16.6%   { filter: var(--arrow-on); }   /* prende arriba */
-    16.7%, 100% { filter: var(--arrow-off); }  /* apagada resto del tiempo */
+    0%, 16.6%   { filter: var(--arrow-on); }
+    16.7%, 100% { filter: var(--arrow-off); }
 }
 
 @keyframes seqBottom{
-    0%, 8.3%    { filter: var(--arrow-off); }  /* espera mientras prende la de arriba */
-    8.4%, 25%   { filter: var(--arrow-on); }   /* prende abajo */
-    25.1%, 100% { filter: var(--arrow-off); }  /* apagada hasta volver a empezar */
+    0%, 8.3%    { filter: var(--arrow-off); }
+    8.4%, 25%   { filter: var(--arrow-on); }
+    25.1%, 100% { filter: var(--arrow-off); }
 }
 
 @media (max-width: 700px) {
