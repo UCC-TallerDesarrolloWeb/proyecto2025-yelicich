@@ -165,7 +165,7 @@ Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 - [X] El funcionamiento de la página debe ser consistente.
 
 ### Sobre la documentación
-- [ ] TODAS las funciones javaScript deben estar comentadas adecuadamente. [JsDoc](https://jsdoc.app/about-getting-started.html)
+- [X] TODAS las funciones javaScript deben estar comentadas adecuadamente. [JsDoc](https://jsdoc.app/about-getting-started.html)
    ```/**
      * Descripción de que hace la función
      * @method Nombre de la función
