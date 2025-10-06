@@ -28,8 +28,6 @@ const renderMarcas = (marcasObj) => {
     });
 }
 
-renderMarcas(MARCAS);
-
 /**
  * Renderiza las tarjetas de segmentos en la sección "Buscar por segmento".
  * @method renderSegmentos
@@ -57,8 +55,6 @@ const renderSegmentos = (segmentosObj) => {
     });
 }
 
-renderSegmentos(TIPOS);
-
 // Carrusel testimonios
 let currentTestimonio = 0;
 const testimonios = document.querySelectorAll(".testimonio");
@@ -76,16 +72,6 @@ const showTestimonio = (index) => {
 }
 
 /**
- * Avanza al siguiente testimonio en el carrusel.
- * @method nextTestimonio
- * @return {void}
- */
-const nextTestimonio = () => {
-    currentTestimonio = (currentTestimonio + 1) % testimonios.length;
-    showTestimonio(currentTestimonio);
-}
-
-/**
  * Retrocede al testimonio anterior en el carrusel.
  * @method prevTestimonio
  * @return {void}
@@ -95,9 +81,15 @@ const prevTestimonio = () => {
     showTestimonio(currentTestimonio);
 }
 
-showTestimonio(currentTestimonio);
-document.getElementById("prev-testimonio").addEventListener("click", prevTestimonio);
-document.getElementById("next-testimonio").addEventListener("click", nextTestimonio);
+/**
+ * Avanza al siguiente testimonio en el carrusel.
+ * @method nextTestimonio
+ * @return {void}
+ */
+const nextTestimonio = () => {
+    currentTestimonio = (currentTestimonio + 1) % testimonios.length;
+    showTestimonio(currentTestimonio);
+}
 
 // Newsletter: validar email
 const newsletterForm = document.querySelector(".newsletter__form");
@@ -109,7 +101,7 @@ const newsletterInput = document.getElementById("newsletter-email");
  * @param {Event} e - Evento de submit del formulario.
  * @return {void}
  */
-newsletterForm.addEventListener("submit", (e) => {
+const submitNewsletter = (e) => {
     e.preventDefault();
 
     const email = newsletterInput.value.trim();
@@ -124,4 +116,4 @@ newsletterForm.addEventListener("submit", (e) => {
 
     alert("¡Gracias por suscribirte!");
     newsletterInput.value = "";
-});
+};

@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <title>YeliMotors</title>
 </head>
-<body>
+<body onload="renderSegmentos(TIPOS); renderMarcas(MARCAS); showTestimonio(currentTestimonio);">
     <header>
         <div id="header-container">
             <div id="header-logo">
@@ -29,7 +29,7 @@
                 <!-- <a href="#" aria-disabled="true" class="header-buttons__small">Importaciones</a>
                 <a href="#" aria-disabled="true" class="header-buttons__small">Servicios</a>
                 <a href="#" aria-disabled="true" class="header-buttons__small">Contacto</a> -->
-                <a id="btn-catalogo" href="../catalog_page/catalog.html">Catálogo</a>
+                <a class="btn btn--primary btn--small" href="../catalog_page/catalog.html">Catálogo</a>
             </nav>
         </div>
     </header>
@@ -153,8 +153,8 @@
 
                 <!-- Controles -->
                 <div class="testimonios__controls">
-                    <button id="prev-testimonio" type="button">&#10094;</button>
-                    <button id="next-testimonio" type="button">&#10095;</button>
+                    <button id="prev-testimonio" type="button" onclick="prevTestimonio()">&#10094;</button>
+                    <button id="next-testimonio" type="button" onclick="nextTestimonio()">&#10095;</button>
                 </div>
             </section>
 
@@ -167,7 +167,7 @@
                             <h4>Suscribite a nuestro <span class="bold">boletín de noticias</span></h4>
                             <p>Enterate de novedades, promociones y lanzamientos exclusivos.</p>
                         </div>
-                        <form class="newsletter__form">
+                        <form class="newsletter__form" onsubmit="submitNewsletter(event)">
                             <label for="newsletter-email" class="sr-only">Correo electrónico</label>
                             <input type="email" id="newsletter-email" placeholder="Ingresá tu email" required size="50" inputmode="email">
                             <button type="submit">Suscribite</button>

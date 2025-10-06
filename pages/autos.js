@@ -20,7 +20,6 @@ const MARCAS = Object.freeze({
     RENAULT: "Renault",
     FERRARI: "Ferrari",
     CITROEN: "Citroën",
-    LOTUS: "Lotus"
 });
 
 const TIPOS = Object.freeze({
