@@ -65,42 +65,12 @@ const renderSimilares = (auto) => {
 }
 
 /**
- * Inserta la información del auto seleccionado en la página de detalles.
- * Modifica título, imagen, precio, tipo de caja, breadcrumb y ubicación.
- * @param {Object} auto - Objeto con los datos del auto seleccionado.
- * @return {void}
- */
-if (auto) {
-    document.getElementById("auto-nombre").innerHTML = `
-        <span class="marca">${auto.marca}</span> 
-        <span class="modelo">${auto.modelo}</span>
-    `;
-    document.getElementById("auto-nombre-mobile").innerHTML = `
-        <span class="marca">${auto.marca}</span> 
-        <span class="modelo">${auto.modelo}</span>
-    `;
-    document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
-    document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
-    document.getElementById("auto-imagen").alt = `${auto.marca} ${auto.modelo}`;
-    document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
-    document.getElementById("auto-type-box-mobile").textContent = `${auto.tipo} • ${auto.caja}`;
-    document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
-    document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * factor_sin_imp).toLocaleString("es-AR")}`;
-    document.getElementById("location-brand").textContent = `Concesionario oficial de ${auto.marca}`;
-
-    document.title = `${auto.marca} ${auto.modelo} - YeliMotors`;
-
-    renderSimilares(auto);
-} else {
-    document.querySelector("main.detalles").innerHTML = "<p>Auto no encontrado</p>";
-}
-
-/**
  * Genera dinámicamente las miniaturas del auto y permite cambiarlas en el visor principal.
+ * @method renderThumbnails
  * @param {Object} auto - Objeto con datos del auto seleccionado.
  * @return {void}
  */
-if (auto) {
+const renderThumbnails = (auto) => {
     const mainImg = document.getElementById("auto-imagen");
     const thumbnailsContainer = document.querySelector(".images-thumbnails");
     const modeloCar = textBase(auto.modelo);
@@ -143,8 +113,42 @@ if (auto) {
     });
 }
 
-// ------ MODAL -------
+/**
+ * Carga la información del auto según el ID en la URL.
+ * @method initDetailsPage
+ * @return {void}
+ */
+const initDetailsPage = () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    const auto = autos.find(a => a.id === id);
 
+    if (!auto) {
+        document.querySelector("main.detalles").innerHTML = "<p>Auto no encontrado</p>";
+        return;
+    }
+
+    // Completar datos principales
+    document.getElementById("auto-nombre").innerHTML = `
+        <span class="marca">${auto.marca}</span> 
+        <span class="modelo">${auto.modelo}</span>`;
+    document.getElementById("auto-nombre-mobile").innerHTML = `
+        <span class="marca">${auto.marca}</span> 
+        <span class="modelo">${auto.modelo}</span>`;
+    document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
+    document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
+    document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
+    document.getElementById("auto-type-box-mobile").textContent = `${auto.tipo} • ${auto.caja}`;
+    document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
+    document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * factor_sin_imp).toLocaleString("es-AR")}`;
+    document.getElementById("location-brand").textContent = `Concesionario oficial de ${auto.marca}`;
+    document.title = `${auto.marca} ${auto.modelo} - YeliMotors`;
+
+    renderSimilares(auto);
+    renderThumbnails(auto);
+};
+
+// ------ MODAL -------
 const precioBase = auto.precio;
 let priceColor = 0
 let priceWheel = 0
@@ -172,25 +176,23 @@ const resetModal = () => {
 };
 
 /**
- * Cierra el modal y lo resetea.
+ * Cierra el modal.
  * @method closeModal
  * @return {void}
  */
 const closeModal = () => {
     document.getElementById("modal-pago").setAttribute("aria-hidden", "true");
-    resetModal();
 }
 
-document.querySelector(".btn-reserve").addEventListener("click", () => {
-    document.getElementById("modal-pago").setAttribute("aria-hidden", "false");
+/**
+ * Abre el modal y lo resetea.
+ * @method openModal
+ * @return {void}
+ */
+const openModal = () => {
     resetModal();
-});
-document.getElementById("close-modal").addEventListener("click", () => {
-    closeModal();
-});
-document.getElementById("modal-overlay").addEventListener("click", () => {
-    closeModal();
-});
+    document.getElementById("modal-pago").setAttribute("aria-hidden", "false");
+}
 
 /**
  * Actualiza el resumen del modal con los precios calculados.
@@ -205,39 +207,35 @@ const updateResumen = () => {
     document.getElementById("precio-interes").textContent = `$${interes.toLocaleString("es-AR")}`;
     document.getElementById("precio-total").textContent = `$${(precioBase + priceColor + priceWheel + interes).toLocaleString("es-AR")}`;
 };
-updateResumen();
 
 // Colores
-document.querySelectorAll("#color-options .option").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.querySelectorAll("#color-options .option").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+const selectColor = (color_value) => {
+    document.querySelectorAll("#color-options .option").forEach(b => b.classList.remove("active"));
+    color_value.classList.add("active");
 
-        const color = btn.getAttribute("value");
+    const color = color_value.getAttribute("value");
 
-        switch (color) {
-            case "blanco": priceColor = 0; break;
-            case "negro": priceColor = 3000; break;
-            case "gris_oscuro": priceColor = 7000; break;
-            case "plata": priceColor = 6000; break;
-            case "azul": priceColor = 4000; break;
-            case "rojo": priceColor = 4500; break;
-            default: priceColor = 0;
-        }
+    switch (color) {
+        case "blanco": priceColor = 0; break;
+        case "negro": priceColor = 3000; break;
+        case "gris_oscuro": priceColor = 7000; break;
+        case "plata": priceColor = 6000; break;
+        case "azul": priceColor = 4000; break;
+        case "rojo": priceColor = 4500; break;
+        default: priceColor = 0;
+    }
 
-        document.getElementById("colors-subtitle").classList.remove("subtitle-error");
+    document.getElementById("colors-subtitle").classList.remove("subtitle-error");
 
-        updateResumen();
-    });
-});
+    updateResumen();
+};
 
 // Rines
-document.querySelectorAll("#rines-options .option").forEach(btn => {
-    btn.addEventListener("click", () => {
+selectWheel = (wheel_value) => {
         document.querySelectorAll("#rines-options .option").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+        wheel_value.classList.add("active");
 
-        const wheel = btn.getAttribute("value");
+        const wheel = wheel_value.getAttribute("value");
 
         switch (wheel) {
             case "magnetite_19": priceWheel = 0; break;
@@ -250,62 +248,57 @@ document.querySelectorAll("#rines-options .option").forEach(btn => {
         document.getElementById("wheels-subtitle").classList.remove("subtitle-error");
 
         updateResumen();
-    });
-});
+};
 
 // Método de pago
-document.querySelectorAll("#metodo-pago .option").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.querySelectorAll("#metodo-pago .option").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+const selectPaymentMethod = (method_value) => {
+    document.querySelectorAll("#metodo-pago .option").forEach(b => b.classList.remove("active"));
+    method_value.classList.add("active");
 
-        const metodo = btn.getAttribute("value");
+    const metodo = method_value.getAttribute("value");
 
-        switch (metodo) {
-            case "contado": 
-                document.getElementById("financiacion-show").style.display = "none";
-                document.querySelectorAll("#financiacion .option").forEach(b => b.classList.remove("active"));
-                interes = 0;
-            break;
-            case "tarjeta":
-                document.getElementById("financiacion-show").style.display = "block";
-            break;
-            default: 
-                document.getElementById("financiacion-show").style.display = "none";
-                document.querySelectorAll("#financiacion .option").forEach(b => b.classList.remove("active"));
-                interes = 0;
-        }
-        
-        document.getElementById("metod-subtitle").classList.remove("subtitle-error");
-        
-        updateResumen();
-    });
-});
+    switch (metodo) {
+        case "contado": 
+            document.getElementById("financiacion-show").style.display = "none";
+            document.querySelectorAll("#financiacion .option").forEach(b => b.classList.remove("active"));
+            interes = 0;
+        break;
+        case "tarjeta":
+            document.getElementById("financiacion-show").style.display = "block";
+        break;
+        default: 
+            document.getElementById("financiacion-show").style.display = "none";
+            document.querySelectorAll("#financiacion .option").forEach(b => b.classList.remove("active"));
+            interes = 0;
+    }
+    
+    document.getElementById("metod-subtitle").classList.remove("subtitle-error");
+    
+    updateResumen();
+};
 
 // Financiación
-document.querySelectorAll("#financiacion .option").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.querySelectorAll("#financiacion .option").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+const selectCuotas = (coutas_value) => {
+    document.querySelectorAll("#financiacion .option").forEach(b => b.classList.remove("active"));
+    coutas_value.classList.add("active");
 
-        const cuotas = btn.getAttribute("value");
+    const cuotas = coutas_value.getAttribute("value");
 
-        switch (cuotas) {
-            case "12cuotas": interes = precioBase * 0.05; break;
-            case "24cuotas": interes = precioBase * 0.075; break;
-            case "36cuotas": interes = precioBase * 0.10; break;
-            case "48cuotas": interes = precioBase * 0.125; break;
-            default: interes = 0;
-        }
+    switch (cuotas) {
+        case "12cuotas": interes = precioBase * 0.05; break;
+        case "24cuotas": interes = precioBase * 0.075; break;
+        case "36cuotas": interes = precioBase * 0.10; break;
+        case "48cuotas": interes = precioBase * 0.125; break;
+        default: interes = 0;
+    }
 
-        document.getElementById("financiation-subtitle").classList.remove("subtitle-error");
+    document.getElementById("financiation-subtitle").classList.remove("subtitle-error");
 
-        updateResumen();
-    });
-});
+    updateResumen();
+};
 
 //Button
-document.getElementById("btn-confirm").addEventListener("click", () => {
+const confirmPayment = () => {
     const colorSel = document.querySelector("#color-options .active");
     const rinSel = document.querySelector("#rines-options .active");
     const metodoSel = document.querySelector("#metodo-pago .active");
@@ -334,4 +327,4 @@ document.getElementById("btn-confirm").addEventListener("click", () => {
 
     alert("¡Gracias por su compra! Nos pondremos en contacto con usted pronto.");
     closeModal();
-});
+};

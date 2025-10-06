@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
     <title>Detalles - YeliMotors</title>
 </head>
-<body>
+<body onload="initDetailsPage()">
     <header>
         <div id="header-container">
             <div id="header-logo">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="buttons-end">
-                    <button class="btn-reserve" type="button">Reservar ahora</button>
+                    <button class="btn-reserve" type="button" onclick="openModal()">Reservar ahora</button>
                     <!-- <div class="custom-divider">
                         <hr class="divider-text">
                         <p class="or-text">O también podés</p>
@@ -211,13 +211,13 @@
 
     <!-- Modal -->
     <div class="modal" id="modal-pago" aria-hidden="true">
-        <div class="modal__overlay" id="modal-overlay"></div>
+        <div class="modal__overlay" id="modal-overlay" onclick="closeModal()"></div>
 
         <div class="modal__content">
             <div class="modal__header">
                 <div class="modal__close"></div>
                 <h2 id="modal-title"></h2>
-                <button class="modal__close" id="close-modal" aria-label="Cerrar" type="button">×</button>
+                <button class="modal__close" id="close-modal" aria-label="Cerrar" type="button" onclick="closeModal()">×</button>
             </div>
 
             <section class="modal__body">
@@ -227,38 +227,38 @@
                 </div>
                 <h4 id="colors-subtitle">Color exterior</h4>
                 <div class="options" id="color-options">
-                    <button class="option color" aria-label="Blanco" value="blanco" type="button">
+                    <button class="option color" aria-label="Blanco" value="blanco" type="button" onclick="selectColor(this)">
                         <img src="../../imagenes/paints/paint_white.png" alt="Blanco">
                     </button>
-                    <button class="option color" aria-label="Negro" value="negro" type="button">
+                    <button class="option color" aria-label="Negro" value="negro" type="button" onclick="selectColor(this)">
                         <img src="../../imagenes/paints/paint_black.png" alt="Negro">
                     </button>
-                    <button class="option color" aria-label="Gris oscuro" value="gris_oscuro" type="button">
+                    <button class="option color" aria-label="Gris oscuro" value="gris_oscuro" type="button" onclick="selectColor(this)">
                         <img src="../../imagenes/paints/paint_stealth_grey.png" alt="Gris oscuro">
                     </button>
-                    <button class="option color" aria-label="Plata" value="plata" type="button">
+                    <button class="option color" aria-label="Plata" value="plata" type="button" onclick="selectColor(this)">
                         <img src="../../imagenes/paints/paint_silver.png" alt="Plata">
                     </button>
-                    <button class="option color" aria-label="Azul" value="azul" type="button">
+                    <button class="option color" aria-label="Azul" value="azul" type="button" onclick="selectColor(this)">
                         <img src="../../imagenes/paints/paint_blue.png" alt="Azul">
                     </button>
-                    <button class="option color" aria-label="Rojo" value="rojo" type="button">
+                    <button class="option color" aria-label="Rojo" value="rojo" type="button" onclick="selectColor(this)">
                         <img src="../../imagenes/paints/paint_red.png" alt="Rojo">
                     </button>
                 </div>
 
                 <h4 id="wheels-subtitle">Rines</h4>
                 <div class="options" id="rines-options">
-                    <button class="option wheels" aria-label="Rines Magnetita 19'" value="magnetite_19" type="button">
+                    <button class="option wheels" aria-label="Rines Magnetita 19'" value="magnetite_19" type="button" onclick="selectWheel(this)">
                         <img src="../../imagenes/wheels/wheel_magnetite_19.webp" alt="Rines Magnetita 19'">
                     </button>
-                    <button class="option wheels" aria-label="Rines Perihelix 20'" value="perihelix_20" type="button">
+                    <button class="option wheels" aria-label="Rines Perihelix 20'" value="perihelix_20" type="button" onclick="selectWheel(this)">
                         <img src="../../imagenes/wheels/wheel_perihelix_20.webp" alt="Rines Perihelix 20'">
                     </button>
-                    <button class="option wheels" aria-label="Rines Velarium 21'" value="velarium_21" type="button">
+                    <button class="option wheels" aria-label="Rines Velarium 21'" value="velarium_21" type="button" onclick="selectWheel(this)">
                         <img src="../../imagenes/wheels/wheel_velarium_21.webp" alt="Rines Velarium 21'">
                     </button>
-                    <button class="option wheels" aria-label="Rines Machina 22'" value="machina_22" type="button">
+                    <button class="option wheels" aria-label="Rines Machina 22'" value="machina_22" type="button" onclick="selectWheel(this)">
                         <img src="../../imagenes/wheels/wheel__machina_22.webp" alt="Rines Machina 22'">
                     </button>
                 </div>
@@ -269,17 +269,17 @@
                 </div>
                 <h4 id="metod-subtitle">Método</h4>
                 <div class="options" id="metodo-pago">
-                    <button class="option" value="contado" type="button">Contado</button>
-                    <button class="option" value="tarjeta" type="button">Tarjeta de crédito</button>
+                    <button class="option" value="contado" type="button" onclick="selectPaymentMethod(this)">Contado</button>
+                    <button class="option" value="tarjeta" type="button" onclick="selectPaymentMethod(this)">Tarjeta de crédito</button>
                 </div>
 
                 <div id="financiacion-show">
                     <h4 id="financiation-subtitle">Financiación</h4>
                     <div class="options" id="financiacion" hidden>
-                        <button class="option" value="12cuotas" type="button">12 cuotas</button>
-                        <button class="option" value="24cuotas" type="button">24 cuotas</button>
-                        <button class="option" value="36cuotas" type="button">36 cuotas</button>
-                        <button class="option" value="48cuotas" type="button">48 cuotas</button>
+                        <button class="option" value="12cuotas" type="button" onclick="selectCuotas(this)">12 cuotas</button>
+                        <button class="option" value="24cuotas" type="button" onclick="selectCuotas(this)">24 cuotas</button>
+                        <button class="option" value="36cuotas" type="button" onclick="selectCuotas(this)">36 cuotas</button>
+                        <button class="option" value="48cuotas" type="button" onclick="selectCuotas(this)">48 cuotas</button>
                     </div>
                 </div>
 
@@ -297,7 +297,7 @@
             </section>
 
             <footer class="modal__footer">
-            <button id="btn-confirm" class="btn-confirm" type="button">Realizar pago</button>
+            <button id="btn-confirm" class="btn-confirm" type="button" onclick="confirmPayment()">Realizar pago</button>
             </footer>
         </div>
     </div>
