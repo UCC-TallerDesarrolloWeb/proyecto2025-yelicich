@@ -22,13 +22,18 @@ const Home = () => {
     }, []);
 
     return (
-        cars.map((car, id) => (
-            <div key={id}>
-                <p>{car.marca}</p>
-                <img src={`/cars/${car.img}`} alt={car.brand} />
-                <p>{formatPrice(car.price)}</p>
-            </div>
-        ))
+        <div>
+            <h1>Catálogo de Autos</h1>
+
+            {cars.map((car, id) => (
+                <div key={id}>
+                    <p>{car.marca}</p>
+                    <img src={`/cars/${car.img}`} alt={car.brand} />
+                    <p>{formatPrice(car.price)}</p>
+                </div>
+            ))}
+        </div>
+
     )
 }
 
