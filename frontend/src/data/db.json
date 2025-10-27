@@ -1,0 +1,212 @@
+{
+    "cars": [
+        {
+            "id": 1,
+            "marca": "Tesla",
+            "modelo": "Model S",
+            "tipo": "Deportivo",
+            "caja": "Eléctrico",
+            "precio": 202047000
+        },
+        {
+            "id": 2,
+            "marca": "Jeep",
+            "modelo": "Compass",
+            "tipo": "SUV",
+            "caja": "Automático",
+            "precio": 60500000
+        },
+        {
+            "id": 3,
+            "marca": "Ford",
+            "modelo": "Ranger",
+            "tipo": "Pick-up",
+            "caja": "Manual",
+            "precio": 64000000
+        },
+        {
+            "id": 4,
+            "marca": "Toyota",
+            "modelo": "Corolla",
+            "tipo": "Sedán",
+            "caja": "Automático",
+            "precio": 44645000
+        },
+        {
+            "id": 5,
+            "marca": "Tesla",
+            "modelo": "Model 3",
+            "tipo": "Sedán",
+            "caja": "Eléctrico",
+            "precio": 58455000
+        },
+        {
+            "id": 6,
+            "marca": "Tesla",
+            "modelo": "Model X",
+            "tipo": "SUV",
+            "caja": "Eléctrico",
+            "precio": 192026000
+        },
+        {
+            "id": 7,
+            "marca": "Tesla",
+            "modelo": "Model Y",
+            "tipo": "SUV",
+            "caja": "Eléctrico",
+            "precio": 75467000
+        },
+        {
+            "id": 8,
+            "marca": "Volkswagen",
+            "modelo": "Amarok",
+            "tipo": "Pick-up",
+            "caja": "Manual",
+            "precio": 69900000
+        },
+        {
+            "id": 9,
+            "marca": "Toyota",
+            "modelo": "SW4",
+            "tipo": "SUV",
+            "caja": "Automático",
+            "precio": 85674000
+        },
+        {
+            "id": 11,
+            "marca": "RAM",
+            "modelo": "RAMPAGE",
+            "tipo": "Pick-up",
+            "caja": "Manual",
+            "precio": 61500000
+        },
+        {
+            "id": 12,
+            "marca": "Chevrolet",
+            "modelo": "Montana",
+            "tipo": "Pick-up",
+            "caja": "Automático",
+            "precio": 36800000
+        },
+        {
+            "id": 13,
+            "marca": "Renault",
+            "modelo": "Alaskan",
+            "tipo": "Pick-up",
+            "caja": "Automático",
+            "precio": 54840000
+        },
+        {
+            "id": 14,
+            "marca": "Fiat",
+            "modelo": "Titano",
+            "tipo": "Pick-up",
+            "caja": "Automático",
+            "precio": 50900000
+        },
+        {
+            "id": 15,
+            "marca": "Toyota",
+            "modelo": "Hilux",
+            "tipo": "Pick-up",
+            "caja": "Automático",
+            "precio": 63350000
+        },
+        {
+            "id": 17,
+            "marca": "Volkswagen",
+            "modelo": "T-Cross",
+            "tipo": "SUV",
+            "caja": "Automático",
+            "precio": 31500000
+        },
+        {
+            "id": 18,
+            "marca": "Volkswagen",
+            "modelo": "Nivus",
+            "tipo": "SUV",
+            "caja": "Manual",
+            "precio": 34700000
+        },
+        {
+            "id": 19,
+            "marca": "Volkswagen",
+            "modelo": "Taos",
+            "tipo": "SUV",
+            "caja": "Automático",
+            "precio": 47900000
+        },
+        {
+            "id": 20,
+            "marca": "Volkswagen",
+            "modelo": "Tera",
+            "tipo": "SUV",
+            "caja": "Manual",
+            "precio": 29000000
+        },
+        {
+            "id": 21,
+            "marca": "Volkswagen",
+            "modelo": "Tiguan",
+            "tipo": "SUV",
+            "caja": "Automático",
+            "precio": 72300000
+        },
+        {
+            "id": 22,
+            "marca": "Volkswagen",
+            "modelo": "Virtus",
+            "tipo": "Sedán",
+            "caja": "Manual",
+            "precio": 28900000
+        },
+        {
+            "id": 23,
+            "marca": "Volkswagen",
+            "modelo": "Vento",
+            "tipo": "Sedán",
+            "caja": "Manual",
+            "precio": 64700000
+        },
+        {
+            "id": 24,
+            "marca": "Volkswagen",
+            "modelo": "Polo",
+            "tipo": "Hatchback",
+            "caja": "Manual",
+            "precio": 24200000
+        },
+        {
+            "id": 25,
+            "marca": "Audi",
+            "modelo": "A3",
+            "tipo": "Sedán",
+            "caja": "Manual",
+            "precio": 83250000
+        },
+        {
+            "id": 26,
+            "marca": "Ford",
+            "modelo": "Territory",
+            "tipo": "SUV",
+            "caja": "Automático",
+            "precio": 43990000
+        },
+        {
+            "id": 27,
+            "marca": "Renault",
+            "modelo": "Kangoo",
+            "tipo": "Utilitario",
+            "caja": "Manual",
+            "precio": 30190000
+        },
+        {
+            "id": 28,
+            "marca": "Peugeot",
+            "modelo": "208",
+            "tipo": "Hatchback",
+            "caja": "Manual",
+            "precio": 25600000
+        }
+    ]
+}
