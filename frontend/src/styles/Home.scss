@@ -1,0 +1,50 @@
+/* ---- BRAND SECTION --- */
+.brands-container {
+    max-width: 1200px;
+
+    .list-brands {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 32px 64px;
+        box-sizing: border-box;
+
+        .brand-image-container {
+        background-color: var(--ym-primary-50);
+        border-radius: 12px;
+        border: 1px solid var(--ym-primary-100);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 0;
+        transition: box-shadow 0.2s ease;
+
+        &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 50%;
+            border-radius: 8px;
+            object-fit: contain;
+            aspect-ratio: 1 / 1;
+        }
+        }
+
+        .brand-name {
+            margin-top: 8px;
+            text-align: center;
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--ym-primary-900);
+        }
+    }
+
+    @media (max-width: 700px) {
+        .list-brands {
+        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+        gap: 16px 32px;
+        }
+    }
+}

@@ -41,14 +41,16 @@ const Home = () => {
             <h3>Buscá por <span className="bold">marca</span></h3>
             <div className="brands-container">
                 {/* Arreglar la navegacion */}
-                {brands.map((brand, id) => (
-                    <a href={`../catalog_page/catalog.html?marca=${encodeURIComponent(brand.name)}`} className="link-detalle" key={id}>
-                        <div className="brand-image-container">
-                            <img src={`/images/marcas/${textBase(brand.name)}.webp`} alt={`logo de la marca ${brand.name}`} loading="lazy"/>
-                        </div>
-                        <div className="brand-name">{brand.name}</div>
-                    </a>
-                ))}
+                <div className="list-brands">
+                    {brands.map((brand, id) => (
+                        <a href={`../catalog_page/catalog.html?marca=${encodeURIComponent(brand.name)}`} className="link-detalle" key={id}>
+                            <div className="brand-image-container">
+                                <img src={`/images/marcas/${textBase(brand.name)}.webp`} alt={`logo de la marca ${brand.name}`} loading="lazy"/>
+                            </div>
+                            <div className="brand-name">{brand.name}</div>
+                        </a>
+                    ))}
+                </div>
             </div>
 
             {cars.length === 0 ? (
