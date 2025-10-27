@@ -1,0 +1,212 @@
+{
+    "cars": [
+        {
+            "id": 1,
+            "brand": "Tesla",
+            "model": "Model S",
+            "type": "Deportivo",
+            "transmission": "Eléctrico",
+            "price": 202047000
+        },
+        {
+            "id": 2,
+            "brand": "Jeep",
+            "model": "Compass",
+            "type": "SUV",
+            "transmission": "Automático",
+            "price": 60500000
+        },
+        {
+            "id": 3,
+            "brand": "Ford",
+            "model": "Ranger",
+            "type": "Pick-up",
+            "transmission": "Manual",
+            "price": 64000000
+        },
+        {
+            "id": 4,
+            "brand": "Toyota",
+            "model": "Corolla",
+            "type": "Sedán",
+            "transmission": "Automático",
+            "price": 44645000
+        },
+        {
+            "id": 5,
+            "brand": "Tesla",
+            "model": "Model 3",
+            "type": "Sedán",
+            "transmission": "Eléctrico",
+            "price": 58455000
+        },
+        {
+            "id": 6,
+            "brand": "Tesla",
+            "model": "Model X",
+            "type": "SUV",
+            "transmission": "Eléctrico",
+            "price": 192026000
+        },
+        {
+            "id": 7,
+            "brand": "Tesla",
+            "model": "Model Y",
+            "type": "SUV",
+            "transmission": "Eléctrico",
+            "price": 75467000
+        },
+        {
+            "id": 8,
+            "brand": "Volkswagen",
+            "model": "Amarok",
+            "type": "Pick-up",
+            "transmission": "Manual",
+            "price": 69900000
+        },
+        {
+            "id": 9,
+            "brand": "Toyota",
+            "model": "SW4",
+            "type": "SUV",
+            "transmission": "Automático",
+            "price": 85674000
+        },
+        {
+            "id": 11,
+            "brand": "RAM",
+            "model": "RAMPAGE",
+            "type": "Pick-up",
+            "transmission": "Manual",
+            "price": 61500000
+        },
+        {
+            "id": 12,
+            "brand": "Chevrolet",
+            "model": "Montana",
+            "type": "Pick-up",
+            "transmission": "Automático",
+            "price": 36800000
+        },
+        {
+            "id": 13,
+            "brand": "Renault",
+            "model": "Alaskan",
+            "type": "Pick-up",
+            "transmission": "Automático",
+            "price": 54840000
+        },
+        {
+            "id": 14,
+            "brand": "Fiat",
+            "model": "Titano",
+            "type": "Pick-up",
+            "transmission": "Automático",
+            "price": 50900000
+        },
+        {
+            "id": 15,
+            "brand": "Toyota",
+            "model": "Hilux",
+            "type": "Pick-up",
+            "transmission": "Automático",
+            "price": 63350000
+        },
+        {
+            "id": 17,
+            "brand": "Volkswagen",
+            "model": "T-Cross",
+            "type": "SUV",
+            "transmission": "Automático",
+            "price": 31500000
+        },
+        {
+            "id": 18,
+            "brand": "Volkswagen",
+            "model": "Nivus",
+            "type": "SUV",
+            "transmission": "Manual",
+            "price": 34700000
+        },
+        {
+            "id": 19,
+            "brand": "Volkswagen",
+            "model": "Taos",
+            "type": "SUV",
+            "transmission": "Automático",
+            "price": 47900000
+        },
+        {
+            "id": 20,
+            "brand": "Volkswagen",
+            "model": "Tera",
+            "type": "SUV",
+            "transmission": "Manual",
+            "price": 29000000
+        },
+        {
+            "id": 21,
+            "brand": "Volkswagen",
+            "model": "Tiguan",
+            "type": "SUV",
+            "transmission": "Automático",
+            "price": 72300000
+        },
+        {
+            "id": 22,
+            "brand": "Volkswagen",
+            "model": "Virtus",
+            "type": "Sedán",
+            "transmission": "Manual",
+            "price": 28900000
+        },
+        {
+            "id": 23,
+            "brand": "Volkswagen",
+            "model": "Vento",
+            "type": "Sedán",
+            "transmission": "Manual",
+            "price": 64700000
+        },
+        {
+            "id": 24,
+            "brand": "Volkswagen",
+            "model": "Polo",
+            "type": "Hatchback",
+            "transmission": "Manual",
+            "price": 24200000
+        },
+        {
+            "id": 25,
+            "brand": "Audi",
+            "model": "A3",
+            "type": "Sedán",
+            "transmission": "Manual",
+            "price": 83250000
+        },
+        {
+            "id": 26,
+            "brand": "Ford",
+            "model": "Territory",
+            "type": "SUV",
+            "transmission": "Automático",
+            "price": 43990000
+        },
+        {
+            "id": 27,
+            "brand": "Renault",
+            "model": "Kangoo",
+            "type": "Utilitario",
+            "transmission": "Manual",
+            "price": 30190000
+        },
+        {
+            "id": 28,
+            "brand": "Peugeot",
+            "model": "208",
+            "type": "Hatchback",
+            "transmission": "Manual",
+            "price": 25600000
+        }
+    ]
+}
