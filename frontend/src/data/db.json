@@ -208,5 +208,25 @@
             "transmission": "Manual",
             "price": 25600000
         }
+    ],
+    
+    "brands": [
+        { "name": "Tesla" },
+        { "name": "Jeep" },
+        { "name": "Ford" },
+        { "name": "Toyota" },
+        { "name": "Chevrolet" },
+        { "name": "Volkswagen" },
+        { "name": "Audi" },
+        { "name": "BMW" },
+        { "name": "Fiat" },
+        { "name": "Honda" },
+        { "name": "Jetour" },
+        { "name": "Nissan" },
+        { "name": "Peugeot" },
+        { "name": "RAM" },
+        { "name": "Renault" },
+        { "name": "Ferrari" },
+        { "name": "Citroën" }
     ]
 }

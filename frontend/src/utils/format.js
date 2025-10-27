@@ -5,3 +5,10 @@ export const formatPrice = (price) => {
     });
     return numberFormat.format(price);
 };
+
+export const textBase = (str) => {
+    if (!str) return "";
+    return str
+        .toLowerCase()
+        .replace(/\s+/g, "");
+};
