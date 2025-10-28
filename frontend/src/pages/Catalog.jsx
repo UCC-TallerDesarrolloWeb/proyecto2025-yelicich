@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { formatPrice, textBase } from '@utils/format';
+import Header from "@components/Header";
 import Footer from "@components/Footer";
-import "@styles/Home.scss";
+import "@styles/Catalog.scss";
 
 const Catalog = () => {
     const [cars, setCars] = useState([]);
@@ -35,7 +36,10 @@ const Catalog = () => {
     }, []);
 
     return (
-        <div>
+        <>
+        <Header />
+        
+        <main>
             <h1>Catálogo de Autos</h1>
 
             {cars.length === 0 ? (
@@ -49,8 +53,10 @@ const Catalog = () => {
                 ))
             )}
 
-            <Footer />
-        </div>
+        </main>
+
+        <Footer />
+        </>
     )
 }
 

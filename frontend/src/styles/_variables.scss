@@ -26,4 +26,9 @@
 
 /* Tipografía */
     --ym-font-main: 'Quicksand', sans-serif;
+
+/* Estados de los iconos */
+    --arrow-off: grayscale(1) brightness(0.65);
+    --arrow-on: brightness(0) saturate(100%) invert(49%) sepia(80%) 
+        saturate(466%) hue-rotate(170deg) brightness(92%) contrast(91%); 
 }

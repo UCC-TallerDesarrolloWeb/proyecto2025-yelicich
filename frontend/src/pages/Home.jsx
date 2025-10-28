@@ -1,20 +1,35 @@
 import { useState, useEffect } from 'react';
 import { textBase } from '@utils/format';
+import { useNavigate } from "react-router-dom"
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import "@styles/Home.scss";
 
 const Home = () => {
-    const [cars, setCars] = useState([]);
+    const navigate = useNavigate()
+
+    const [bestSellerCars, setBestSellerCars] = useState([]);
     const [brands, setBrands] = useState([]);
     const [categories, setCategories] = useState([]);
     const [testimonials, setTestimonials] = useState([]);
     const [current, setCurrent] = useState(0);
 
-    const BASE_URL_CARS = "http://localhost:4000/cars"
+    const BASE_URL_CARS = "http://localhost:4000/cars";
     const BASE_URL_BRANDS = "http://localhost:4000/brands"
     const BASE_URL_CATEGORIES = "http://localhost:4000/categories"
     const BASE_URL_TESTIMONIALS = "http://localhost:4000/testimonials"
+
+    const fetchCars = async () => {
+        try {
+            const response = await fetch(BASE_URL_CARS);
+            const data = await response.json();
+            const featuredIds = [2, 9, 6];
+            const featured = data.filter(car => featuredIds.map(String).includes(car.id));
+            setBestSellerCars(featured);
+        } catch (error) {
+            console.error(`Error al obtener autos: ${error}`);
+        }
+    };
 
     const fetchData = async (url, setter) => {
         try {
@@ -27,7 +42,7 @@ const Home = () => {
     };
 
     useEffect(() => {
-        fetchData(BASE_URL_CARS, setCars);
+        fetchCars();
         fetchData(BASE_URL_BRANDS, setBrands);
         fetchData(BASE_URL_CATEGORIES, setCategories);
         fetchData(BASE_URL_TESTIMONIALS, setTestimonials);
@@ -67,12 +82,40 @@ const Home = () => {
         <Header />
 
         <main className="home">
-
             {/* Hero Section */}
-
+            <div className="hero" aria-label="Presentación">
+                <div className="hero__content">
+                    <h2>Encontrá tu próximo<br />0km en Argentina</h2>
+                    <a className="btn-catalogo-hero" onClick={() => navigate("/catalog")}>Catálogo</a>
+                </div>
+                <div className="hero__arrows">
+                    <img src="/images/icons/head_arrow.png" alt="" aria-hidden="true" draggable="false"/>
+                    <img src="/images/icons/head_arrow.png" alt="" aria-hidden="true" draggable="false"/>
+                </div>
+            </div>
 
             {/* Best Seller Section */}
-
+            <section className="best-seller" aria-label="vehículos destacados">
+                <div className="best-seller__content">
+                    <h3>Vehículos <span className="bold">destacados</span></h3>
+                    <ul className="best-seller__list" role="list">
+                        {bestSellerCars.map((car) => (
+                            <li key={car.id}>
+                                <div className="card-best-seller">
+                                    <img src={`/images/cars/${textBase(car.model)}/featured_${textBase(car.model)}.webp`} alt={`Imagen destacada de ${car.brand} ${car.model}`} loading="lazy" />
+                                    <div className="card-best-seller__body">
+                                        <div className="card-best-seller__body-top">
+                                            <h4>{car.brand} <strong>{car.model}</strong></h4>
+                                            <p>{car.type} • {car.transmission}</p>
+                                        </div>
+                                        <a href={`/details?id=${car.id}`}>Ir a la página &gt;</a>
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
 
             {/* Brands Section */}
             <section className="grid-section grid-section--brands">
@@ -145,7 +188,7 @@ const Home = () => {
                         <form className="newsletter__form" onSubmit={(e) => submitNewsletter(e)}> {/* TODO: Arreglar funcion */}
                             <label htmlFor="newsletter-email" className="sr-only">Correo electrónico</label>
                             <input type="email" id="newsletter-email" placeholder="Ingresá tu email" required size="50" inputMode="email"/>
-                            <button type="submit">Suscribite</button>
+                            <button type="submit" aria-label="Enviar suscripción">Suscribite</button>
                         </form>
                     </div>
                 </div>
