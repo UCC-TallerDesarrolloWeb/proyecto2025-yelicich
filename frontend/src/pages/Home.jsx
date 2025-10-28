@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { formatPrice, textBase } from '@utils/format';
+import { textBase } from '@utils/format';
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import "@styles/Home.scss";
@@ -16,52 +16,26 @@ const Home = () => {
     const BASE_URL_CATEGORIES = "http://localhost:4000/categories"
     const BASE_URL_TESTIMONIALS = "http://localhost:4000/testimonials"
 
-    const fetchCars = async () => {
+    const fetchData = async (url, setter) => {
         try {
-            const response = await fetch(BASE_URL_CARS);
+            const response = await fetch(url);
             const data = await response.json();
-            setCars(data);
+            setter(data);
         } catch (error) {
-            console.error(`Error al realizar un get en el servicio: ${error}`);
+            console.error(`Error al obtener datos de ${url}:`, error);
         }
-    }
-
-    const fetchBrands = async () => {
-        try {
-            const response = await fetch(BASE_URL_BRANDS);
-            const data = await response.json();
-            setBrands(data);
-        } catch (error) {
-            console.error(`Error al realizar un get en el servicio: ${error}`);
-        }
-    }
-
-    const fetchCategories = async () => {
-        try {
-            const response = await fetch(BASE_URL_CATEGORIES);
-            const data = await response.json();
-            setCategories(data);
-        } catch (error) {
-            console.error(`Error al realizar un get en el servicio: ${error}`);
-        }
-    }
-
-    const fetchTestimonials = async () => {
-        try {
-            const response = await fetch(BASE_URL_TESTIMONIALS);
-            const data = await response.json();
-            setTestimonials(data);
-        } catch (error) {
-            console.error(`Error al realizar un get en el servicio: ${error}`);
-        }
-    }
+    };
 
     useEffect(() => {
-        fetchCars();
-        fetchBrands();
-        fetchCategories();
-        fetchTestimonials();
+        fetchData(BASE_URL_CARS, setCars);
+        fetchData(BASE_URL_BRANDS, setBrands);
+        fetchData(BASE_URL_CATEGORIES, setCategories);
+        fetchData(BASE_URL_TESTIMONIALS, setTestimonials);
     }, []);
+
+    useEffect(() => {
+        if (current >= testimonials.length) setCurrent(0);
+    }, [testimonials]);
 
     const nextTestimonial = () => {
         setCurrent((prev) => (prev + 1) % testimonials.length);
@@ -71,7 +45,8 @@ const Home = () => {
         setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };;
 
-    const { name, role, comment, image } = testimonials[current];
+    const hasTestimonials = testimonials.length > 0;
+    const t = hasTestimonials ? testimonials[current] : null;
 
     const submitNewsletter = (e) => {
         e.preventDefault();
@@ -130,35 +105,33 @@ const Home = () => {
             </section>
 
             {/* Testimonials Section */}
-            <section className="testimonials" aria-label="Testimonios de clientes">
-                <h3>
-                    Nuestros <span className="bold">testimonios</span>
-                </h3>
+            {hasTestimonials ? (
+                <section className="testimonials" aria-label="Testimonios de clientes">
+                    <h3>Nuestros <span className="bold">testimonios</span></h3>
 
-                <div className="testimonials__content">
-                    <div className="testimonial active">
-                    <img src={image} alt={`Retrato de ${name}`} loading="lazy" />
-                    <div className="testimonial__text">
-                        <div className="testimonial__comment">
-                        <p>"{comment}"</p>
-                        </div>
-                        <div className="testimonial__about">
-                        <h4>- {name}</h4>
-                        <p>{role}</p>
+                    <div className="testimonials__content">
+                        <div className="testimonial active">
+                            <img src={t.image} alt={`Retrato de ${t.name}`} loading="lazy" />
+                            <div className="testimonial__text">
+                                <div className="testimonial__comment">
+                                    <p>"{t.comment}"</p>
+                                </div>
+                                <div className="testimonial__about">
+                                    <h4>- {t.name}</h4>
+                                    <p>{t.role}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
 
-                <div className="testimonials__controls">
-                    <button type="button" onClick={prevTestimonial}>
-                    &#10094;
-                    </button>
-                    <button type="button" onClick={nextTestimonial}>
-                    &#10095;
-                    </button>
-                </div>
-            </section>
+                    <div className="testimonials__controls">
+                        <button type="button" onClick={prevTestimonial}>&#10094;</button>
+                        <button type="button" onClick={nextTestimonial}>&#10095;</button>
+                    </div>
+                </section>
+            ) : (
+                <p>Cargando testimonios...</p>
+            )}
 
             {/* Newsletter Section */}
             <section className="newsletter" aria-label="Suscripción a boletín de noticias">

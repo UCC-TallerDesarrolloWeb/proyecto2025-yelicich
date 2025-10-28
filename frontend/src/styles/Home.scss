@@ -60,6 +60,12 @@
 
 /* ---- MAIN ---- */
 .home {
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+
     h3 {
         width: 100%;
         margin: 0;
