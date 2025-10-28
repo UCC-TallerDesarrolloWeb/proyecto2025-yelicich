@@ -1,0 +1,46 @@
+/* ---- BREADCRUMB SECTION ---- */
+.breadcrumb {
+    padding-top: 100px;
+    width: 95%;
+    max-width: 1280px;
+    letter-spacing: 2px;
+
+    ol {
+        list-style: none;
+        display: flex;
+        gap: 4px;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: "/";
+                margin-left: 4px;
+                color: var(--ym-gray-700);
+            }
+
+            &:last-child::after {
+                content: "";
+            }
+
+            a {
+                text-decoration: none;
+                font-weight: 400;
+                color: var(--ym-gray-700);
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--ym-primary-600);
+                }
+            }
+
+            .bold {
+                font-weight: 600;
+                color: var(--ym-primary-900);
+            }
+        }
+    }
+}

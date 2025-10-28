@@ -1,38 +1,33 @@
 import { useState, useEffect } from 'react';
 import { formatPrice, textBase } from '@utils/format';
 import Header from "@components/Header";
+import Breadcrumb from "@components/Breadcrumb";
 import Footer from "@components/Footer";
 import "@styles/Catalog.scss";
 
 const Catalog = () => {
     const [cars, setCars] = useState([]);
     const [brands, setBrands] = useState([]);
+    const [categories, setCategories] = useState([]);
 
-    const BASE_URL = "http://localhost:4000/cars"
+    const BASE_URL_CARS = "http://localhost:4000/cars"
+    const BASE_URL_BRANDS = "http://localhost:4000/brands"
+    const BASE_URL_CATEGORIES = "http://localhost:4000/categories"
 
-    const fetchCars = async () => {
+    const fetchData = async (url, setter) => {
         try {
-            const response = await fetch(BASE_URL);
+            const response = await fetch(url);
             const data = await response.json();
-            setCars(data);
+            setter(data);
         } catch (error) {
-            console.error(`Error al realizar un get en el servicio: ${error}`);
+            console.error(`Error al obtener datos de ${url}:`, error);
         }
-    }
-
-    const fetchBrands = async () => {
-        try {
-            const response = await fetch("http://localhost:4000/brands");
-            const data = await response.json();
-            setBrands(data);
-        } catch (error) {
-            console.error(`Error al realizar un get en el servicio: ${error}`);
-        }
-    }
+    };
 
     useEffect(() => {
-        fetchCars();
-        fetchBrands();
+        fetchData(BASE_URL_CARS, setCars);
+        fetchData(BASE_URL_BRANDS, setBrands);
+        fetchData(BASE_URL_CATEGORIES, setCategories);
     }, []);
 
     return (
@@ -40,6 +35,10 @@ const Catalog = () => {
         <Header />
         
         <main>
+            <Breadcrumb items={[
+                { href: "../home_page/index.html", label: "Inicio" },
+                { label: "Catálogo" }
+            ]} />
             <h1>Catálogo de Autos</h1>
 
             {cars.length === 0 ? (
