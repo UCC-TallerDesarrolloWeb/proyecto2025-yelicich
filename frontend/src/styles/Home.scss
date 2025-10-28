@@ -1,50 +1,321 @@
-/* ---- BRAND SECTION --- */
-.brands-container {
-    max-width: 1200px;
+/* ---- HEADER (HOME VARIANT) ---- */
+.header {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    border-bottom: none;
 
-    .list-brands {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 32px 64px;
-        box-sizing: border-box;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 
-        .brand-image-container {
-        background-color: var(--ym-primary-50);
-        border-radius: 12px;
-        border: 1px solid var(--ym-primary-100);
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 16px 0;
-        transition: box-shadow 0.2s ease;
+    /* Logo text color */
+    &__logo-title {
+        color: var(--ym-primary-50);
+    }
+
+    /* Navigation links (first three) */
+    &__nav {
+        a:nth-child(-n + 3) {
+        color: #fff;
 
         &:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: var(--ym-primary-200);
+        }
+        }
+    }
+}
+
+
+/* ---- MIXINS GENERALES ---- */
+@mixin grid-section($min: 100px, $gap-row: 32px, $gap-col: 64px) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+    gap: $gap-row $gap-col;
+    box-sizing: border-box;
+}
+
+@mixin card($aspect: 1 / 1) {
+    background-color: var(--ym-primary-50);
+    border-radius: 12px;
+    border: 1px solid var(--ym-primary-100);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
+    transition: box-shadow 0.2s ease;
+
+    &:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+    img {
+        width: 50%;
+        border-radius: 8px;
+        object-fit: contain;
+        aspect-ratio: $aspect;
+    }
+}
+
+/* ---- MAIN ---- */
+.home {
+    h3 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: 1.75rem;
+        color: var(--ym-primary-900);
+    }
+
+    /* ---- BRANDS SECTION ---- */
+    .grid-section {
+        max-width: 1200px;
+
+        &__grid {
+            @include grid-section(100px);
         }
 
-        img {
-            width: 50%;
-            border-radius: 8px;
-            object-fit: contain;
-            aspect-ratio: 1 / 1;
-        }
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
         }
 
-        .brand-name {
+        &__logo { @include card(1 / 1); }
+
+        &__name {
             margin-top: 8px;
             text-align: center;
             font-weight: 400;
             font-size: 1rem;
             color: var(--ym-primary-900);
         }
+
+        &--brands {
+            .grid-section__grid { @include grid-section(80px); }
+            .grid-section__logo img { aspect-ratio: 1 / 1; }
+        }
+
+        &--categories {
+            .grid-section__grid { @include grid-section(120px); }
+            .grid-section__logo img { aspect-ratio: 4 / 3; }
+        }
+
+        @media (max-width: 700px) {
+            &__grid {
+                grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+                gap: 16px 32px;
+            }
+        }
     }
 
-    @media (max-width: 700px) {
-        .list-brands {
-        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
-        gap: 16px 32px;
+    /* ---- TESTIMONIALS SECTION ---- */
+    .testimonials {
+        max-width: 1200px;
+        text-align: center;
+
+        h3 {
+            margin: 0 auto;
+            padding: 8px 0;
+            text-align: left;
+        }
+
+        &__content {
+            max-width: 1000px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 256px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+        }
+
+        .testimonial {
+            max-width: 1200px;
+            display: none;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+            animation: fade 0.5s ease-in-out;
+
+            &.active {
+                display: flex;
+            }
+
+            &__text {
+                height: 100%;
+                background-color: var(--ym-primary-50);
+                border-left: 4px solid var(--ym-primary-400);
+                padding: 16px 24px;
+                font-style: italic;
+                color: var(--ym-gray-800);
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &__comment {
+                p {
+                    text-align: justify;
+                    margin: 0;
+                }
+            }
+
+            &__about {
+                width: 100%;
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                margin-top: 16px;
+                font-style: normal;
+
+                h4 {
+                    margin: 0;
+                    color: var(--ym-primary);
+                    font-weight: 600;
+                }
+
+                p {
+                    margin: 0;
+                    color: var(--ym-gray-700);
+                    font-size: 0.875rem;
+                }
+            }
+        }
+
+        &__controls {
+            text-align: center;
+            margin-top: 12px;
+
+            button {
+                border: none;
+                background: var(--ym-primary-400);
+                color: white;
+                font-size: 1.125rem;
+                padding: 6px 10px;
+                margin: 0 6px;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: var(--ym-primary-600);
+                }
+            }
+        }
+
+        @media (max-width: 700px) {
+            .testimonial {
+                &.active {
+                    flex-direction: column;
+                }
+
+                img {
+                    width: 200px;
+                    border-radius: 16px;
+                }
+
+                &__text {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    /* ---- ANIMACIÓN ---- */
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+
+    /* ---- NEWSLETTER SECTION ---- */
+    .newsletter {
+        margin: 0;
+        width: 100dvw;
+        position: relative;
+        background: url("/images/backgrounds/tesla_roadster_front.jpg") no-repeat fixed center;
+        padding: 0;
+        color: white;
+
+        &__overlay {
+            background-color: rgba(0, 0, 0, 0.75);
+            width: 100%;
+            padding: 50px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        &__text {
+            h4 {
+                margin: 0;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: var(--ym-primary-400);
+            }
+
+            p {
+                margin: 8px 0 0;
+                font-size: 1rem;
+                color: var(--ym-primary-100);
+            }
+        }
+
+        &__form {
+            display: flex;
+            gap: 0;
+
+            input {
+                padding: 10px 16px;
+                border: none;
+                border-radius: 4px 0 0 4px;
+                width: 250px;
+                outline: none;
+                background-color: var(--ym-primary-50);
+                color: var(--ym-primary-950);
+            }
+
+            button {
+                background: var(--ym-primary);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 0 4px 4px 0;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: var(--ym-primary-600);
+                }
+            }
         }
     }
 }

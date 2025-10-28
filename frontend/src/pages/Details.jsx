@@ -39,6 +39,8 @@ const Details = () => {
                     <button onClick={cerrarModal()}>Cerrar</button>
                 </div>
             )}
+            
+            <Footer />
         </div>
     )
 }

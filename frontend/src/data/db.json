@@ -209,7 +209,7 @@
             "price": 25600000
         }
     ],
-    
+
     "brands": [
         { "name": "Tesla" },
         { "name": "Jeep" },
@@ -228,5 +228,38 @@
         { "name": "Renault" },
         { "name": "Ferrari" },
         { "name": "Citroën" }
+    ],
+
+    "categories": [
+        { "name": "SUV" },
+        { "name": "Sedán" },
+        { "name": "Pick-up" },
+        { "name": "Utilitario" },
+        { "name": "Deportivo" },
+        { "name": "Hatchback" }
+    ],
+
+    "testimonials": [
+        {
+        "id": 1,
+        "name": "Juan Cruz Novell",
+        "role": "Cliente satisfecho",
+        "comment": "La atención fue excelente desde el primer momento. Me asesoraron en cada detalle, resolvieron todas mis dudas y me ofrecieron distintas alternativas hasta encontrar el auto ideal para mí.",
+        "image": "/images/persons/fake_person_1.jpg"
+        },
+        {
+        "id": 2,
+        "name": "Martín López",
+        "role": "Cliente frecuente",
+        "comment": "Me sorprendió la variedad de modelos y la transparencia en toda la operación. Comparé precios con otras concesionarias y acá conseguí la mejor oferta, con facilidades de financiación adaptadas a mis necesidades.",
+        "image": "/images/persons/fake_person_2.jpg"
+        },
+        {
+        "id": 3,
+        "name": "Laura Fernández",
+        "role": "Compradora",
+        "comment": "Recomiendo totalmente este lugar. No solo encontré el vehículo que buscaba a un precio competitivo, sino que también recibí un trato cordial y profesional. Todo muy claro y rápido.",
+        "image": "/images/persons/fake_person_3.jpg"
+        }
     ]
 }

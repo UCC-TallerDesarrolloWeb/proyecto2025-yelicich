@@ -1,0 +1,100 @@
+/* ---- HEADER ---- */
+.header {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+    background: var(--ym-background-alpha);
+    border-bottom: 0.1px solid var(--ym-gray-400);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &__container {
+        width: 100%;
+        max-width: 1800px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 8px;
+            padding: 16px;
+        }
+
+        &-img {
+            height: 32px;
+            user-select: none;
+        }
+
+        &-title {
+            margin: 0;
+            padding: 0;
+            font-weight: 500;
+            color: var(--ym-primary-900);
+            font-size: 2rem;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+
+        .header__link {
+            text-decoration: none;
+            color: var(--ym-gray-700);
+            letter-spacing: 2px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+
+            &:hover {
+                text-decoration: underline;
+                color: var(--ym-primary-600);
+            }
+        }
+
+        .header__btn--catalogo {
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--ym-primary);
+            padding: 8px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1.3px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--ym-primary-600);
+            }
+        }
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 700px) {
+        &__logo-title {
+        font-size: 1.5rem;
+        }
+
+        &__logo-img {
+        height: 24px;
+        }
+
+        &__nav a:nth-child(-n + 3) {
+        display: none;
+        }
+    }
+}
