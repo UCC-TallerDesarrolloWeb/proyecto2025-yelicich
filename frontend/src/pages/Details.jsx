@@ -17,21 +17,30 @@ const Details = () => {
     const [similarCars, setSimilarCars] = useState([]);
     const [activeImg, setActiveImg] = useState("main");
     const [showModal, setShowModal] = useState(false);
-
-    const fetchData = async (url, setter) => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setter(data);
-        } catch (error) {
-            console.error(`Error al obtener datos de ${url}:`, error);
-        }
-    };
-
+    
     useEffect(() => {
-        fetchData(`${BASE_URL_CARS}/${id}`, setCar);
-        fetchData(BASE_URL_CARS, setSimilarCars);
-    }, []);
+        const fetchCarAndSimilar = async () => {
+            try {
+                const resCar = await fetch(`${BASE_URL_CARS}/${id}`);
+                if (!resCar.ok) throw new Error("Auto no encontrado");
+                const carData = await resCar.json();
+                setCar(carData);
+
+                const resAll = await fetch(BASE_URL_CARS);
+                const allCars = await resAll.json();
+
+                const similar = allCars
+                    .filter((c) => c.id !== Number(id) && c.type === carData.type)
+                    .slice(0, 5);
+
+                setSimilarCars(similar);
+            } catch (err) {
+                console.error("Error al obtener datos de autos:", err);
+            }
+        };
+
+        fetchCarAndSimilar();
+    }, [id]);
 
     if (!car) return <p>Cargando vehículo...</p>;
 
@@ -151,9 +160,13 @@ const Details = () => {
                     <div className="similar-cars">
                         <h3>Vehículos similares</h3>
                         <div className="similar-cars__list">
-                            {similarCars.map((car) => (
-                                <CardCar key={car.id} car={car} />
-                                ))}
+                            {
+                                similarCars.length === 0 ? (
+                                    <p>No hay autos similares disponibles.</p>
+                                ) : (
+                                    similarCars.map((car) => <CardCar key={car.id} car={car} />)
+                                )
+                            }
                         </div>
                     </div>
                 </div>

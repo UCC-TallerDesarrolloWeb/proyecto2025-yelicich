@@ -36,24 +36,31 @@
         justify-content: space-between;
         margin-bottom: 1rem;
 
-        .modal__title {
+        &__title {
             margin: 0;
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
 
-        .modal__close {
-            background: none;
+        &__close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
             border: none;
-            width: 36px;
-            height: 36px;
+            color: var(--ym-primary-950);
+            width: 24px;
+            height: 24px;
             font-size: 2rem;
+            font-weight: 700;
             cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.2s ease;
 
             &:hover {
                 color: var(--ym-accent);
                 background-color: var(--ym-primary-100);
-                border-radius: 50%;
+                transform: scale(1.05);
             }
         }
     }
