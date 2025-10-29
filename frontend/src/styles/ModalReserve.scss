@@ -1,0 +1,195 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    &[aria-hidden="false"] {
+        display: flex;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    &__content {
+        position: relative;
+        margin: 0 32px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 1.5rem 1.8rem;
+        width: 95%;
+        max-width: 500px;
+        max-height: 90%;
+        overflow-y: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        font-family: "Quicksand", sans-serif;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        .modal__title {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .modal__close {
+            background: none;
+            border: none;
+            width: 36px;
+            height: 36px;
+            font-size: 2rem;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--ym-accent);
+                background-color: var(--ym-primary-100);
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__body {
+        h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 1rem;
+            margin: 0.6rem 0 0.4rem;
+            font-weight: 600;
+        }
+
+        .modal__section {
+            &__subtitle {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 32px;
+            }
+        }
+
+        .subtitle-error {
+        color: var(--ym-accent);
+        font-weight: 600;
+        }
+    }
+
+    .options {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        gap: 16px;
+
+        .option {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--ym-gray-400);
+            border-radius: 6px;
+            cursor: pointer;
+            background: var(--ym-primary-50);
+            color: var(--ym-primary-950);
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+
+            &:hover {
+                border-color: var(--ym-primary-400);
+                background: var(--ym-primary-100);
+            }
+
+            &.active {
+                border: 2.5px solid var(--ym-primary);
+                background: var(--ym-primary-50);
+                font-weight: 600;
+            }
+
+            &.color,
+            &.wheels {
+                width: 48px;
+                height: 48px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                border: 2px solid transparent;
+                transition: border 0.2s ease;
+
+                img {
+                    width: 80%;
+                    height: 80%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                &.active {
+                    border: 2px solid var(--ym-primary-400);
+                    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            &.wheels {
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+
+    /* ---- resumen ---- */
+    .resumen {
+        background: var(--ym-primary-100);
+        border-radius: 12px;
+        padding: 1rem;
+        font-size: 0.875rem;
+        margin-top: 8px;
+
+        p {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            color: var(--ym-gray-700);
+        }
+
+        .total {
+            margin-top: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--ym-primary-900);
+        }
+    }
+
+    /* ---- footer ---- */
+    &__footer {
+        margin-top: 1.2rem;
+
+        .btn-confirm {
+            display: block;
+            width: 100%;
+            background: var(--ym-primary);
+            color: var(--ym-primary-50);
+            font-weight: 600;
+            font-family: Quicksand, sans-serif;
+            letter-spacing: 1.3px;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: var(--ym-primary-600);
+            }
+        }
+    }
+}
