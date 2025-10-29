@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
 
     &:hover {
         box-shadow: 0 0 8px 1px var(--ym-primary-alpha);
@@ -45,19 +46,19 @@
 
             &__marca {
                 font-weight: 300;
-                font-size: 1.25rem;
+                font-size: 1.25em;
                 color: var(--ym-primary-900);
             }
 
             &__modelo {
                 color: var(--ym-primary-800);
                 font-weight: 600;
-                font-size: 1.75rem;
+                font-size: 1.75em;
             }
 
             &__tipo-caja {
                 font-weight: 400;
-                font-size: 1rem;
+                font-size: 1em;
                 color: var(--ym-gray-700);
             }
         }
@@ -66,13 +67,13 @@
             margin-top: 16px;
             color: var(--ym-primary);
             font-weight: 400;
-            font-size: 1.5rem;
+            font-size: 1.5em;
             display: flex;
             flex-direction: column;
 
             &__desde {
                 font-weight: 300;
-                font-size: 1rem;
+                font-size: 0.65em;
                 color: var(--ym-gray-700);
             }
         }

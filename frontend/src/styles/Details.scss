@@ -33,30 +33,7 @@
 
             .card-car {
                 flex: 0 0 240px;
-
-                &__informacion {
-                    &__datos {
-                        &__marca {
-                            font-size: 1rem;
-                        }
-
-                        &__modelo {
-                            font-size: 1.5rem;
-                        }
-
-                        &__tipo-caja {
-                            font-size: 0.8125rem;
-                        }
-                    }
-
-                    &__precio {
-                        font-size: 1.4rem;
-
-                        &__desde {
-                            font-size: 0.75rem;
-                        }
-                    }
-                }
+                font-size: 0.875rem;
             }
         }
     }
