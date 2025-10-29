@@ -280,6 +280,37 @@
         }
     }
 
+    /* ---- RECENT CARS SECTION ---- */
+    .recently-viewed {
+        max-width: 1200px;
+
+        h3 {
+            margin: 0;
+            padding: 8px 0;
+            text-align: left;
+        }
+
+        &__list {
+            width: 100%;
+            text-align: left;
+            justify-content: flex-start;
+            list-style: none;
+            display: flex;
+            gap: 4px;
+            padding-bottom: 8px;
+
+            .card-car {
+                margin: 4px;
+                flex: 0 0 240px;
+                font-size: 0.875rem;
+
+                img {
+                    max-width: 256px;
+                }
+            }
+        }
+    }
+
     /* ---- TESTIMONIALS SECTION ---- */
     .testimonials {
         max-width: 1200px;

@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { formatPrice, textBase } from '@utils/format';
-import Header from "@components/Header";
 import Breadcrumb from "@components/Breadcrumb";
 import CardCar from "@components/CardCar";
 import InfoSection from "@components/InfoSection";
 import ModalReserve from "@components/ModalReserve";
-import Footer from "@components/Footer";
 import "@styles/Details.scss";
 
 const BASE_URL_CARS = "http://localhost:4000/cars"

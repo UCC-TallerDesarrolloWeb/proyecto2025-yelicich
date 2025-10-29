@@ -1,9 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { formatCurrency, textBase } from "@utils/format";
-import Header from "@components/Header";
 import Breadcrumb from "@components/Breadcrumb";
 import CardCar from "@components/CardCar";
-import Footer from "@components/Footer";
 import "@styles/Catalog.scss";
 
 const BASE_URL = "http://localhost:4000/";
@@ -155,7 +153,7 @@ const Catalog = () => {
                         <div className="filters__group filters__group--price" id="price-filter">
                             <h4 className="filters__title">Precio</h4>
                             {priceError && (
-                            <p className="filters__error-text">El precio mínimo no puede ser mayor al máximo.</p>
+                                <p className="filters__error-text">El precio mínimo no puede ser mayor al máximo.</p>
                             )}
                             <ul className="filters__list">
                                 <li className="filters__item">

@@ -27,7 +27,11 @@ const CardCar = ({ car }) => {
     };
 
     const navigate = useNavigate()
+
     const navToDetails = (id) => {
+        const viewed = JSON.parse(localStorage.getItem("recentCars") || "[]");
+        const updated = [id, ...viewed.filter((v) => v !== id)].slice(0, 5);
+        localStorage.setItem("recentCars", JSON.stringify(updated));
         navigate(`/details/${id}`);
     };
 

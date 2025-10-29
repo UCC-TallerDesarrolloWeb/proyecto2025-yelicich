@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { textBase } from '@utils/format';
 import { useNavigate } from "react-router-dom"
-import Footer from "@components/Footer";
-import Header from "@components/Header";
+import CardCar from "@components/CardCar";
 import "@styles/Home.scss";
 
 const BASE_URL= "http://localhost:4000/";
@@ -11,6 +10,7 @@ const Home = () => {
     const [bestSellerCars, setBestSellerCars] = useState([]);
     const [brands, setBrands] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [recentCars, setRecentCars] = useState([]);
     const [testimonials, setTestimonials] = useState([]);
     const [current, setCurrent] = useState(0);
 
@@ -94,6 +94,30 @@ const Home = () => {
     const navToCategory = (name) =>
         navigate(`/catalog?categoria=${encodeURIComponent(name)}`);
 
+    useEffect(() => {
+        const viewedIds = JSON.parse(localStorage.getItem("recentCars") || "[]");
+
+        if (viewedIds.length === 0) return;
+
+        const fetchRecent = async () => {
+            try {
+            const res = await fetch(`${BASE_URL}cars`);
+            const data = await res.json();
+
+            // filtrar solo los autos cuyos id estén en viewedIds (manteniendo orden)
+            const filtered = viewedIds
+                .map((id) => data.find((c) => c.id === id))
+                .filter(Boolean);
+
+            setRecentCars(filtered);
+            } catch (err) {
+            console.error("Error al cargar autos vistos:", err);
+            }
+        };
+
+        fetchRecent();
+    }, []);
+
     return (
         <main className="home">
             {/* Hero Section */}
@@ -160,6 +184,20 @@ const Home = () => {
                     ))}
                 </div>
             </section>
+
+            {/* Últimos vehículos vistos */}
+            {recentCars.length != 0 && (
+                <section className="recently-viewed" aria-label="Últimos autos vistos">
+                    <h3>Últimos <span className="bold">vehículos vistos</span></h3>
+                    <ul className="recently-viewed__list">
+                        {recentCars.map((car) => (
+                            <li key={car.id}>
+                                <CardCar car={car} />
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )}
 
             {/* Testimonials Section */}
             {hasTestimonials ? (

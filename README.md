@@ -145,7 +145,7 @@ Tener en cuenta:
 - [X] Se debe emplear pseudoclase
 - [X] No emplear !important
 - [X] El diseño de la página debe ser consistente
-- [ ] En la primera etapa debe existir un único archivo CSS (se debe evitar código duplicado. Se debe aplicar re-utilización de código/estilos)
+- [X] En la primera etapa debe existir un único archivo CSS (se debe evitar código duplicado. Se debe aplicar re-utilización de código/estilos)
 
 ### Sobre Accesibilidad:
 - [X] Toda imagen debe tener su etiqueta alt
@@ -204,15 +204,15 @@ Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 
 ### Sobre React
 - [X] Se debe emplear **Vite** para instalar **React**
-- [x] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
-- [x] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
-- [ ] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
+- [X] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
+- [X] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
+- [X] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
 - [X] La estructura del proyecto (carpetas) debe ser el correcto: components, pages, styles
-- [x] Los **imports** deben ser usando con **alias**
+- [X] Los **imports** deben ser usando con **alias**
 - [ ] Validaciones en tiempo real con onChange + mensajes de error accesibles.
-- [x] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
-- [ ] Guardar algún dato en localStorage (ej: preferencias de tema o un carrito de compras).
-- [ ] En caso de tener backend, emplear **fetch**
+- [X] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
+- [X] Guardar algún dato en localStorage (ej: preferencias de tema o un carrito de compras).
+- [X] En caso de tener backend, emplear **fetch**
 - [X] En caso de no contar con un servicio que nos provea la información necesaria, la misma debe ser leída en formato tipo Json local y renderizar listas dinámicas. Ejemplo:
 ````javascript
 const activities = [
@@ -237,7 +237,7 @@ const activities = [
 ````
 
 ### Sobre las Correcciones
-- [x] Todas las correcciones y mejoras (sugerencias) solicitadas durante el primer parcial deben estar corregidas.
+- [X] Todas las correcciones y mejoras (sugerencias) solicitadas durante el primer parcial deben estar corregidas.
 - [ ] No debe haber errores presentes en el código (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [ ] Se corregirá el proyecto con el último commit realizado en Github hasta las 23:59 del día anterior a la fecha de entrega
 - [ ] Las notas serán de la siguiente manera: (Por ejemplo 55% 4; 59% 5; 67% 6; 75% 7; 82% 8; 89% 9; 97% 10)
