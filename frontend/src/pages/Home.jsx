@@ -5,6 +5,8 @@ import Footer from "@components/Footer";
 import Header from "@components/Header";
 import "@styles/Home.scss";
 
+const BASE_URL= "http://localhost:4000/";
+
 const Home = () => {
     const [bestSellerCars, setBestSellerCars] = useState([]);
     const [brands, setBrands] = useState([]);
@@ -12,17 +14,11 @@ const Home = () => {
     const [testimonials, setTestimonials] = useState([]);
     const [current, setCurrent] = useState(0);
 
-    const BASE_URL_CARS = "http://localhost:4000/cars";
-    const BASE_URL_BRANDS = "http://localhost:4000/brands"
-    const BASE_URL_CATEGORIES = "http://localhost:4000/categories"
-    const BASE_URL_TESTIMONIALS = "http://localhost:4000/testimonials"
-
     const fetchCars = async () => {
         try {
-            const response = await fetch(BASE_URL_CARS);
+            const response = await fetch(`${BASE_URL}cars`);
             const data = await response.json();
-            const featuredIds = [2, 9, 6];
-            const featured = data.filter(car => featuredIds.map(String).includes(car.id));
+            const featured = data.filter(car => car.isFeatured);
             setBestSellerCars(featured);
         } catch (error) {
             console.error(`Error al obtener autos: ${error}`);
@@ -41,13 +37,25 @@ const Home = () => {
 
     useEffect(() => {
         fetchCars();
-        fetchData(BASE_URL_BRANDS, setBrands);
-        fetchData(BASE_URL_CATEGORIES, setCategories);
-        fetchData(BASE_URL_TESTIMONIALS, setTestimonials);
+        fetchData(`${BASE_URL}brands`, setBrands);
+        fetchData(`${BASE_URL}categories`, setCategories);
+        fetchData(`${BASE_URL}testimonials`, setTestimonials);
     }, []);
 
     useEffect(() => {
+        if (testimonials.length === 0) {
+        setCurrent(0);
+        return;
+        }
         if (current >= testimonials.length) setCurrent(0);
+    }, [testimonials, current]);
+
+    useEffect(() => {
+        if (testimonials.length < 2) return;
+        const interval = setInterval(() => {
+        setCurrent((prev) => (prev + 1) % testimonials.length);
+        }, 5000);
+        return () => clearInterval(interval);
     }, [testimonials]);
 
     const nextTestimonial = () => {
@@ -56,7 +64,7 @@ const Home = () => {
 
     const prevTestimonial = () => {
         setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    };;
+    };
 
     const hasTestimonials = testimonials.length > 0;
     const t = hasTestimonials ? testimonials[current] : null;
@@ -76,9 +84,15 @@ const Home = () => {
     };
 
     const navigate = useNavigate()
-    const navToDetails = (id) => {
+
+    const navToDetails = (id) =>
         navigate(`/details/${id}`);
-    };
+
+    const navToBrand = (name) =>
+        navigate(`/catalog?marca=${encodeURIComponent(name)}`);
+
+    const navToCategory = (name) =>
+        navigate(`/catalog?categoria=${encodeURIComponent(name)}`);
 
     return (
         <>
@@ -125,7 +139,7 @@ const Home = () => {
                 <h3>Buscá por <span className="bold">marca</span></h3>
                 <div className="grid-section__grid">
                     {brands.map((brand) => (
-                    <a key={brand.name} href={`../catalog_page/catalog.html?marca=${encodeURIComponent(brand.name)}`} className="grid-section__item">
+                    <a key={brand.name} onClick={() => navToBrand(brand.name)} className="grid-section__item">
                         <div className="grid-section__logo">
                             <img src={`/images/brands/${textBase(brand.name)}.webp`} alt={`logo de la marca ${brand.name}`} loading="lazy" />
                         </div>
@@ -140,7 +154,7 @@ const Home = () => {
                 <h3>Buscá por <span className="bold">categoría</span></h3>
                 <div className="grid-section__grid">
                     {categories.map((category) => (
-                    <a key={category.name} href={`../catalog_page/catalog.html?categoria=${encodeURIComponent(category.name)}`} className="grid-section__item">
+                    <a key={category.name} onClick={() => navToCategory(category.name)} className="grid-section__item">
                         <div className="grid-section__logo">
                             <img src={`/images/categories/${textBase(category.name)}.webp`} alt={`logo de la categoría ${category.name}`} loading="lazy" />
                         </div>

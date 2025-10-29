@@ -6,7 +6,8 @@
             "model": "Model S",
             "type": "Deportivo",
             "transmission": "Eléctrico",
-            "price": 202047000
+            "price": 202047000,
+            "isFeatured": false
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "model": "Compass",
             "type": "SUV",
             "transmission": "Automático",
-            "price": 60500000
+            "price": 60500000,
+            "isFeatured": true
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "model": "Ranger",
             "type": "Pick-up",
             "transmission": "Manual",
-            "price": 64000000
+            "price": 64000000,
+            "isFeatured": false
         },
         {
             "id": 4,
@@ -30,7 +33,8 @@
             "model": "Corolla",
             "type": "Sedán",
             "transmission": "Automático",
-            "price": 44645000
+            "price": 44645000,
+            "isFeatured": false
         },
         {
             "id": 5,
@@ -38,7 +42,8 @@
             "model": "Model 3",
             "type": "Sedán",
             "transmission": "Eléctrico",
-            "price": 58455000
+            "price": 58455000,
+            "isFeatured": false
         },
         {
             "id": 6,
@@ -46,7 +51,8 @@
             "model": "Model X",
             "type": "SUV",
             "transmission": "Eléctrico",
-            "price": 192026000
+            "price": 192026000,
+            "isFeatured": true
         },
         {
             "id": 7,
@@ -54,7 +60,8 @@
             "model": "Model Y",
             "type": "SUV",
             "transmission": "Eléctrico",
-            "price": 75467000
+            "price": 75467000,
+            "isFeatured": false
         },
         {
             "id": 8,
@@ -62,7 +69,8 @@
             "model": "Amarok",
             "type": "Pick-up",
             "transmission": "Manual",
-            "price": 69900000
+            "price": 69900000,
+            "isFeatured": false
         },
         {
             "id": 9,
@@ -70,7 +78,8 @@
             "model": "SW4",
             "type": "SUV",
             "transmission": "Automático",
-            "price": 85674000
+            "price": 85674000,
+            "isFeatured": true
         },
         {
             "id": 11,
@@ -78,7 +87,8 @@
             "model": "RAMPAGE",
             "type": "Pick-up",
             "transmission": "Manual",
-            "price": 61500000
+            "price": 61500000,
+            "isFeatured": false
         },
         {
             "id": 12,
@@ -86,7 +96,8 @@
             "model": "Montana",
             "type": "Pick-up",
             "transmission": "Automático",
-            "price": 36800000
+            "price": 36800000,
+            "isFeatured": false
         },
         {
             "id": 13,
@@ -94,7 +105,8 @@
             "model": "Alaskan",
             "type": "Pick-up",
             "transmission": "Automático",
-            "price": 54840000
+            "price": 54840000,
+            "isFeatured": false
         },
         {
             "id": 14,
@@ -102,7 +114,8 @@
             "model": "Titano",
             "type": "Pick-up",
             "transmission": "Automático",
-            "price": 50900000
+            "price": 50900000,
+            "isFeatured": false
         },
         {
             "id": 15,
@@ -110,7 +123,8 @@
             "model": "Hilux",
             "type": "Pick-up",
             "transmission": "Automático",
-            "price": 63350000
+            "price": 63350000,
+            "isFeatured": false
         },
         {
             "id": 17,
@@ -118,7 +132,8 @@
             "model": "T-Cross",
             "type": "SUV",
             "transmission": "Automático",
-            "price": 31500000
+            "price": 31500000,
+            "isFeatured": false
         },
         {
             "id": 18,
@@ -126,7 +141,8 @@
             "model": "Nivus",
             "type": "SUV",
             "transmission": "Manual",
-            "price": 34700000
+            "price": 34700000,
+            "isFeatured": false
         },
         {
             "id": 19,
@@ -134,7 +150,8 @@
             "model": "Taos",
             "type": "SUV",
             "transmission": "Automático",
-            "price": 47900000
+            "price": 47900000,
+            "isFeatured": false
         },
         {
             "id": 20,
@@ -142,7 +159,8 @@
             "model": "Tera",
             "type": "SUV",
             "transmission": "Manual",
-            "price": 29000000
+            "price": 29000000,
+            "isFeatured": false
         },
         {
             "id": 21,
@@ -150,7 +168,8 @@
             "model": "Tiguan",
             "type": "SUV",
             "transmission": "Automático",
-            "price": 72300000
+            "price": 72300000,
+            "isFeatured": false
         },
         {
             "id": 22,
@@ -158,7 +177,8 @@
             "model": "Virtus",
             "type": "Sedán",
             "transmission": "Manual",
-            "price": 28900000
+            "price": 28900000,
+            "isFeatured": false
         },
         {
             "id": 23,
@@ -166,7 +186,8 @@
             "model": "Vento",
             "type": "Sedán",
             "transmission": "Manual",
-            "price": 64700000
+            "price": 64700000,
+            "isFeatured": false
         },
         {
             "id": 24,
@@ -174,7 +195,8 @@
             "model": "Polo",
             "type": "Hatchback",
             "transmission": "Manual",
-            "price": 24200000
+            "price": 24200000,
+            "isFeatured": false
         },
         {
             "id": 25,
@@ -182,7 +204,8 @@
             "model": "A3",
             "type": "Sedán",
             "transmission": "Manual",
-            "price": 83250000
+            "price": 83250000,
+            "isFeatured": false
         },
         {
             "id": 26,
@@ -190,7 +213,8 @@
             "model": "Territory",
             "type": "SUV",
             "transmission": "Automático",
-            "price": 43990000
+            "price": 43990000,
+            "isFeatured": false
         },
         {
             "id": 27,
@@ -198,7 +222,8 @@
             "model": "Kangoo",
             "type": "Utilitario",
             "transmission": "Manual",
-            "price": 30190000
+            "price": 30190000,
+            "isFeatured": false
         },
         {
             "id": 28,
@@ -206,7 +231,8 @@
             "model": "208",
             "type": "Hatchback",
             "transmission": "Manual",
-            "price": 25600000
+            "price": 25600000,
+            "isFeatured": false
         }
     ],
 

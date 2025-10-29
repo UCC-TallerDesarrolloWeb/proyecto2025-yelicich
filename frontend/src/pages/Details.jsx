@@ -9,14 +9,14 @@ import ModalReserve from "@components/ModalReserve";
 import Footer from "@components/Footer";
 import "@styles/Details.scss";
 
+const BASE_URL_CARS = "http://localhost:4000/cars"
+
 const Details = () => {
     const { id } = useParams();
     const [car, setCar] = useState(null);
     const [similarCars, setSimilarCars] = useState([]);
     const [activeImg, setActiveImg] = useState("main");
     const [showModal, setShowModal] = useState(false);
-
-    const BASE_URL_CARS = "http://localhost:4000/cars"
 
     const fetchData = async (url, setter) => {
         try {

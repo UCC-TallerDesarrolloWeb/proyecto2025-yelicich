@@ -416,7 +416,9 @@
         margin: 0;
         width: 100vw;
         position: relative;
-        background: url("/images/backgrounds/tesla_roadster_front.jpg") no-repeat fixed center;
+        background: url("/images/backgrounds/tesla_roadster_front.jpg") no-repeat;
+        background-size: 100% auto;
+        background-position: center -600px;
         padding: 0;
         color: white;
 

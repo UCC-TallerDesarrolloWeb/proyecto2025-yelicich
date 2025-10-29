@@ -14,3 +14,10 @@ export const textBase = (str) => {
         .toLowerCase()
         .replace(/\s+/g, "");
 };
+
+export const formatCurrency = (value) => {
+    if (!value) return "";
+    const num = String(value).replace(/\D/g, "");
+    if (!num) return "";
+    return `$ ${Number(num).toLocaleString("es-AR")}`;
+};
