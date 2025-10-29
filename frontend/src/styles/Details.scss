@@ -1,0 +1,63 @@
+.details {
+
+    .similar-cars {
+        width: 100%;
+
+        h3 {
+            width: 100%;
+            margin: 0 0 16px;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        &__list {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 8px;
+            
+            &::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--ym-gray-400);
+                border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+
+            .card-car {
+                flex: 0 0 240px;
+
+                &__informacion {
+                    &__datos {
+                        &__marca {
+                            font-size: 1rem;
+                        }
+
+                        &__modelo {
+                            font-size: 1.5rem;
+                        }
+
+                        &__tipo-caja {
+                            font-size: 0.8125rem;
+                        }
+                    }
+
+                    &__precio {
+                        font-size: 1.4rem;
+
+                        &__desde {
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
