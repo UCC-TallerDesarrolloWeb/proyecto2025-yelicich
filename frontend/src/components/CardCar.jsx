@@ -26,34 +26,23 @@ const CardCar = ({ car }) => {
     };
 
     return (
-        <div className="card-car">
+        <div className="card-car" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <a href={`/details?id=${car.id}`} className="link-detalle">
-            <div
-            className="car-image-container"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            >
-            <img
-                src={imageSrc}
-                alt={`${car.brand} ${car.model}`}
-                loading="lazy"
-                onError={handleError}
-            />
+            <div className="car-image-container">
+            <img src={imageSrc} alt={`${car.brand} ${car.model}`} loading="lazy" onError={handleError}/>
             </div>
 
             <div className="informacion">
-            <div className="datos">
-                <div className="car-marca">{car.brand}</div>
-                <div className="car-modelo">{car.model}</div>
-                <div className="car-tipo-caja">
-                {car.type} • {car.transmission}
+                <div className="datos">
+                    <div className="car-marca">{car.brand}</div>
+                    <div className="car-modelo">{car.model}</div>
+                    <div className="car-tipo-caja">{car.type} • {car.transmission}</div>
                 </div>
-            </div>
 
-            <div className="car-precio">
-                <span className="car-desde">Desde</span>
-                <strong>{formatPrice(car.price)}</strong>
-            </div>
+                <div className="car-precio">
+                    <span className="car-desde">Desde</span>
+                    <strong>{formatPrice(car.price)}</strong>
+                </div>
             </div>
         </a>
         </div>

@@ -55,7 +55,7 @@ const Catalog = () => {
                 <div className="catalog__container">
                     <div className="catalog__header">
                         <h2>Catálogo de vehículos</h2>
-                        <hr className="divider" />
+                        <hr/>
 
                         <div className="catalog__subtitles">
                             <div className="catalog__subtitles__cars">{totalCars} autos</div>
@@ -102,31 +102,39 @@ const Catalog = () => {
                             <div className="filters__group filters__group--transmission">
                                 <h4 className="filters__title">Transmisión</h4>
                                 <ul className="filters__list">
-                                    <li className="filters__item">
-                                        <input type="checkbox" id="manual" value="Manual" />
-                                        <label htmlFor="manual">Manual</label>
-                                    </li>
-                                    <li className="filters__item">
-                                        <input type="checkbox" id="automatic" value="Automático" />
-                                        <label htmlFor="automatic">Automático</label>
-                                    </li>
-                                    <li className="filters__item">
-                                        <input type="checkbox" id="electric" value="Eléctrico" />
-                                        <label htmlFor="electric">Eléctrico</label>
-                                    </li>
+                                    {transmissions.map((transmission) => (
+                                        <li key={transmission.name} className="filters__list__item">
+                                            <input type="checkbox" id={textBase(transmission.name)} value={transmission.name} />    
+                                            <label htmlFor={textBase(transmission.name)}>{transmission.name}</label>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
 
                             {/* Filtro de segmento */}
                             <div className="filters__group filters__group--segment">
                                 <h4 className="filters__title">Segmento</h4>
-                                <ul className="filters__list" id="segment-filter"></ul>
+                                <ul className="filters__list" id="segment-filter">
+                                    {categories.map((category) => (
+                                        <li key={category.name} className="filters__list__item">
+                                            <input type="checkbox" id={textBase(category.name)} value={category.name} />    
+                                            <label htmlFor={textBase(category.name)}>{category.name}</label>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
                             {/* Filtro de marca */}
                             <div className="filters__group filters__group--brand">
                                 <h4 className="filters__title">Marca</h4>
-                                <ul className="filters__list" id="brand-filter"></ul>
+                                <ul className="filters__list" id="brand-filter">
+                                    {brands.map((brand) => (
+                                        <li key={brand.name} className="filters__list__item">
+                                            <input type="checkbox" id={textBase(brand.name)} value={brand.name} />
+                                            <label htmlFor={textBase(brand.name)}>{brand.name}</label>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
 
