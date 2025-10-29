@@ -100,7 +100,7 @@ Tener en cuenta:
       - Crear una carpeta para las imágenes
       - Carpeta para los sketch
       - Carpeta para los mockups/Wireframes
-- [ ] La estructura del proyecto debe ser adecuada
+- [X] La estructura del proyecto debe ser adecuada
       En una segunda etapa, al emplear **React**:
       - Carpeta de Componentes
       - Carpeta de Pages
@@ -204,13 +204,13 @@ Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 
 ### Sobre React
 - [X] Se debe emplear **Vite** para instalar **React**
-- [ ] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
-- [ ] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
+- [x] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
+- [x] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
 - [ ] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
 - [X] La estructura del proyecto (carpetas) debe ser el correcto: components, pages, styles
-- [ ] Los **imports** deben ser usando con **alias**
+- [x] Los **imports** deben ser usando con **alias**
 - [ ] Validaciones en tiempo real con onChange + mensajes de error accesibles.
-- [ ] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
+- [x] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
 - [ ] Guardar algún dato en localStorage (ej: preferencias de tema o un carrito de compras).
 - [ ] En caso de tener backend, emplear **fetch**
 - [X] En caso de no contar con un servicio que nos provea la información necesaria, la misma debe ser leída en formato tipo Json local y renderizar listas dinámicas. Ejemplo:
@@ -237,7 +237,7 @@ const activities = [
 ````
 
 ### Sobre las Correcciones
-- [ ] Todas las correcciones y mejoras (sugerencias) solicitadas durante el primer parcial deben estar corregidas.
+- [x] Todas las correcciones y mejoras (sugerencias) solicitadas durante el primer parcial deben estar corregidas.
 - [ ] No debe haber errores presentes en el código (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [ ] Se corregirá el proyecto con el último commit realizado en Github hasta las 23:59 del día anterior a la fecha de entrega
 - [ ] Las notas serán de la siguiente manera: (Por ejemplo 55% 4; 59% 5; 67% 6; 75% 7; 82% 8; 89% 9; 97% 10)

@@ -55,7 +55,6 @@ const Details = () => {
     return (
         <div className="page">
             <main className="details page-container">
-                <Header />
                 <Breadcrumb items={[
                     { href: "../home", label: "Inicio" },
                     { href: "../catalog", label: "Catálogo" },
@@ -173,9 +172,6 @@ const Details = () => {
             </main>
 
             {showModal && <ModalReserve car={car} onClose={() => setShowModal(false)} />}
-
-            
-            <Footer />
         </div>
     )
 }

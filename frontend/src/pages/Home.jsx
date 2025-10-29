@@ -95,9 +95,6 @@ const Home = () => {
         navigate(`/catalog?categoria=${encodeURIComponent(name)}`);
 
     return (
-        <>
-        <Header />
-
         <main className="home">
             {/* Hero Section */}
             <div className="hero" aria-label="Presentación">
@@ -211,9 +208,6 @@ const Home = () => {
                 </div>
             </section>
         </main>
-        
-        <Footer />
-        </>
     )
 }
 

@@ -110,7 +110,6 @@ const Catalog = () => {
     return (
         <div className="page">
         <main className="catalog page-container">
-            <Header />
             <Breadcrumb
             items={[
                 { href: "../home", label: "Inicio" },
@@ -271,8 +270,6 @@ const Catalog = () => {
                 </div>
             </div>
         </main>
-
-        <Footer />
         </div>
     );
 };
