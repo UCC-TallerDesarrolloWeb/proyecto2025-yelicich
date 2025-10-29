@@ -199,4 +199,11 @@
             }
         }
     }
+
+    .error-text {
+        color: var(--ym-accent);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-left: 8px;
+    }
 }

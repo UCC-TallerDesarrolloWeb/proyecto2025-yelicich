@@ -9,6 +9,12 @@ const ModalReserve = ({ car, onClose }) => {
     const [wheel, setWheel] = useState(null);
     const [payment, setPayment] = useState(null);
     const [installments, setInstallments] = useState(null);
+    const [errors, setErrors] = useState({
+        color: "",
+        wheel: "",
+        payment: "",
+        installments: "",
+    });
 
     const handleSelect = (setter, value) => setter(value);
 
@@ -55,35 +61,37 @@ const ModalReserve = ({ car, onClose }) => {
     const metodos = ["contado", "tarjeta"];
 
     const onConfirmPayment = () => {
+        const newErrors = { color: "", wheel: "", payment: "", installments: "" };
+        let valid = true;
+
         if (!color) {
-            alert("Debe seleccionar un color exterior.");
-            return;
+            newErrors.color = "Seleccioná un color exterior.";
+            valid = false;
         }
-
         if (!wheel) {
-            alert("Debe seleccionar un tipo de rines.");
-            return;
+            newErrors.wheel = "Seleccioná un tipo de rines.";
+            valid = false;
         }
-
         if (!payment) {
-            alert("Debe seleccionar un método de pago.");
-            return;
+            newErrors.payment = "Elegí un método de pago.";
+            valid = false;
         }
-
         if (payment === "tarjeta" && !installments) {
-            alert("Debe seleccionar una opción de financiación.");
-            return;
+            newErrors.installments = "Seleccioná una opción de financiación.";
+            valid = false;
         }
 
-        alert(
-            `¡Gracias por su compra!\n\nResumen:\n- Color: ${color}\n- Rines: ${wheel}\n- Pago: ${payment}${
-            payment === "tarjeta" ? ` (${installments} cuotas)` : ""
-            }\n\nNos pondremos en contacto con usted pronto.`
-        );
+        setErrors(newErrors);
 
-        onClose();
+        if (valid) {
+            alert(
+                `¡Gracias por su compra!\n\nResumen:\n- Color: ${color}\n- Rines: ${wheel}\n- Pago: ${payment}${
+                payment === "tarjeta" ? ` (${installments} cuotas)` : ""
+                }\n\nNos pondremos en contacto con usted pronto.`
+            );
+            onClose();
+        }
     };
-
 
     return (
         <div className="modal" aria-hidden="false">
@@ -102,7 +110,12 @@ const ModalReserve = ({ car, onClose }) => {
                         <span className="icon material-icons-round">edit</span>
                         <h3>Personalizar</h3>
                     </div>
-                    <h4>Color exterior</h4>
+                    <h4>
+                        Color exterior{" "}
+                        {errors.color && (
+                            <span className="error-text" role="alert" aria-live="assertive">{errors.color}</span>
+                        )}
+                    </h4>
                     <div className="options">
                         {paint_colors.map((clr) => (
                             <button key={clr} className={`option color ${color === clr ? "active" : ""}`} aria-label={clr} onClick={() => handleSelect(setColor, clr)}>
@@ -114,7 +127,12 @@ const ModalReserve = ({ car, onClose }) => {
 
                 {/* Rines */}
                 <div className="modal__section">
-                    <h4>Rines</h4>
+                    <h4>
+                        Rines{" "}
+                        {errors.wheel && (
+                            <span className="error-text" role="alert" aria-live="assertive">{errors.wheel}</span>
+                        )}
+                    </h4>
                     <div className="options">
                         {wheels.map((w) => (
                             <button key={w} className={`option wheels ${wheel === w ? "active" : ""}`} aria-label={w} onClick={() => handleSelect(setWheel, w)}>
@@ -130,7 +148,12 @@ const ModalReserve = ({ car, onClose }) => {
                         <span className="icon material-icons-round">payment</span>
                         <h3>Forma de pago</h3>
                     </div>
-                    <h4>Método</h4>
+                    <h4>
+                        Método{" "}
+                        {errors.payment && (
+                            <span className="error-text" role="alert" aria-live="assertive">{errors.payment}</span>
+                        )}
+                    </h4>
                     <div className="options">
                         {metodos.map((m) => (
                             <button key={m} className={`option ${payment === m ? "active" : ""}`} onClick={() => handleSelect(setPayment, m)}>
@@ -141,7 +164,12 @@ const ModalReserve = ({ car, onClose }) => {
 
                     {payment === "tarjeta" && (
                     <div className="modal__section__financiacion">
-                        <h4>Financiación</h4>
+                        <h4>
+                            Financiación{" "}
+                            {errors.installments && (
+                                <span className="error-text" role="alert" aria-live="assertive">{errors.installments}</span>
+                            )}
+                        </h4>
                         <div className="options">
                             {[12, 24, 36, 48].map((n) => (
                                 <button key={n} className={`option ${installments === n ? "active" : ""}`} onClick={() => handleSelect(setInstallments, n)}>

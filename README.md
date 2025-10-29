@@ -196,10 +196,6 @@ Se debe agregar funcionalidad Js a la página HTML+CSS desarrollada
 
 Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 
-
-
-
-
 ## Requisitos del Segundo Parcial
 
 ### Sobre React
@@ -209,7 +205,7 @@ Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 - [X] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
 - [X] La estructura del proyecto (carpetas) debe ser el correcto: components, pages, styles
 - [X] Los **imports** deben ser usando con **alias**
-- [ ] Validaciones en tiempo real con onChange + mensajes de error accesibles.
+- [X] Validaciones en tiempo real con onChange + mensajes de error accesibles.
 - [X] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
 - [X] Guardar algún dato en localStorage (ej: preferencias de tema o un carrito de compras).
 - [X] En caso de tener backend, emplear **fetch**
