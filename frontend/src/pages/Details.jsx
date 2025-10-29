@@ -13,6 +13,7 @@ const Details = () => {
     const { id } = useParams();
     const [car, setCar] = useState(null);
     const [similarCars, setSimilarCars] = useState([]);
+    const [activeImg, setActiveImg] = useState("main");
     const [showModal, setShowModal] = useState(false);
 
     const BASE_URL_CARS = "http://localhost:4000/cars"
@@ -34,6 +35,14 @@ const Details = () => {
 
     if (!car) return <p>Cargando vehículo...</p>;
 
+    const model = textBase(car.model);
+    const imgNames = ["main", "right", "back", "front", "inside"];
+    const basePath = `/images/cars/${model}`;
+
+    const handleImgError = (e) => {
+        e.target.src = "/images/cars/without_image.webp";
+    };
+
     return (
         <div className="page">
             <main className="details page-container">
@@ -48,10 +57,28 @@ const Details = () => {
                     <div className="details__content">
                         <div className="details__content__left">
                             <div className="images-container">
+                                {/* Miniaturas */}
                                 <div className="images-thumbnails">
-                                    {/* TODO: Agregar miniaturas de imágenes */}
+                                    {imgNames.map((img, index) => (
+                                        <img
+                                            key={index}
+                                            src={`${basePath}/${img}_${model}.webp`}
+                                            alt={`${car.brand} ${car.model} vista ${index + 1}`}
+                                            className={`image-thumbnail ${activeImg === img ? "active" : ""}`}
+                                            onClick={() => setActiveImg(img)}
+                                            onError={(e) => e.target.remove()}
+                                        />
+                                    ))}
                                 </div>
-                                <img className="car-image" src={`/images/cars/${textBase(car.model)}/main_${textBase(car.model)}.webp`} alt={`Imagen del auto ${car.brand} ${car.model}`} draggable="false"/>
+
+                                {/* Imagen principal */}
+                                <img
+                                    className="car-image"
+                                    src={`${basePath}/${activeImg}_${model}.webp`}
+                                    alt={`Imagen del auto ${car.brand} ${car.model}`}
+                                    draggable="false"
+                                    onError={handleImgError}
+                                />
                             </div>
 
                             <section className="detalles-auto">
