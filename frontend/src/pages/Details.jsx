@@ -5,6 +5,7 @@ import Header from "@components/Header";
 import Breadcrumb from "@components/Breadcrumb";
 import CardCar from "@components/CardCar";
 import InfoSection from "@components/InfoSection";
+import ModalReserve from "@components/ModalReserve";
 import Footer from "@components/Footer";
 import "@styles/Details.scss";
 
@@ -131,12 +132,8 @@ const Details = () => {
                 </div>
             </main>
 
-            {showModal && (
-                <div>
-                    //Agregar el modal
-                    <button onClick={() => setShowModal(false)}>Cerrar</button>
-                </div>
-            )}
+            {showModal && <ModalReserve car={car} onClose={() => setShowModal(false)} />}
+
             
             <Footer />
         </div>
