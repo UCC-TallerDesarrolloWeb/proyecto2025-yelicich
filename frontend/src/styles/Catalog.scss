@@ -1,12 +1,4 @@
 .catalog {
-    width: 100vw;
-    max-width: 1350px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-    margin: 0 auto 64px auto;
-
     &__container {
         width: 95%;
         padding: 32px 64px;

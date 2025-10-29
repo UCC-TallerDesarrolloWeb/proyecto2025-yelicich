@@ -33,24 +33,24 @@ const CardCar = ({ car }) => {
 
     return (
         <div className="card-car" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <a onClick={() => navToDetails(car.id)} className="link-detalle">
-            <div className="car-image-container">
-            <img src={imageSrc} alt={`${car.brand} ${car.model}`} loading="lazy" onError={handleError}/>
-            </div>
-
-            <div className="informacion">
-                <div className="datos">
-                    <div className="car-marca">{car.brand}</div>
-                    <div className="car-modelo">{car.model}</div>
-                    <div className="car-tipo-caja">{car.type} • {car.transmission}</div>
+            <a onClick={() => navToDetails(car.id)} className="card-car__link-detalle">
+                <div className="card-car__image-container">
+                    <img src={imageSrc} alt={`${car.brand} ${car.model}`} loading="lazy" onError={handleError}/>
                 </div>
 
-                <div className="car-precio">
-                    <span className="car-desde">Desde</span>
-                    <strong>{formatPrice(car.price)}</strong>
+                <div className="card-car__informacion">
+                    <div className="card-car__informacion__datos">
+                        <div className="card-car__informacion__datos__marca">{car.brand}</div>
+                        <div className="card-car__informacion__datos__modelo">{car.model}</div>
+                        <div className="card-car__informacion__datos__tipo-caja">{car.type} • {car.transmission}</div>
+                    </div>
+
+                    <div className="card-car__informacion__precio">
+                        <span className="card-car__informacion__precio__desde">Desde</span>
+                        <strong>{formatPrice(car.price)}</strong>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
         </div>
     );
 };

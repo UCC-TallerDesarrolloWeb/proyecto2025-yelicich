@@ -11,11 +11,14 @@
         transform: translateY(-1px);
     }
 
-    a.link-detalle {
+    &__link-detalle {
         text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
     }
 
-    .car-image-container {
+    &__image-container {
         background-color: var(--ym-primary-100);
         border-radius: 8px 8px 0 0;
         width: 100%;
@@ -32,28 +35,34 @@
         }
     }
 
-    .informacion {
+    &__informacion {
         padding: 12px;
 
-        .car-marca {
-            font-weight: 300;
-            font-size: 1.25rem;
-            color: var(--ym-primary-900);
+        &__datos {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            &__marca {
+                font-weight: 300;
+                font-size: 1.25rem;
+                color: var(--ym-primary-900);
+            }
+
+            &__modelo {
+                color: var(--ym-primary-800);
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+
+            &__tipo-caja {
+                font-weight: 400;
+                font-size: 1rem;
+                color: var(--ym-gray-700);
+            }
         }
 
-        .car-modelo {
-            color: var(--ym-primary-800);
-            font-weight: 600;
-            font-size: 1.75rem;
-        }
-
-        .car-tipo-caja {
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--ym-gray-700);
-        }
-
-        .car-precio {
+        &__precio {
             margin-top: 16px;
             color: var(--ym-primary);
             font-weight: 400;
@@ -61,15 +70,11 @@
             display: flex;
             flex-direction: column;
 
-            .car-desde {
+            &__desde {
                 font-weight: 300;
                 font-size: 1rem;
                 color: var(--ym-gray-700);
             }
         }
-    }
-
-    @media (max-width: 700px) {
-        width: 100%;
     }
 }

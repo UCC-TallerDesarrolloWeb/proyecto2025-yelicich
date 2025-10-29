@@ -28,8 +28,18 @@ html, body {
     border: 0;
 }
 
-.page {
+.page-container {
     width: 100vw;
     min-height: 100vh;
     background-color: var(--ym-primary-100);
+}
+
+.page-content {
+    width: 100vw;
+    max-width: 1350px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin: 0 auto 64px auto;
 }
