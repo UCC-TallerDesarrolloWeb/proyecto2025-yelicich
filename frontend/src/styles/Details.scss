@@ -1,7 +1,162 @@
 .details {
+    &__container {
+        padding: 32px;
+    }
+    
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 0.4fr;
+        gap: 48px;
+        align-items: start;
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .images-container {
+                display: flex;
+                align-items: flex-start;
+                gap: 16px;
+
+                .images-thumbnails {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    width: 64px;
+
+                    img {
+                        width: 100%;
+                        aspect-ratio: 1 / 1;
+                        object-fit: cover;
+                        border-radius: 8px;
+                        border: 1px solid var(--ym-primary-200);
+                        cursor: pointer;
+                        transition: transform 0.2s ease, border 0.2s ease;
+
+                        &:hover {
+                            transform: scale(1.05);
+                            border: 2px solid var(--ym-primary);
+                        }
+
+                        &.active {
+                            border: 2px solid var(--ym-primary);
+                        }
+                    }
+                }
+
+                .car-image {
+                    flex: 1;
+                    border-radius: 16px;
+                    object-fit: cover;
+                    max-height: 400px;
+                    aspect-ratio: 4 / 3;
+                }
+            }
+
+            .detalles-auto {
+                h3 {
+                    margin: 16px 0 0;
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 0.875rem;
+                    color: var(--ym-gray-700);
+                    text-align: justify;
+                }
+            }
+        }
+
+        &__right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 32px;
+            padding: 16px;
+            border: 1px solid var(--ym-primary-200);
+            border-radius: 16px;
+
+            .details__titles {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                &__info {
+                    display: flex;
+                    flex-direction: column;
+
+                    &__nombre {
+                        margin: 0;
+                        font-size: 2rem;
+                        font-weight: 400;
+                        line-height: 2rem;
+                    }
+
+                    &__type-box {
+                        font-weight: 400;
+                        font-size: 1rem;
+                        color: var(--ym-gray-700);
+                    }
+                }
+
+                &__precio {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    &__valor {
+                        font-size: 1.75rem;
+                        font-weight: 600;
+                    }
+
+                    &__sin-tax {
+                        font-size: 0.875rem;
+                        color: var(--ym-gray-700);
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: 0.785rem;
+                        color: var(--ym-gray-700);
+                    }
+                }
+            }
+        }
+
+        .details__buttons-end {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            width: 100%;
+            margin-bottom: 32px;
+
+            &__reserve {
+                width: 100%;
+                padding: 12px 0;
+                text-align: center;
+                background-color: var(--ym-primary);
+                font-weight: 600;
+                letter-spacing: 2px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: var(--ym-primary-600);
+                }
+            }
+        }
+    }
 
     .similar-cars {
-        width: 100%;
+        max-width: 1200px;
+        margin-top: 32px;
 
         h3 {
             width: 100%;
@@ -12,7 +167,7 @@
 
         &__list {
             display: flex;
-            gap: 16px;
+            gap: 4px;
             overflow-x: auto;
             overflow-y: hidden;
             scroll-behavior: smooth;
@@ -32,6 +187,7 @@
             }
 
             .card-car {
+                margin: 4px;
                 flex: 0 0 240px;
                 font-size: 0.875rem;
             }

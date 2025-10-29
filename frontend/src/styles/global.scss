@@ -28,13 +28,13 @@ html, body {
     border: 0;
 }
 
-.page-container {
+.page {
     width: 100vw;
     min-height: 100vh;
     background-color: var(--ym-primary-100);
 }
 
-.page-content {
+.page-container {
     width: 100vw;
     max-width: 1350px;
     display: flex;
@@ -42,6 +42,14 @@ html, body {
     gap: 16px;
     align-items: center;
     margin: 0 auto 64px auto;
+}
+
+.page-content {
+    width: 95%;
+    margin: 0 128px;
+    box-sizing: border-box;
+    background-color: var(--ym-primary-50);
+    border-radius: 16px;
 }
 
 // TODO: Unificar los estilos de los títulos

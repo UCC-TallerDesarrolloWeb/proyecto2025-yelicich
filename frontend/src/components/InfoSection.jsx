@@ -1,3 +1,5 @@
+import "@styles/InfoSection.scss";
+
 const InfoSection = ({ icon, title, children }) => (
     <>
         <div className="details__custom__section">

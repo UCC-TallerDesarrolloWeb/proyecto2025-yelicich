@@ -1,0 +1,42 @@
+.details__custom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .details__custom__section {
+        &__subtitle {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        h4 {
+            margin: 0;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .icon {
+            width: 32px;
+            font-size: 1.25em;
+            line-height: 1;
+            color: var(--ym-primary);
+        }
+        }
+
+        &__content {
+        margin-left: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.875em;
+        color: var(--ym-gray-700);
+        }
+    }
+
+    .divider {
+        width: 95%;
+        margin: 16px auto;
+        border: none;
+        border-top: 1px solid var(--ym-primary-200);
+    }
+}

@@ -12,7 +12,7 @@ const Details = () => {
     const { id } = useParams();
     const [car, setCar] = useState(null);
     const [similarCars, setSimilarCars] = useState([]);
-    const [opened, setOpened] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const BASE_URL_CARS = "http://localhost:4000/cars"
 
@@ -34,8 +34,8 @@ const Details = () => {
     if (!car) return <p>Cargando vehículo...</p>;
 
     return (
-        <div className="page-container">
-            <main className="details page-content">
+        <div className="page">
+            <main className="details page-container">
                 <Header />
                 <Breadcrumb items={[
                     { href: "../home", label: "Inicio" },
@@ -43,10 +43,7 @@ const Details = () => {
                     { label: `Detalles - ${car.brand} ${car.model}` }
                 ]} />
 
-                <div className="catalog__container">
-                    <h1>Detalles del Auto {car.brand} </h1>
-                    <button onClick={() => setOpened(true)}>Abrir</button>
-
+                <div className="details__container page-content">
                     <div className="details__content">
                         <div className="details__content__left">
                             <div className="images-container">
@@ -85,7 +82,7 @@ const Details = () => {
                         <div className="details__content__right">
                             <div className="details__titles">
                                 <div className="details__titles__info">
-                                    <h2 className="details__titles__info__nombre">{car.brand} {car.model}</h2>
+                                    <h2 className="details__titles__info__nombre">{car.brand} <span className="bold">{car.model}</span></h2>
                                     <span className="details__titles__info__type-box">{car.type} • {car.transmission}</span>
                                 </div>
 
@@ -98,26 +95,26 @@ const Details = () => {
 
                             <div className="details__custom">
                                 <InfoSection icon="straighten" title="Dimensiones">
-                                <div>Alto: 1.85 mts</div>
-                                <div>Ancho: 1.95 mts</div>
-                                <div>Largo: 5.35 mts</div>
+                                    <div>Alto: 1.85 mts</div>
+                                    <div>Ancho: 1.95 mts</div>
+                                    <div>Largo: 5.35 mts</div>
                                 </InfoSection>
 
                                 <InfoSection icon="access_time_filled" title="Disponibilidad">
-                                Entrega inmediata / 30 días
+                                    Entrega inmediata / 30 días
                                 </InfoSection>
 
                                 <InfoSection icon="credit_card" title="Forma de pago">
-                                Financiado (precio variable) / Contado
+                                    Financiado (precio variable) / Contado
                                 </InfoSection>
 
                                 <InfoSection icon="location_on" title={`Concesionario oficial de ${car.brand}`}>
-                                Ubicación Córdoba Capital
+                                    Ubicación Córdoba Capital
                                 </InfoSection>
                             </div>
 
                             <div className="details__buttons-end">
-                                <button className="details__buttons-end__reserve" type="button" onClick={() => openModal()}>Reservar ahora</button>
+                                <button className="details__buttons-end__reserve" type="button" onClick={() => setShowModal(true)}>Reservar ahora</button>
                             </div>
                         </div>
                     </div>
@@ -134,10 +131,10 @@ const Details = () => {
                 </div>
             </main>
 
-            {opened && (
+            {showModal && (
                 <div>
                     //Agregar el modal
-                    <button onClick={() => setOpened(false)}>Cerrar</button>
+                    <button onClick={() => setShowModal(false)}>Cerrar</button>
                 </div>
             )}
             
