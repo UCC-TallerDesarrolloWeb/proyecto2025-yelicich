@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { formatPrice, textBase } from '@utils/format';
 import Header from "@components/Header";
 import Breadcrumb from "@components/Breadcrumb";
+import CardCar from "@components/CardCar";
 import Footer from "@components/Footer";
 import "@styles/Catalog.scss";
 
@@ -9,10 +10,15 @@ const Catalog = () => {
     const [cars, setCars] = useState([]);
     const [brands, setBrands] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [transmissions, setTransmissions] = useState([]);
+
+    const [order, setOrder] = useState("most_recent");
+    const [filtersOpen, setFiltersOpen] = useState(false);
 
     const BASE_URL_CARS = "http://localhost:4000/cars"
     const BASE_URL_BRANDS = "http://localhost:4000/brands"
     const BASE_URL_CATEGORIES = "http://localhost:4000/categories"
+    const BASE_URL_TRANSMISSIONS = "http://localhost:4000/transmissions"
 
     const fetchData = async (url, setter) => {
         try {
@@ -28,34 +34,118 @@ const Catalog = () => {
         fetchData(BASE_URL_CARS, setCars);
         fetchData(BASE_URL_BRANDS, setBrands);
         fetchData(BASE_URL_CATEGORIES, setCategories);
+        fetchData(BASE_URL_TRANSMISSIONS, setTransmissions);
     }, []);
 
+    const clearAllFilters = () => {
+        // TODO: Lógica para limpiar todos los filtros
+    };
+
+    const totalCars = cars.length;
+
     return (
-        <>
-        <Header />
-        
-        <main>
-            <Breadcrumb items={[
-                { href: "../home_page/index.html", label: "Inicio" },
-                { label: "Catálogo" }
-            ]} />
-            <h1>Catálogo de Autos</h1>
+        <div className="catalog-page">
+            <main className="catalog">
+                <Header />
+                <Breadcrumb items={[
+                    { href: "../home_page/index.html", label: "Inicio" },
+                    { label: "Catálogo" }
+                ]} />
 
-            {cars.length === 0 ? (
-                <p>Cargando autos...</p>
-            ) : (
-                cars.map((car) => (
-                    <div key={car.id}>
-                        <p>{car.brand}</p>
-                        <p>{formatPrice(car.price)}</p>
+                <div className="catalog__container">
+                    <div className="catalog__header">
+                        <h2>Catálogo de vehículos</h2>
+                        <hr className="divider" />
+
+                        <div className="catalog__subtitles">
+                            <div className="catalog__subtitles__cars">{totalCars} autos</div>
+
+                            <div className="catalog__subtitles__order">
+                                <label htmlFor="order-by" className="catalog__subtitles__order__text">
+                                    Ordenar por:
+                                </label>
+
+                                <select className="catalog__subtitles__order__order-by" name="order-by" id="order-by" value={order} onChange={(e) => setOrder(e.target.value)}>
+                                    <option value="most_recent">Relevancia</option>
+                                    <option value="expensive">Mayor precio</option>
+                                    <option value="cheaper">Menor precio</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                ))
-            )}
 
-        </main>
+                    <div className="catalog__content">
+                        <div className="catalog__content__filters">
+                            {/* Header de filtros */}
+                            <div className="filters__header">
+                                <h3>Filtros</h3>
+                                <button id="clear-filters" className="filters__clear-btn hidden" type="button" onClick={clearAllFilters}>Limpiar filtros</button>
+                            </div>
 
-        <Footer />
-        </>
+                            {/* Filtro de precio */}
+                            <div className="filters__group filters__group--price" id="price-filter">
+                                <h4 className="filters__title">Precio</h4>
+                                <p className="filters__error-text">El precio mínimo no puede ser mayor al máximo.</p>
+                                <ul className="filters__list">
+                                    <li className="filters__item">
+                                        <label htmlFor="from-price">Desde:</label>
+                                        <input type="text" id="from-price" placeholder="$40.000.000" className="filters__input price-filter" maxLength="13" inputMode="numeric"/>
+                                    </li>
+                                    <li className="filters__item">
+                                        <label htmlFor="to-price">Hasta:</label>
+                                        <input type="text" id="to-price" placeholder="$60.000.000" className="filters__input price-filter" maxLength="13" inputMode="numeric"/>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Filtro de transmisión */}
+                            <div className="filters__group filters__group--transmission">
+                                <h4 className="filters__title">Transmisión</h4>
+                                <ul className="filters__list">
+                                    <li className="filters__item">
+                                        <input type="checkbox" id="manual" value="Manual" />
+                                        <label htmlFor="manual">Manual</label>
+                                    </li>
+                                    <li className="filters__item">
+                                        <input type="checkbox" id="automatic" value="Automático" />
+                                        <label htmlFor="automatic">Automático</label>
+                                    </li>
+                                    <li className="filters__item">
+                                        <input type="checkbox" id="electric" value="Eléctrico" />
+                                        <label htmlFor="electric">Eléctrico</label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Filtro de segmento */}
+                            <div className="filters__group filters__group--segment">
+                                <h4 className="filters__title">Segmento</h4>
+                                <ul className="filters__list" id="segment-filter"></ul>
+                            </div>
+
+                            {/* Filtro de marca */}
+                            <div className="filters__group filters__group--brand">
+                                <h4 className="filters__title">Marca</h4>
+                                <ul className="filters__list" id="brand-filter"></ul>
+                            </div>
+                        </div>
+
+                        {cars.length === 0 ? (
+                            <p>Cargando vehículos...</p>
+                        ) : (
+                            <div className="catalog__content__cars-grid">
+                                {cars.map((car) => (
+                                    <CardCar key={car.id} car={car} />
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+            </main>
+
+            <Footer />
+        </div>
     )
 }
 
