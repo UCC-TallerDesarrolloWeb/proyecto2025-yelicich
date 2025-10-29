@@ -6,8 +6,6 @@ import Header from "@components/Header";
 import "@styles/Home.scss";
 
 const Home = () => {
-    const navigate = useNavigate()
-
     const [bestSellerCars, setBestSellerCars] = useState([]);
     const [brands, setBrands] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -77,6 +75,11 @@ const Home = () => {
         e.currentTarget.reset();
     };
 
+    const navigate = useNavigate()
+    const navToDetails = (id) => {
+        navigate(`/details/${id}`);
+    };
+
     return (
         <>
         <Header />
@@ -108,7 +111,7 @@ const Home = () => {
                                             <h4>{car.brand} <strong>{car.model}</strong></h4>
                                             <p>{car.type} • {car.transmission}</p>
                                         </div>
-                                        <a href={`/details?id=${car.id}`}>Ir a la página &gt;</a>
+                                        <a onClick={() => navToDetails(car.id)}>Ir a la página &gt;</a>
                                     </div>
                                 </div>
                             </li>

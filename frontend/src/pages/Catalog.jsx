@@ -44,11 +44,11 @@ const Catalog = () => {
     const totalCars = cars.length;
 
     return (
-        <div className="catalog-page">
+        <div className="page">
             <main className="catalog">
                 <Header />
                 <Breadcrumb items={[
-                    { href: "../home_page/index.html", label: "Inicio" },
+                    { href: "../home", label: "Inicio" },
                     { label: "Catálogo" }
                 ]} />
 

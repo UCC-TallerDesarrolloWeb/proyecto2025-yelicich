@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { textBase, formatPrice } from "@utils/format";
+import { useNavigate } from "react-router-dom"
 import "@styles/CardCar.scss";
 
 const CardCar = ({ car }) => {
@@ -25,9 +26,14 @@ const CardCar = ({ car }) => {
         }
     };
 
+    const navigate = useNavigate()
+    const navToDetails = (id) => {
+        navigate(`/details/${id}`);
+    };
+
     return (
         <div className="card-car" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <a href={`/details?id=${car.id}`} className="link-detalle">
+        <a onClick={() => navToDetails(car.id)} className="link-detalle">
             <div className="car-image-container">
             <img src={imageSrc} alt={`${car.brand} ${car.model}`} loading="lazy" onError={handleError}/>
             </div>

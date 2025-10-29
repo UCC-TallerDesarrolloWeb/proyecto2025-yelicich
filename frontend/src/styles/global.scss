@@ -27,3 +27,9 @@ html, body {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+.page {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--ym-primary-100);
+}
