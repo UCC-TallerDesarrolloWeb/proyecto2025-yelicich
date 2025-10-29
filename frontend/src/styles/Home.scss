@@ -150,6 +150,7 @@
     flex-direction: column;
     gap: 60px;
     align-items: center;
+    background-color: var(--ym-primary-50);
 
     section {
         width: 100%;
@@ -304,7 +305,6 @@
         }
 
         .testimonial {
-            max-width: 1200px;
             display: none;
             gap: 24px;
             align-items: center;
