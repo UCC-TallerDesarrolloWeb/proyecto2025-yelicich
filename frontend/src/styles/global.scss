@@ -6,6 +6,7 @@
 }
 
 html, body {
+    overflow-x: hidden;
     scroll-behavior: smooth;
     color: var(--ym-primary-950);
     background-color: var(--ym-primary-100);
