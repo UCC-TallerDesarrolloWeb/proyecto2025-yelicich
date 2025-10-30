@@ -252,10 +252,10 @@
     }  
 }
 
-.filters__error-text { /* no lo escondas por default */
-  color: var(--ym-accent);
-  font-size: .9rem;
-  margin: 4px 0 8px;
+.filters__error-text {
+    color: var(--ym-accent);
+    font-size: .9rem;
+    margin: 4px 0 8px;
 }
 
 .input-error { border-color: var(--ym-accent); }

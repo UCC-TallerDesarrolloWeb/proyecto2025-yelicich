@@ -2,9 +2,6 @@ import { useState } from "react";
 import "@styles/ModalReserve.scss";
 
 const ModalReserve = ({ car, onClose }) => {
-
-    if (!car) return <p>Cargando vehículo...</p>;
-
     const [color, setColor] = useState(null);
     const [wheel, setWheel] = useState(null);
     const [payment, setPayment] = useState(null);
@@ -15,6 +12,8 @@ const ModalReserve = ({ car, onClose }) => {
         payment: "",
         installments: "",
     });
+
+    if (!car) return <p>Cargando vehículo...</p>;
 
     const handleSelect = (setter, value) => setter(value);
 

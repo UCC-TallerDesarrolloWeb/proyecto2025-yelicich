@@ -32,7 +32,7 @@
 .hero {
     width: 100vw;
     height: 100vh;
-    background-image: url(/images/backgrounds/four_teslas.jpg);
+    background-image: url("/public/images/backgrounds/four_teslas.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -121,29 +121,8 @@
         filter: var(--arrow-off);
         }
     }
-
-    @media (max-width: 700px) {
-        &__content {
-        h2 {
-            font-size: 2.25em;
-        }
-
-        .btn-catalogo-hero {
-            padding: 8px 32px;
-            font-size: 1.5em;
-        }
-        }
-
-        &__arrows {
-        img {
-            width: 48px;
-        }
-        }
-    }
 }
 
-
-/* ---- MAIN ---- */
 .home {
     width: 100vw;
     display: flex;
@@ -168,6 +147,7 @@
         font-size: 1.75rem;
         color: var(--ym-primary-900);
     }
+
     /* ---- BEST SELLER SECTION ---- */
     .best-seller {
         width: 100%;
@@ -270,13 +250,6 @@
         &--categories {
             .grid-section__grid { @include grid-section(120px); }
             .grid-section__logo img { aspect-ratio: 4 / 3; }
-        }
-
-        @media (max-width: 700px) {
-            &__grid {
-                grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
-                gap: 16px 32px;
-            }
         }
     }
 
@@ -410,26 +383,8 @@
                 }
             }
         }
-
-        @media (max-width: 700px) {
-            .testimonial {
-                &.active {
-                    flex-direction: column;
-                }
-
-                img {
-                    width: 200px;
-                    border-radius: 16px;
-                }
-
-                &__text {
-                    text-align: left;
-                }
-            }
-        }
     }
 
-    /* ---- ANIMACIÓN ---- */
     @keyframes fade {
         from {
             opacity: 0;
@@ -447,7 +402,7 @@
         margin: 0;
         width: 100vw;
         position: relative;
-        background: url("/images/backgrounds/tesla_roadster_front.jpg") no-repeat;
+        background: url("/public/images/backgrounds/tesla_roadster_front.jpg") no-repeat;
         background-size: 100% auto;
         background-position: center -600px;
         padding: 0;
