@@ -1,5 +1,11 @@
 const BASE_URL = "http://localhost:4000";
 
+/**
+ * Realiza una petición fetch genérica al mock server y devuelve los datos JSON.
+ * @function fetchData
+ * @param {string} database - Nombre o ruta del recurso en el mock server (por ejemplo `"cars"`, `"brands"`, `"cars/5"`).
+ * @param {string} errorMessage - Mensaje personalizado que se mostrará si ocurre un error.
+ */
 const fetchData = async (database, errorMessage) => {
     try {
         const res = await fetch(`${BASE_URL}/${database}`);
