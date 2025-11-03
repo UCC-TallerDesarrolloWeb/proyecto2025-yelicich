@@ -10,6 +10,7 @@ Estructura de Proyecto Taller de Desarrollo Web - 2025
 - [Link gh-pages](#link-de-gh-pages)
 - [Contenido de la pagina](#contenido-de-la-pagina)
 - [Listado de tecnologias](#listado-de-tecnologias-usadas)
+- [Iniciar proyecto frontend](#iniciar-proyecto-frontend)
 
 ---
 
