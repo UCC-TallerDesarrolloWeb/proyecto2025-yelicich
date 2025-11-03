@@ -69,15 +69,18 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 
 ---
 
-## Iniciar proyecto frontend
-### 1️⃣ Instala todas las dependencias del proyecto
-````npm install````
+  ## Iniciar proyecto frontend
+### 1️⃣ Entrar a la carpeta del proyecto
+```cd frontend```
 
-### 2️⃣ Iniciar Vite
-````npm run dev````
+### 2️⃣ Instala todas las dependencias del proyecto
+```npm install```
 
-#### 3️⃣ Levanta el mock de backend con json-server
-````npx json-server --watch src/data/db.json --port 4000````
+### 3️⃣ Iniciar Vite
+```npm run dev```
+
+#### 4️⃣ Levanta el mock de backend con json-server
+```npx json-server --watch src/data/db.json --port 4000```
 
 ---
 
@@ -218,7 +221,7 @@ Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 
 ### Sobre React
 - [X] Se debe emplear **Vite** para instalar **React**
-- [X] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
+- [X] Se debe emplear **Hooks**, useState, useEffect, useNavigate
 - [X] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
 - [X] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
 - [X] La estructura del proyecto (carpetas) debe ser el correcto: **components**, **pages**, **styles**, **api**
