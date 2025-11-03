@@ -55,7 +55,6 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 | | Modal de compra | Configurador con color, rines, método de pago, cuotas y resumen dinámico. |
 | | Footer | Igual al de inicio. |
 
-
 ---
 
 ## Tecnologias usadas
