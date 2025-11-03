@@ -43,3 +43,43 @@ export const getRecentCars = async (viewedIds = []) => {
     const data = await fetchData("cars", "Error al obtener autos recientes");
     return viewedIds.map((id) => data.find((c) => c.id === id)).filter(Boolean);
 };
+
+/**
+ * Filtra autos según criterios simulados del servidor
+ * @param {Object} filters - Filtros opcionales
+ * @param {string[]} [filters.brands]
+ * @param {string[]} [filters.categories]
+ * @param {string[]} [filters.transmissions]
+ * @param {number} [filters.minPrice]
+ * @param {number} [filters.maxPrice]
+ */
+export const getFilteredCars = async (filters = {}) => {
+    const data = await fetchData("cars", "Error al filtrar autos");
+
+    return data.filter((car) => {
+        const byBrand = !filters.brands?.length || filters.brands.includes(car.brand);
+        const byCategory = !filters.categories?.length || filters.categories.includes(car.type);
+        const byTransmission = !filters.transmissions?.length || filters.transmissions.includes(car.transmission);
+        const byMin = !filters.minPrice || car.price >= Number(filters.minPrice);
+        const byMax = !filters.maxPrice || car.price <= Number(filters.maxPrice);
+        return byBrand && byCategory && byTransmission && byMin && byMax;
+    });
+};
+
+/**
+ * Devuelve la lista de autos ordenados según un criterio (simulación de /cars?sort=)
+ * @async
+ * @function getSortedCars
+ * @param {string} order - Criterio de ordenamiento ("most_recent" | "cheaper" | "expensive")
+ * @returns {Promise<Array>} Lista de autos ordenados.
+ * 
+ * @example
+ * const cars = await getSortedCars("expensive");
+ */
+export const getSortedCars = async (order = "most_recent") => {
+    const data = await fetchData("cars", "Error al obtener autos ordenados");
+
+    if (order === "cheaper") return data.sort((a, b) => a.price - b.price);
+    if (order === "expensive") return data.sort((a, b) => b.price - a.price);
+    return data.sort((a, b) => a.id - b.id);
+};
