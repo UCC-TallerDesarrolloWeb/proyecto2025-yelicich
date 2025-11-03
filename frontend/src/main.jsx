@@ -18,6 +18,3 @@ createRoot(document.getElementById('root')).render(
         </Routes>
     </BrowserRouter>,
 )
-
-//npm run dev
-//npx json-server --watch src/data/db.json --port 4000 

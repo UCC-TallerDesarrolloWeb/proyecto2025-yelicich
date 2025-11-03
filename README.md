@@ -68,6 +68,18 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 
 ---
 
+## Iniciar proyecto frontend
+# 1️⃣ Instala todas las dependencias del proyecto
+````npm install````
+
+# 2️⃣ Iniciar Vite
+````npm run dev````
+
+# 3️⃣ Levanta el mock de backend con json-server
+````npx json-server --watch src/data/db.json --port 4000````
+
+---
+
 ## Requisitos del Primer Parcial
 
 ### Sobre el Sketch
