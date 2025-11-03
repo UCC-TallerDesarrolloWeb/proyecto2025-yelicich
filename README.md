@@ -208,12 +208,15 @@ Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 - [X] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
 - [X] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
 - [X] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
+- [X] La estructura del proyecto (carpetas) debe ser el correcto: **components**, **pages**, **styles**, **api**
 - [X] La estructura del proyecto (carpetas) debe ser el correcto: components, pages, styles
 - [X] Los **imports** deben ser usando con **alias**
+- [X] Emplear al menos una imagen en **/public** y otra en **/assets**
 - [X] Validaciones en tiempo real con onChange + mensajes de error accesibles.
 - [X] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
 - [X] Guardar algún dato en localStorage (ej: preferencias de tema o un carrito de compras).
-- [X] En caso de tener backend, emplear **fetch**
+- [ ] Emplear **mock** de al menos un servicio y permitir al menos una de estas acciones: **GET / read**, **POST / add**, **PATCH / update**, **DELETE**
+- [X] Emplear **fetch** y funciones **async/await** (en lugar del `.then`)
 - [X] En caso de no contar con un servicio que nos provea la información necesaria, la misma debe ser leída en formato tipo Json local y renderizar listas dinámicas. Ejemplo:
 ````javascript
 const activities = [
@@ -236,6 +239,12 @@ const activities = [
   }
 ];
 ````
+
+### Sobre SASS
+- [X] Todos los archivos de estilos deben encontrarse dentro de la carpeta **/styles**
+- [X] El import de los estilos debe realizarse empleando **alias**
+- [X] Todos los estilos deben estar aplicados en archivos con extensión **.scss**
+
 
 ### Sobre las Correcciones
 - [X] Todas las correcciones y mejoras (sugerencias) solicitadas durante el primer parcial deben estar corregidas.

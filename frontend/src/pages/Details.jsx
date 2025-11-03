@@ -1,13 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { formatPrice, textBase } from '@utils/format';
+import { getCarById, getSimilarCars } from "@api/carsApi";
 import Breadcrumb from "@components/Breadcrumb";
 import CardCar from "@components/CardCar";
 import InfoSection from "@components/InfoSection";
 import ModalReserve from "@components/ModalReserve";
 import "@styles/Details.scss";
-
-const BASE_URL_CARS = "http://localhost:4000/cars"
 
 const Details = () => {
     const { id } = useParams();
@@ -18,25 +17,11 @@ const Details = () => {
     
     useEffect(() => {
         const fetchCarAndSimilar = async () => {
-            try {
-                const resCar = await fetch(`${BASE_URL_CARS}/${id}`);
-                if (!resCar.ok) throw new Error("Auto no encontrado");
-                const carData = await resCar.json();
-                setCar(carData);
-
-                const resAll = await fetch(BASE_URL_CARS);
-                const allCars = await resAll.json();
-
-                const similar = allCars
-                    .filter((c) => c.id !== Number(id) && c.type === carData.type)
-                    .slice(0, 5);
-
-                setSimilarCars(similar);
-            } catch (err) {
-                console.error("Error al obtener datos de autos:", err);
-            }
+            const carData = await getCarById(id);
+            if (!carData) return;
+            setCar(carData);
+            setSimilarCars(await getSimilarCars(id, carData.type));
         };
-
         fetchCarAndSimilar();
     }, [id]);
 
