@@ -18,7 +18,6 @@ const Header = () => {
 
                 <nav className="header__nav" aria-label="Navegación principal">
                     <a className="header__link" onClick={() => navigate("/home")} aria-disabled="true">Home</a>
-                    {/* <a href="#" aria-disabled="true" className="header__link">Contacto</a> */}
                     <a className="header__btn--catalogo" onClick={() => navigate("/catalog")}>Catálogo</a>
                 </nav>
             </div>

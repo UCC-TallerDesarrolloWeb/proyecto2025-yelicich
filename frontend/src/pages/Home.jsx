@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { textBase } from '@utils/format';
 import { useNavigate } from "react-router-dom"
 import { getFeaturedCars, getBrands, getCategories, getTestimonials, getRecentCars } from "@api/carsApi";
-import arrowImg from "../assets/head_arrow.png"
+import arrowImg from "@assets/head_arrow.png"
 import CardCar from "@components/CardCar";
 import "@styles/Home.scss";
 
