@@ -60,7 +60,7 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 ## Tecnologias usadas
 - **HTML5** → estructura semántica de las páginas (header, nav, main, section, footer, etc.).  
 - **CSS3** → estilos, diseño responsive, carruseles, modal de compra, layout con flexbox y grid.  
-- **JavaScript (ES6)** → funcionalidad dinámica: renderizado de autos, filtros, validaciones, simulador de pago, carruseles y modales.  
+- **JavaScript** → funcionalidad dinámica: renderizado de autos, filtros, validaciones, simulador de pago, carruseles y modales.  
 - **Figma** → prototipado de interfaces: sketch y wireframe en desktop y mobile.  
 - **Git & GitHub** → control de versiones, repositorio del proyecto y despliegue con GitHub Pages.  
 - **Google Fonts** → tipografía personalizada (Quicksand).  
