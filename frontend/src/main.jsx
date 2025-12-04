@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './index.css'
 import Layout from './pages/Layout.jsx'
 import Home from './pages/Home.jsx'
 import Catalog from './pages/Catalog.jsx'
@@ -19,6 +18,3 @@ createRoot(document.getElementById('root')).render(
         </Routes>
     </BrowserRouter>,
 )
-
-//npm run dev
-//npx json-server --watch src/data/db.json --port 4000 

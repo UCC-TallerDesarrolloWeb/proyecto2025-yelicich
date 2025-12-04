@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { textBase } from '@utils/format';
 import { useNavigate } from "react-router-dom"
+import { getFeaturedCars, getBrands, getCategories, getTestimonials, getRecentCars } from "@api/carsApi";
+import arrowImg from "@assets/head_arrow.png"
 import CardCar from "@components/CardCar";
 import "@styles/Home.scss";
-
-const BASE_URL= "http://localhost:4000/";
 
 const Home = () => {
     const [bestSellerCars, setBestSellerCars] = useState([]);
@@ -14,32 +14,16 @@ const Home = () => {
     const [testimonials, setTestimonials] = useState([]);
     const [current, setCurrent] = useState(0);
 
-    const fetchCars = async () => {
-        try {
-            const response = await fetch(`${BASE_URL}cars`);
-            const data = await response.json();
-            const featured = data.filter(car => car.isFeatured);
-            setBestSellerCars(featured);
-        } catch (error) {
-            console.error(`Error al obtener autos: ${error}`);
-        }
-    };
-
-    const fetchData = async (url, setter) => {
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            setter(data);
-        } catch (error) {
-            console.error(`Error al obtener datos de ${url}:`, error);
-        }
-    };
-
     useEffect(() => {
-        fetchCars();
-        fetchData(`${BASE_URL}brands`, setBrands);
-        fetchData(`${BASE_URL}categories`, setCategories);
-        fetchData(`${BASE_URL}testimonials`, setTestimonials);
+        (async () => {
+            setBestSellerCars(await getFeaturedCars());
+            setBrands(await getBrands());
+            setCategories(await getCategories());
+            setTestimonials(await getTestimonials());
+
+            const viewedIds = JSON.parse(localStorage.getItem("recentCars") || "[]");
+            if (viewedIds.length > 0) setRecentCars(await getRecentCars(viewedIds));
+        })();
     }, []);
 
     useEffect(() => {
@@ -94,30 +78,6 @@ const Home = () => {
     const navToCategory = (name) =>
         navigate(`/catalog?categoria=${encodeURIComponent(name)}`);
 
-    useEffect(() => {
-        const viewedIds = JSON.parse(localStorage.getItem("recentCars") || "[]");
-
-        if (viewedIds.length === 0) return;
-
-        const fetchRecent = async () => {
-            try {
-            const res = await fetch(`${BASE_URL}cars`);
-            const data = await res.json();
-
-            // filtrar solo los autos cuyos id estén en viewedIds (manteniendo orden)
-            const filtered = viewedIds
-                .map((id) => data.find((c) => c.id === id))
-                .filter(Boolean);
-
-            setRecentCars(filtered);
-            } catch (err) {
-            console.error("Error al cargar autos vistos:", err);
-            }
-        };
-
-        fetchRecent();
-    }, []);
-
     return (
         <main className="home">
             {/* Hero Section */}
@@ -127,8 +87,8 @@ const Home = () => {
                     <a className="btn-catalogo-hero" onClick={() => navigate("/catalog")}>Catálogo</a>
                 </div>
                 <div className="hero__arrows">
-                    <img src="/images/icons/head_arrow.png" alt="" aria-hidden="true" draggable="false"/>
-                    <img src="/images/icons/head_arrow.png" alt="" aria-hidden="true" draggable="false"/>
+                    <img src={arrowImg} alt="" aria-hidden="true" draggable="false"/>
+                    <img src={arrowImg} alt="" aria-hidden="true" draggable="false"/>
                 </div>
             </div>
 

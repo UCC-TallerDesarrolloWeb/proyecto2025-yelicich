@@ -32,7 +32,7 @@
 .hero {
     width: 100vw;
     height: 100vh;
-    background-image: url("/public/images/backgrounds/four_teslas.jpg");
+    background-image: url('../../public/images/backgrounds/four_teslas.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -402,7 +402,7 @@
         margin: 0;
         width: 100vw;
         position: relative;
-        background: url("/public/images/backgrounds/tesla_roadster_front.jpg") no-repeat;
+        background: url("../../public/images/backgrounds/tesla_roadster_front.jpg") no-repeat;
         background-size: 100% auto;
         background-position: center -600px;
         padding: 0;

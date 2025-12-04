@@ -1,10 +1,9 @@
 import { useState, useEffect, useMemo } from "react";
 import { formatCurrency, textBase } from "@utils/format";
+import { getCars, getBrands, getCategories, getTransmissions } from "@api/carsApi";
 import Breadcrumb from "@components/Breadcrumb";
 import CardCar from "@components/CardCar";
 import "@styles/Catalog.scss";
-
-const BASE_URL = "http://localhost:4000/";
 
 const Catalog = () => {
     const [cars, setCars] = useState([]);
@@ -21,27 +20,20 @@ const Catalog = () => {
 
     const [priceError, setPriceError] = useState(false);
 
-    const fetchData = async (url, setter) => {
-        try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setter(data);
-        } catch (err) {
-        console.error(`Error al obtener datos de ${url}:`, err);
-        }
-    };
-
     useEffect(() => {
-        fetchData(`${BASE_URL}cars`, setCars);
-        fetchData(`${BASE_URL}brands`, setBrands);
-        fetchData(`${BASE_URL}categories`, setCategories);
-        fetchData(`${BASE_URL}transmissions`, setTransmissions);
+        (async () => {
+            setCars(await getCars());
+            setBrands(await getBrands());
+            setCategories(await getCategories());
+            setTransmissions(await getTransmissions());
+        })();
     }, []);
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const marcaQ = params.get("marca");
         const catQ = params.get("categoria");
+
         if (marcaQ) setSelBrands([marcaQ]);
         if (catQ) setSelCats([catQ]);
     }, []);
@@ -57,12 +49,6 @@ const Catalog = () => {
         if (list.includes(value)) setter(list.filter((v) => v !== value));
         else setter([...list, value]);
     };
-
-    useEffect(() => {
-        const min = toNumber(minPrice);
-        const max = toNumber(maxPrice);
-        setPriceError(min !== null && max !== null && min > max);
-    }, [minPrice, maxPrice]);
 
     const filteredAndSorted = useMemo(() => {
         let out = [...cars];

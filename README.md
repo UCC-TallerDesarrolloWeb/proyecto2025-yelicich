@@ -10,6 +10,7 @@ Estructura de Proyecto Taller de Desarrollo Web - 2025
 - [Link gh-pages](#link-de-gh-pages)
 - [Contenido de la pagina](#contenido-de-la-pagina)
 - [Listado de tecnologias](#listado-de-tecnologias-usadas)
+- [Iniciar proyecto frontend](#iniciar-proyecto-frontend)
 
 ---
 
@@ -54,7 +55,6 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 | | Modal de compra | Configurador con color, rines, método de pago, cuotas y resumen dinámico. |
 | | Footer | Igual al de inicio. |
 
-
 ---
 
 ## Tecnologias usadas
@@ -65,6 +65,21 @@ El sitio incluye catálogo dinámico, página de detalles con configurador de co
 - **Git & GitHub** → control de versiones, repositorio del proyecto y despliegue con GitHub Pages.  
 - **Google Fonts** → tipografía personalizada (Quicksand).  
 - **Material Icons** → iconos para mejorar la interfaz.  
+
+---
+
+  ## Iniciar proyecto frontend
+### 1️⃣ Entrar a la carpeta del proyecto
+```cd frontend```
+
+### 2️⃣ Instala todas las dependencias del proyecto
+```npm install```
+
+### 3️⃣ Iniciar Vite
+```npm run dev```
+
+#### 4️⃣ Levanta el mock de backend con json-server
+```npx json-server --watch src/data/db.json --port 4000```
 
 ---
 
@@ -205,15 +220,18 @@ Por cada corrección o defecto en el HTML+CSS+Js se descontará un 5% del 85%.
 
 ### Sobre React
 - [X] Se debe emplear **Vite** para instalar **React**
-- [X] Se debe emplear **Hooks**, useState, useEffect, useContext, useNavigate
+- [X] Se debe emplear **Hooks**, useState, useEffect, useNavigate
 - [X] Se debe emplear **react-router-dom** para el enrutamiento a otras páginas
 - [X] Se debe emplear **outlet** para que un componente principal renderice componentes de rutas hijas.
+- [X] La estructura del proyecto (carpetas) debe ser el correcto: **components**, **pages**, **styles**, **api**
 - [X] La estructura del proyecto (carpetas) debe ser el correcto: components, pages, styles
 - [X] Los **imports** deben ser usando con **alias**
+- [X] Emplear al menos una imagen en **/public** y otra en **/assets**
 - [X] Validaciones en tiempo real con onChange + mensajes de error accesibles.
 - [X] Crear al menos un componente genérico (ej: Button, Card, Input) y reutilizarlo en varias páginas.
 - [X] Guardar algún dato en localStorage (ej: preferencias de tema o un carrito de compras).
-- [X] En caso de tener backend, emplear **fetch**
+- [X] Emplear **mock** de al menos un servicio y permitir al menos una de estas acciones: **GET / read**, **POST / add**, **PATCH / update**, **DELETE**
+- [X] Emplear **fetch** y funciones **async/await** (en lugar del `.then`)
 - [X] En caso de no contar con un servicio que nos provea la información necesaria, la misma debe ser leída en formato tipo Json local y renderizar listas dinámicas. Ejemplo:
 ````javascript
 const activities = [
@@ -237,9 +255,15 @@ const activities = [
 ];
 ````
 
+### Sobre SASS
+- [X] Todos los archivos de estilos deben encontrarse dentro de la carpeta **/styles**
+- [X] El import de los estilos debe realizarse empleando **alias**
+- [X] Todos los estilos deben estar aplicados en archivos con extensión **.scss**
+
+
 ### Sobre las Correcciones
 - [X] Todas las correcciones y mejoras (sugerencias) solicitadas durante el primer parcial deben estar corregidas.
-- [ ] No debe haber errores presentes en el código (realizar *Code* > *Inspect Code* para verificar que no haya errores)
+- [X] No debe haber errores presentes en el código (realizar *Code* > *Inspect Code* para verificar que no haya errores) - **Me da error con los path**
 - [X] Se corregirá el proyecto con el último commit realizado en Github hasta las 23:59 del día anterior a la fecha de entrega
 - [X] Las notas serán de la siguiente manera: (Por ejemplo 55% 4; 59% 5; 67% 6; 75% 7; 82% 8; 89% 9; 97% 10)
 - Las sugerencias sobre el HTML, CSS y Js realizadas en el anterior parcial dejen ser corregidas.
@@ -259,4 +283,3 @@ const activities = [
 - [ ] No debe haber errores presentes en el código (realizar Code > Inspect Code para verificar que no haya errores)
 - [ ] No debe haber errores JavaScript presentes (F12 > Consola)
 - [ ] Debe cumplir con TODOS los requisitos del 1er y 2do Parcial (si se agrego código nuevo en Js, se debe documentar, si hay nuevos inputs de html deben contener su label, etc)
-- [ ] Incluir al menos 5 tests con Jest + React Testing Library (ejemplo: que un botón renderice un texto esperado).
