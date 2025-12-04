@@ -7,7 +7,6 @@
     <meta name="keywords" content="autos, 0km, concesionaria, argentina, yelimotors">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="home.css">
     <script src="../autos.js" type="text/javascript" defer></script>
     <script src="home.js" type="text/javascript" defer></script>
     <link rel="shortcut icon" href="../../imagenes/logo_ym.ico" type="image/x-icon">
@@ -17,23 +16,20 @@
     <title>YeliMotors</title>
 </head>
 <body onload="renderSegmentos(TIPOS); renderMarcas(MARCAS); showTestimonio(currentTestimonio);">
-    <header>
+    <header id="header-home">
         <div id="header-container">
             <div id="header-logo">
                 <a href="index.html">
                     <img id="logo" src="../../imagenes/logo_ym.png" alt="YeliMotors Logo" draggable="false">
-                    <h1>Yeli<span class="bold">Motors</span></h1>
+                    <h1 id="title-home">Yeli<span class="bold">Motors</span></h1>
                 </a>
             </div>
-            <nav id="header-buttons">
-                <!-- <a href="#" aria-disabled="true" class="header-buttons__small">Importaciones</a>
-                <a href="#" aria-disabled="true" class="header-buttons__small">Servicios</a>
-                <a href="#" aria-disabled="true" class="header-buttons__small">Contacto</a> -->
-                <a class="btn btn--primary btn--small" href="../catalog_page/catalog.html">Catálogo</a>
+            <nav>
+                <a id="header-button-home" href="../catalog_page/catalog.html">Catálogo</a>
             </nav>
         </div>
     </header>
-    <main>
+    <main id="home">
         <!-- Hero section -->
         <section class="hero" aria-label="Presentación">
             <div class="hero__content">
@@ -46,11 +42,11 @@
             </div>
         </section>
 
-        <div class="global-container">
+        <div class="home-container">
             <!-- Best seller section -->
-            <section class="best-seller" aria-label="vehículos destacados">
+            <section class="best-seller section-home" aria-label="vehículos destacados">
                 <div class="best-seller__content">
-                    <h3>Vehículos <span class="bold">destacados</span></h3>
+                    <h3 class="home-subtitles">Vehículos <span class="bold">destacados</span></h3>
                     <ul class="best-seller__list" id="best-seller-list" role="list">
                         <li>
                             <div class="card-best-seller">
@@ -93,20 +89,20 @@
             </section>
 
             <!-- Brand section -->
-            <section class="brands" aria-label="Buscar por marca">
-                <h3>Buscá por <span class="bold">marca</span></h3>
+            <section class="brands section-home" aria-label="Buscar por marca">
+                <h3 class="home-subtitles">Buscá por <span class="bold">marca</span></h3>
                 <div class="list-brands" id="list-brands"></div>
             </section>
 
             <!-- Segmentos section -->
-            <section class="types" aria-label="Buscar por segmento">
-                <h3>Buscá por <span class="bold">Segmentos</span></h3>
+            <section class="types section-home" aria-label="Buscar por segmento">
+                <h3 class="home-subtitles">Buscá por <span class="bold">Segmentos</span></h3>
                 <div class="list-types" id="list-types"></div>
             </section>
 
             <!-- Testimonios section -->
-            <section class="testimonios" aria-label="Testimonios">
-                <h3>Nuestros <span class="bold">testimonios</span></h3>
+            <section class="testimonios section-home" aria-label="Testimonios">
+                <h3 class="home-subtitles">Nuestros <span class="bold">testimonios</span></h3>
 
                 <div class="testimonios__content">
 
@@ -160,7 +156,7 @@
 
 
             <!-- Newsletter section -->
-            <section class="newsletter" aria-label="Suscripción a boletín de noticias">
+            <section class="newsletter section-home" aria-label="Suscripción a boletín de noticias">
                 <div class="newsletter__overlay">
                     <div class="newsletter__content">
                         <div class="newsletter__text">

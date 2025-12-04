@@ -132,13 +132,9 @@ const initDetailsPage = () => {
     document.getElementById("auto-nombre").innerHTML = `
         <span class="marca">${auto.marca}</span> 
         <span class="modelo">${auto.modelo}</span>`;
-    document.getElementById("auto-nombre-mobile").innerHTML = `
-        <span class="marca">${auto.marca}</span> 
-        <span class="modelo">${auto.modelo}</span>`;
     document.getElementById("breadcrumb-current").textContent = `Detalles - ${auto.marca} ${auto.modelo}`;
     document.getElementById("auto-imagen").src = `../../imagenes/cars/${textBase(auto.modelo)}/main_${textBase(auto.modelo)}.webp`;
     document.getElementById("auto-type-box").textContent = `${auto.tipo} • ${auto.caja}`;
-    document.getElementById("auto-type-box-mobile").textContent = `${auto.tipo} • ${auto.caja}`;
     document.getElementById("auto-precio").textContent = `$${auto.precio.toLocaleString("es-AR")}`;
     document.getElementById("auto-precio-tax").textContent = `Precio sin impuestos nacionales: $${(auto.precio * factor_sin_imp).toLocaleString("es-AR")}`;
     document.getElementById("location-brand").textContent = `Concesionario oficial de ${auto.marca}`;

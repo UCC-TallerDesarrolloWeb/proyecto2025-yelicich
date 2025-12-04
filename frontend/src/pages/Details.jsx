@@ -60,7 +60,7 @@ const Details = () => {
                 ]} />
 
                 <div className="details__container page-content">
-                    <div className="details__content">
+                    <div className="details__content">  
                         <div className="details__content__left">
                             <div className="images-container">
                                 {/* Miniaturas */}

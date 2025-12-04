@@ -7,7 +7,6 @@
     <meta name="keywords" content="autos, 0km, concesionaria, argentina, YeliMotors">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="details.css">
     <script src="../autos.js" type="text/javascript" defer></script>
     <script src="details.js" type="text/javascript" defer></script>
     <link rel="shortcut icon" href="../../imagenes/logo_ym.ico" type="image/x-icon">
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
     <title>Detalles - YeliMotors</title>
 </head>
-<body onload="initDetailsPage()">
+<body class="body-container" onload="initDetailsPage()">
     <header>
         <div id="header-container">
             <div id="header-logo">
@@ -27,9 +26,6 @@
                 </a>
             </div>
             <nav id="header-buttons">
-                <!-- <a href="#" aria-disabled="true" class="header-buttons__small">Importaciones</a>
-                <a href="#" aria-disabled="true" class="header-buttons__small">Servicios</a>
-                <a href="#" aria-disabled="true" class="header-buttons__small">Contacto</a> -->
                 <a id="btn-catalogo" href="../catalog_page/catalog.html">Catálogo</a>
             </nav>
         </div>
@@ -41,12 +37,8 @@
             <li class="bold" id="breadcrumb-current" aria-current="page"></li>
         </ol>
     </nav>
-    <main class="global-container">
+    <main id="details" class="page-container">
         <div class="detalles">
-            <div id="titles-mobile">
-                <h2 id="auto-nombre-mobile"></h2>
-                <span id="auto-type-box-mobile"></span>
-            </div>
             <div class="detalles__left">
                 <div class="imagenes-container">
                     <div class="images-thumbnails"></div>
