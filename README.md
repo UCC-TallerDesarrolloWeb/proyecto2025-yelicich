@@ -279,7 +279,7 @@ const activities = [
 | Código limpio y sin errores en consola   | 10% |
 
 ## Requisitos del FINAL
-- [ ] Todas las correcciones y mejoras solicitadas durante el primer y segundo parcial deben estar corregidas.
-- [ ] No debe haber errores presentes en el código (realizar Code > Inspect Code para verificar que no haya errores)
-- [ ] No debe haber errores JavaScript presentes (F12 > Consola)
-- [ ] Debe cumplir con TODOS los requisitos del 1er y 2do Parcial (si se agrego código nuevo en Js, se debe documentar, si hay nuevos inputs de html deben contener su label, etc)
+- [X] Todas las correcciones y mejoras solicitadas durante el primer y segundo parcial deben estar corregidas.
+- [X] No debe haber errores presentes en el código (realizar Code > Inspect Code para verificar que no haya errores)
+- [X] No debe haber errores JavaScript presentes (F12 > Consola)
+- [X] Debe cumplir con TODOS los requisitos del 1er y 2do Parcial (si se agrego código nuevo en Js, se debe documentar, si hay nuevos inputs de html deben contener su label, etc)
