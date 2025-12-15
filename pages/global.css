@@ -1,18 +1,3 @@
-/* ---- PALETA ACCESIBLE (segun axe) --- */
-/* :root {
-    --ym-primary-950: #102a41; - textos en fondo claro
-    --ym-primary-900: #184262; - titulos en fondo claro
-    --ym-primary-800: #164d76; - desc
-    --ym-primary-700: #165b8e; - desc
-    --ym-primary-600: #1a72af; - hover oscuro
-    --ym-primary: #1d6aa1; - primary
-    --ym-primary-400: #2a94d5; - ahora lo bajamos un nivel
-    --ym-primary-300: #4faae1; - texto clarito
-    --ym-primary-200: #8cc7ed; - hover claro y divisores
-    --ym-primary-100: #c2dff5; - surface
-    --ym-primary-50: #f2f8fd; - textos en fondo oscuro y para fondos claros
-}; */
-
 :root {
 /* YM-Primary */
     --ym-primary-950: #102a41; /* textos en fondo claro */
@@ -1405,7 +1390,6 @@ input[type="checkbox"] {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* card de auto */
